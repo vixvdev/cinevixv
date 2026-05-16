@@ -43,4 +43,6 @@
 Masuk ke project `cinevixv-api` → Settings → Environment Variables.
 Update/Add:
 - `CORS_ORIGIN` = `https://cine.vixv.biz.id`
+- `TIKTOK_CLIENT_KEY` = `awbkhrmjc67yi2vp`
+- `TIKTOK_CLIENT_SECRET` = `AQV563X54RV71rgbizEI4tKUs9nM8UVy`
 - `TIKTOK_REDIRECT_URI` = `https://cinevixv-api.vercel.app/api/tiktok/callback`
