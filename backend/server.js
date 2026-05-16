@@ -9,6 +9,8 @@ const helmet = require('helmet');
 
 const app = express();
 const PORT = process.env.PORT || 4000;
+const DEFAULT_TIKTOK_SCOPES = ['user.info.basic'];
+const DEFAULT_TIKTOK_USER_FIELDS = ['open_id', 'avatar_url', 'display_name'];
 
 /* ═══════════════════════════════════════════
    MIDDLEWARE
@@ -67,7 +69,7 @@ app.get('/api/tiktok/auth', (req, res) => {
     const authUrl = 'https://www.tiktok.com/v2/auth/authorize/';
     const params = {
       client_key: process.env.TIKTOK_CLIENT_KEY,
-      scope: 'user.info.basic,user.info.profile,user.info.stats,video.list',
+      scope: DEFAULT_TIKTOK_SCOPES.join(','),
       response_type: 'code',
       redirect_uri: process.env.TIKTOK_REDIRECT_URI,
       state: csrfState
@@ -149,17 +151,20 @@ app.get('/api/tiktok/callback', async (req, res) => {
     // Fetch user profile info
     const userInfoEndpoint = 'https://open.tiktokapis.com/v2/user/info/';
     const userInfoResponse = await axios.get(userInfoEndpoint, {
+      params: {
+        fields: DEFAULT_TIKTOK_USER_FIELDS.join(',')
+      },
       headers: {
         'Authorization': `Bearer ${access_token}`,
         'Content-Type': 'application/json'
       }
     });
 
-    const userInfo = userInfoResponse.data.data.user;
+    const userInfo = userInfoResponse.data?.data?.user || {};
 
     // Redirect to frontend with success (in production, store tokens securely)
     // For demo purposes, we redirect with a flag. In production, set httpOnly cookies.
-    res.redirect(`${process.env.CORS_ORIGIN || 'http://localhost:3000'}/?tiktok_auth=success&username=${encodeURIComponent(userInfo?.display_name || 'user')}`);
+    res.redirect(`${process.env.CORS_ORIGIN || 'http://localhost:3000'}/?tiktok_auth=success&username=${encodeURIComponent(userInfo.display_name || 'user')}`);
 
   } catch (error) {
     console.error('Error in TikTok callback:', error.message);
@@ -297,6 +302,9 @@ app.post('/api/tiktok/user', async (req, res) => {
     const userInfoEndpoint = 'https://open.tiktokapis.com/v2/user/info/';
 
     const response = await axios.get(userInfoEndpoint, {
+      params: {
+        fields: DEFAULT_TIKTOK_USER_FIELDS.join(',')
+      },
       headers: {
         'Authorization': `Bearer ${access_token}`,
         'Content-Type': 'application/json'
