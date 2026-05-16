@@ -100,17 +100,26 @@ app.get('/api/tiktok/callback', async (req, res) => {
       return res.redirect(`${process.env.CORS_ORIGIN || 'http://localhost:3000'}/?error=No authorization code received`);
     }
 
-    // Verify CSRF state
-    const storedState = req.cookies.csrfState;
-    if (!storedState || storedState !== state) {
-      console.error('CSRF state mismatch');
-      return res.redirect(`${process.env.CORS_ORIGIN || 'http://localhost:3000'}/?error=Invalid state parameter`);
+    // Verify CSRF state (Skip for Local Dashboard Bridge requests)
+    const isLocalBridge = state && state.startsWith('local_');
+
+    if (!isLocalBridge) {
+      // Normal website flow: check cookie
+      const storedState = req.cookies.csrfState;
+      if (!storedState || storedState !== state) {
+        console.error('CSRF state mismatch');
+        return res.redirect(`${process.env.CORS_ORIGIN || 'http://localhost:3000'}/?error=Invalid state parameter`);
+      }
+      res.clearCookie('csrfState');
+    } else {
+      // Local Dashboard Bridge flow:
+      // Vercel acts as a passthrough. Do NOT exchange token here.
+      // Redirect browser back to Local Dashboard with the code.
+      console.log('Local Bridge detected, forwarding code to localhost');
+      return res.redirect(`http://127.0.0.1:8765/auth/tiktok/callback?code=${encodeURIComponent(code)}&state=${encodeURIComponent(state)}`);
     }
 
-    // Clear CSRF cookie
-    res.clearCookie('csrfState');
-
-    // Exchange authorization code for access token
+    // Exchange authorization code for access token (Website flow only)
     const tokenEndpoint = 'https://open.tiktokapis.com/v2/oauth/token/';
     const tokenParams = {
       client_key: process.env.TIKTOK_CLIENT_KEY,
