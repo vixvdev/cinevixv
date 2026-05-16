@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Syarat & Ketentuan Layanan – Cinevixv</title>
+  <meta name="description" content="Syarat dan Ketentuan Layanan Cinevixv. Dokumen legal yang mengatur penggunaan platform Cinevixv, integrasi TikTok API, hak kekayaan intelektual, dan ketentuan lainnya."/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg: #0d0d0d;
+      --surface: #161616;
+      --border: #2a2a2a;
+      --accent: #c0392b;
+      --accent-soft: #e74c3c22;
+      --text: #e8e8e8;
+      --muted: #888;
+      --heading-font: 'Playfair Display', serif;
+      --body-font: 'DM Sans', sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--body-font);
+      font-weight: 300;
+      line-height: 1.8;
+      font-size: 15px;
+    }
+
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 18px 40px;
+      background: rgba(13,13,13,0.9);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .logo {
+      font-family: var(--heading-font);
+      font-size: 22px;
+      letter-spacing: 1px;
+      color: var(--text);
+      text-decoration: none;
+    }
+    .logo span { color: var(--accent); }
+    nav small { color: var(--muted); font-size: 12px; letter-spacing: 2px; text-transform: uppercase; }
+
+    .hero {
+      padding: 80px 40px 50px;
+      max-width: 780px;
+      margin: 0 auto;
+      border-bottom: 1px solid var(--border);
+    }
+    .label {
+      display: inline-block;
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      padding: 4px 12px;
+      border-radius: 2px;
+      margin-bottom: 24px;
+    }
+    h1 {
+      font-family: var(--heading-font);
+      font-size: clamp(32px, 5vw, 52px);
+      line-height: 1.15;
+      margin-bottom: 20px;
+      color: #fff;
+    }
+    .meta { color: var(--muted); font-size: 13px; letter-spacing: 0.5px; }
+    .meta span { color: var(--accent); }
+
+    .content {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 60px 40px 100px;
+    }
+    .section { margin-bottom: 52px; }
+    h2 {
+      font-family: var(--heading-font);
+      font-size: 22px;
+      color: #fff;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    h2 .num {
+      font-family: var(--body-font);
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      width: 28px; height: 28px;
+      display: grid; place-items: center;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    h3 {
+      font-family: var(--heading-font);
+      font-size: 17px;
+      color: #fff;
+      margin: 24px 0 10px;
+    }
+    p { margin-bottom: 14px; color: #ccc; }
+    ul { padding-left: 20px; margin-bottom: 14px; color: #ccc; }
+    ul li { margin-bottom: 8px; }
+    ol { padding-left: 20px; margin-bottom: 14px; color: #ccc; }
+    ol li { margin-bottom: 8px; }
+    a { color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s; }
+    a:hover { border-color: var(--accent); }
+
+    .highlight-box {
+      background: var(--accent-soft);
+      border-left: 3px solid var(--accent);
+      padding: 18px 22px;
+      border-radius: 0 6px 6px 0;
+      margin: 20px 0;
+      color: #ddd;
+      font-size: 14px;
+    }
+
+    /* Table of Contents */
+    .toc {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 28px 32px;
+      margin: 40px 0 60px;
+    }
+    .toc h3 {
+      font-family: var(--heading-font);
+      font-size: 18px;
+      color: #fff;
+      margin: 0 0 18px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    .toc ol {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      counter-reset: toc-counter;
+    }
+    .toc ol li {
+      counter-increment: toc-counter;
+      margin-bottom: 6px;
+      padding: 6px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .toc ol li:last-child { border-bottom: none; }
+    .toc ol li a {
+      color: var(--text);
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: color 0.2s;
+    }
+    .toc ol li a::before {
+      content: counter(toc-counter, decimal-leading-zero);
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--accent);
+      min-width: 24px;
+    }
+    .toc ol li a:hover { color: var(--accent); }
+
+    .sub-list {
+      margin: 8px 0 14px;
+      padding-left: 20px;
+      list-style-type: disc;
+    }
+    .sub-list li {
+      margin-bottom: 6px;
+      font-size: 14px;
+      color: #bbb;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 30px 40px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    footer strong { color: var(--text); }
+
+    @media (max-width: 640px) {
+      nav { padding: 14px 20px; }
+      .hero { padding: 60px 20px 40px; }
+      .content { padding: 40px 20px 80px; }
+      .toc { padding: 20px; }
+      footer { padding: 24px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="https://cine.vixv.biz.id" class="logo">cine<span>v</span>ixv</a>
+  <small>Syarat & Ketentuan</small>
+</nav>
+
+<div class="hero">
+  <div class="label">Dokumen Legal</div>
+  <h1>Syarat & Ketentuan Layanan</h1>
+  <p class="meta">
+    Berlaku sejak: <span>16 Mei 2026</span> &nbsp;&middot;&nbsp; Terakhir diperbarui: <span>16 Mei 2026</span>
+  </p>
+</div>
+
+<div class="content">
+
+  <div class="highlight-box">
+    <strong>Penting:</strong> Dengan mengakses, menjelajahi, atau menggunakan platform Cinevixv (selanjutnya disebut "Layanan"), termasuk melalui website <a href="https://cine.vixv.biz.id">cine.vixv.biz.id</a>, aplikasi, atau platform media sosial terkait, Anda secara tegas menyetujui seluruh syarat, ketentuan, kebijakan, dan ketentuan tambahan yang tercantum dalam dokumen ini. Jika Anda tidak menyetujui seluruh atau sebagian dari Syarat & Ketentuan ini, harap segera berhenti menggunakan Layanan kami.
+  </div>
+
+  <!-- TABLE OF CONTENTS -->
+  <div class="toc">
+    <h3>Daftar Isi</h3>
+    <ol>
+      <li><a href="#s1">Definisi dan Istilah</a></li>
+      <li><a href="#s2">Informasi Layanan dan Operator</a></li>
+      <li><a href="#s3">Penerimaan Syarat dan Ketentuan</a></li>
+      <li><a href="#s4">Kualifikasi dan Eligibilitas Pengguna</a></li>
+      <li><a href="#s5">Lisensi Penggunaan dan Hak Akses</a></li>
+      <li><a href="#s6">Kewajiban dan Tanggung Jawab Pengguna</a></li>
+      <li><a href="#s7">Kebijakan Penggunaan yang Dapat Diterima (Acceptable Use Policy)</a></li>
+      <li><a href="#s8">Konten yang Dihasilkan Pengguna (User-Generated Content)</a></li>
+      <li><a href="#s9">Hak Kekayaan Intelektual dan Hak Cipta</a></li>
+      <li><a href="#s10">Pemberitahuan Hak Cipta (DMCA & UU Hak Cipta)</a></li>
+      <li><a href="#s11">Integrasi dan Kepatuhan TikTok Developer Platform</a></li>
+      <li><a href="#s12">Penggunaan API TikTok dan Batasan</a></li>
+      <li><a href="#s13">Perlindungan Data dan Privasi Pengguna</a></li>
+      <li><a href="#s14">Tautan dan Layanan Pihak Ketiga</a></li>
+      <li><a href="#s15">Penafian dan Batasan Tanggung Jawab</a></li>
+      <li><a href="#s16">Indemnifikasi</a></li>
+      <li><a href="#s17">Penghentian dan Pembatasan Akses</a></li>
+      <li><a href="#s18">Perubahan dan Pembaruan Layanan</a></li>
+      <li><a href="#s19">Hukum yang Berlaku dan Penyelesaian Sengketa</a></li>
+      <li><a href="#s20">Ketentuan Umum dan Disposisi</a></li>
+      <li><a href="#s21">Informasi Kontak</a></li>
+    </ol>
+  </div>
+
+  <!-- SECTION 1 -->
+  <div class="section" id="s1">
+    <h2><span class="num">1</span> Definisi dan Istilah</h2>
+    <p>Dalam dokumen Syarat & Ketentuan ini, istilah-istilah berikut memiliki makna sebagaimana didefinisikan di bawah ini, baik dalam bentuk tunggal maupun jamak:</p>
+    <ul>
+      <li><strong>"Cinevixv"</strong> merujuk pada platform, website, layanan, dan seluruh entitas terkait yang dioperasikan di bawah domain <a href="https://cine.vixv.biz.id">cine.vixv.biz.id</a>, termasuk seluruh subdomain, halaman, fitur, dan konten yang tersedia di dalamnya.</li>
+      <li><strong>"Layanan"</strong> merujuk pada keseluruhan produk, fitur, fungsi, konten, dan pengalaman yang disediakan oleh Cinevixv melalui website, aplikasi, platform media sosial, dan saluran digital lainnya.</li>
+      <li><strong>"Pengguna"</strong> atau <strong>"Anda"</strong> merujuk pada setiap individu, entitas, atau organisasi yang mengakses, menjelajahi, atau menggunakan Layanan Cinevixv dengan cara apapun, termasuk namun tidak terbatas pada pengunjung website, pengikut media sosial, dan pengguna yang berinteraksi dengan konten kami.</li>
+      <li><strong>"Konten"</strong> merujuk pada seluruh materi yang tersedia melalui Layanan, termasuk namun tidak terbatas pada artikel, teks, gambar, foto, ilustrasi, grafis, video, audio, desain, tata letak, kode sumber, dan elemen visual lainnya.</li>
+      <li><strong>"Konten Editorial"</strong> merujuk pada konten yang diproduksi dan diterbitkan oleh tim editorial Cinevixv, termasuk ulasan film, rekomendasi series, artikel analisis, dan materi informatif lainnya.</li>
+      <li><strong>"Konten Pihak Ketiga"</strong> merujuk pada materi, konten, atau informasi yang berasal dari sumber di luar Cinevixv, termasuk namun tidak terbatas pada studio film, platform streaming, distributor konten, dan pemegang hak cipta lainnya.</li>
+      <li><strong>"TikTok"</strong> merujuk pada platform media sosial yang dioperasikan oleh TikTok Pte. Ltd. dan/atau afiliasinya, termasuk seluruh layanan, fitur, API, dan produk terkait.</li>
+      <li><strong>"TikTok API"</strong> merujuk pada Application Programming Interface yang disediakan oleh TikTok untuk pengembang, termasuk TikTok for Developers Platform, Content Posting API, Display API, Login Kit, dan seluruh endpoint serta layanan terkait.</li>
+      <li><strong>"TikTok Developer Terms"</strong> merujuk pada Syarat Layanan Pengembang TikTok (<em>TikTok Developer Terms of Service</em>) yang diterbitkan dan diperbarui secara berkala oleh TikTok, yang dapat diakses melalui situs resmi TikTok.</li>
+      <li><strong>"Data Pengguna"</strong> merujuk pada informasi apapun yang dapat digunakan untuk mengidentifikasi secara langsung atau tidak langsung seorang individu, termasuk informasi pribadi, data teknis, data penggunaan, dan metadata terkait.</li>
+      <li><strong>"Hak Kekayaan Intelektual"</strong> merujuk pada hak cipta, merek dagang, paten, rahasia dagang, desain industri, hak moral, dan bentuk perlindungan kekayaan intelektual lainnya yang diakui oleh hukum yang berlaku.</li>
+    </ul>
+  </div>
+
+  <!-- SECTION 2 -->
+  <div class="section" id="s2">
+    <h2><span class="num">2</span> Informasi Layanan dan Operator</h2>
+    <h3>2.1 Deskripsi Layanan</h3>
+    <p>Cinevixv adalah platform konten digital berbahasa Indonesia yang berfokus pada publikasi artikel ulasan, pembahasan mendalam, rekomendasi, analisis, dan informasi seputar industri perfilman dan series. Kami menyediakan konten editorial berkualitas tinggi yang mencakup ulasan film terbaru, rekomendasi tontonan berdasarkan genre dan platform streaming, analisis sinematik, berita industri hiburan, dan panduan menonton yang komprehensif.</p>
+    <h3>2.2 Fitur Utama Layanan</h3>
+    <p>Layanan Cinevixv mencakup, namun tidak terbatas pada:</p>
+    <ul>
+      <li>Publikasi artikel ulasan film dan series yang ditulis oleh tim editorial Cinevixv.</li>
+      <li>Rekomendasi tontonan yang dikurasi berdasarkan genre, mood, platform streaming, dan preferensi penonton.</li>
+      <li>Konten video pendek dan panjang yang dipublikasikan melalui platform media sosial, termasuk TikTok.</li>
+      <li>Tautan referensi ke platform streaming resmi (Netflix, Disney+, Vidio, iQIYI, WeTV, dan lainnya) sebagai panduan bagi pembaca.</li>
+      <li>Interaksi dengan komunitas melalui platform media sosial dan saluran komunikasi digital.</li>
+    </ul>
+    <h3>2.3 Operator Layanan</h3>
+    <p>Layanan Cinevixv dioperasikan dan dikelola oleh tim editorial dan teknis Cinevixv. Layanan ini dapat diakses melalui:</p>
+    <ul>
+      <li>Website resmi: <a href="https://cine.vixv.biz.id">https://cine.vixv.biz.id</a></li>
+      <li>TikTok: <a href="https://tiktok.com/@cinevix" target="_blank">@cinevix</a></li>
+      <li>Email kontak: <a href="mailto:hello@cine.vixv.biz.id">hello@cine.vixv.biz.id</a></li>
+    </ul>
+  </div>
+
+  <!-- SECTION 3 -->
+  <div class="section" id="s3">
+    <h2><span class="num">3</span> Penerimaan Syarat dan Ketentuan</h2>
+    <h3>3.1 Persetujuan Eksplisit</h3>
+    <p>Dengan mengakses, menjelajahi, atau menggunakan Layanan Cinevixv dalam bentuk atau cara apapun, Anda secara sadar, sukarela, dan eksplisit menyatakan bahwa Anda telah membaca, memahami, dan menyetujui seluruh ketentuan yang tercantum dalam dokumen Syarat & Ketentuan ini. Persetujuan ini mencakup pula seluruh kebijakan, pedoman, perjanjian, dan ketentuan tambahan yang dirujuk atau ditautkan di dalam dokumen ini.</p>
+    <h3>3.2 Representasi Pengguna</h3>
+    <p>Dengan menggunakan Layanan, Anda merepresentasikan dan menjamin bahwa:</p>
+    <ul>
+      <li>Anda memiliki kapasitas hukum yang sah untuk menyetujui dan terikat oleh Syarat & Ketentuan ini.</li>
+      <li>Anda akan mematuhi seluruh ketentuan yang tercantum dalam dokumen ini serta seluruh hukum dan peraturan yang berlaku.</li>
+      <li>Informasi yang Anda berikan atau sampaikan melalui Layanan adalah benar, akurat, dan mutakhir.</li>
+      <li>Penggunaan Layanan oleh Anda tidak akan melanggar hukum atau peraturan yang berlaku di yurisdiksi Anda.</li>
+    </ul>
+    <h3>3.3 Pembaruan Persetujuan</h3>
+    <p>Setiap kali Anda mengakses atau menggunakan Layanan setelah pembaruan Syarat & Ketentuan ini diterbitkan, hal tersebut merupakan konfirmasi bahwa Anda menyetujui syarat-syarat yang telah diperbarui. Kami sangat menyarankan Anda untuk secara berkala meninjau halaman ini agar tetap memahami ketentuan yang berlaku.</p>
+  </div>
+
+  <!-- SECTION 4 -->
+  <div class="section" id="s4">
+    <h2><span class="num">4</span> Kualifikasi dan Eligibilitas Pengguna</h2>
+    <h3>4.1 Persyaratan Usia</h3>
+    <p>Untuk menggunakan Layanan Cinevixv, Anda harus berusia minimal 13 (tiga belas) tahun atau usia minimum yang diwajibkan oleh hukum yang berlaku di yurisdiksi Anda, mana yang lebih tinggi. Jika Anda berusia di bawah 13 tahun, Anda tidak diperkenankan untuk mengakses atau menggunakan Layanan kami dalam bentuk apapun.</p>
+    <h3>4.2 Pengguna di Bawah Umur</h3>
+    <p>Jika Anda berusia antara 13 hingga 17 tahun (atau di bawah usia dewasa menurut hukum yang berlaku), Anda menyatakan bahwa Anda telah mendapatkan persetujuan dari orang tua atau wali sah Anda untuk menggunakan Layanan. Orang tua atau wali sah Anda juga harus menyetujui Syarat & Ketentuan ini dan bertanggung jawab atas penggunaan Layanan oleh Anda.</p>
+    <h3>4.3 Pelanggaran Eligibilitas</h3>
+    <p>Jika Cinevixv mengetahui atau memiliki alasan untuk percaya bahwa seorang pengguna tidak memenuhi syarat eligibilitas yang ditetapkan, kami berhak untuk segera menghentikan akses pengguna tersebut ke Layanan, menghapus konten atau data terkait, dan mengambil tindakan lain yang dianggap perlu sesuai dengan ketentuan yang berlaku.</p>
+  </div>
+
+  <!-- SECTION 5 -->
+  <div class="section" id="s5">
+    <h2><span class="num">5</span> Lisensi Penggunaan dan Hak Akses</h2>
+    <h3>5.1 Lisensi Terbatas</h3>
+    <p>Cinevixv memberikan kepada Anda lisensi terbatas, tidak eksklusif, tidak dapat dialihkan, tidak dapat disublisensikan, dan dapat dibatalkan sewaktu-waktu untuk mengakses dan menggunakan Layanan semata-mata untuk keperluan pribadi, non-komersial, dan informatif. Lisensi ini tidak memberikan hak kepemilikan apapun atas Layanan atau Konten kepada Anda.</p>
+    <h3>5.2 Ruang Lingkup Lisensi</h3>
+    <p>Dalam kerangka lisensi yang diberikan, Anda diperbolehkan untuk:</p>
+    <ul>
+      <li>Membaca, menjelajahi, dan mengakses seluruh konten yang tersedia di platform Cinevixv untuk keperluan pribadi dan non-komersial.</li>
+      <li>Mengutip sebagian kecil dari konten editorial Cinevixv (tidak lebih dari 200 kata per kutipan) dengan menyertakan atribusi yang jelas dan tautan langsung ke sumber asli di cine.vixv.biz.id.</li>
+      <li>Mengikuti dan berinteraksi dengan akun media sosial Cinevixv, termasuk akun TikTok <a href="https://tiktok.com/@cinevix" target="_blank">@cinevix</a>, sesuai dengan ketentuan platform masing-masing.</li>
+      <li>Mengakses dan menggunakan tautan eksternal yang disertakan dalam konten Cinevixv untuk merujuk ke platform streaming resmi dan sumber informasi lainnya.</li>
+    </ul>
+    <h3>5.3 Batasan Lisensi</h3>
+    <p>Lisensi yang diberikan secara tegas tidak mencakup hak untuk:</p>
+    <ul>
+      <li>Menyalin, mereproduksi, mendistribusikan, mempublikasikan ulang, menjual, atau mengeksploitasi seluruh atau sebagian besar konten Cinevixv tanpa izin tertulis sebelumnya dari tim Cinevixv.</li>
+      <li>Menggunakan konten Cinevixv untuk tujuan komersial, termasuk namun tidak terbatas pada iklan, promosi, produk turunan, atau layanan berbayar.</li>
+      <li>Memodifikasi, mengadaptasi, menerjemahkan, atau membuat karya turunan dari konten Cinevixv tanpa persetujuan eksplisit.</li>
+      <li>Menghapus, mengubah, atau menyembunyikan pemberitahuan hak cipta, merek dagang, atau pemberitahuan kepemilikan lainnya yang terdapat pada konten Cinevixv.</li>
+    </ul>
+  </div>
+
+  <!-- SECTION 6 -->
+  <div class="section" id="s6">
+    <h2><span class="num">6</span> Kewajiban dan Tanggung Jawab Pengguna</h2>
+    <p>Sebagai pengguna Layanan Cinevixv, Anda berkewajiban untuk:</p>
+    <ol>
+      <li><strong>Mematuhi Hukum yang Berlaku:</strong> Seluruh akses dan penggunaan Layanan harus sesuai dengan hukum, peraturan, dan ketentuan yang berlaku di yurisdiksi Anda, termasuk namun tidak terbatas pada hukum hak cipta, hukum perlindungan data, dan hukum perlindungan konsumen.</li>
+      <li><strong>Menghormati Hak Pihak Lain:</strong> Anda tidak diperkenankan menggunakan Layanan dengan cara yang melanggar atau berpotensi melanggar hak kekayaan intelektual, hak privasi, hak publisitas, atau hak hukum lainnya dari pihak ketiga manapun.</li>
+      <li><strong>Menjaga Keakuratan Informasi:</strong> Jika Anda memberikan informasi atau data kepada Cinevixv, Anda bertanggung jawab untuk memastikan bahwa informasi tersebut benar, akurat, lengkap, dan mutakhir.</li>
+      <li><strong>Menggunakan Layanan Secara Wajar:</strong> Anda tidak diperkenankan menggunakan Layanan secara berlebihan, tidak wajar, atau dengan cara yang dapat mengganggu, membebani, atau merusak infrastruktur teknis Cinevixv.</li>
+      <li><strong>Tidak Melakukan Reverse Engineering:</strong> Anda tidak diperkenankan melakukan reverse engineering, dekompilasi, disassembly, atau upaya lainnya untuk mengekstrak kode sumber, algoritma, atau teknologi yang mendasari Layanan.</li>
+      <li><strong>Tidak Mengelakkan Pengamanan:</strong> Anda tidak diperkenankan mengelak, menonaktifkan, atau menghindari fitur keamanan, pembatasan akses, atau mekanisme perlindungan lainnya yang diterapkan pada Layanan.</li>
+      <li><strong>Bertanggung Jawab atas Aktivitas Akun:</strong> Jika Anda memiliki atau menggunakan akun untuk mengakses fitur tertentu dari Layanan, Anda bertanggung jawab penuh atas seluruh aktivitas yang terjadi di bawah akun tersebut.</li>
+    </ol>
+  </div>
+
+  <!-- SECTION 7 -->
+  <div class="section" id="s7">
+    <h2><span class="num">7</span> Kebijakan Penggunaan yang Dapat Diterima (Acceptable Use Policy)</h2>
+    <h3>7.1 Penggunaan yang Dilarang Secara Tegas</h3>
+    <p>Anda secara tegas <strong>DILARANG</strong> untuk menggunakan Layanan Cinevixv dalam cara-cara berikut:</p>
+    <ul>
+      <li><strong>Scraping dan Crawling:</strong> Melakukan scraping, crawling, data mining, atau pengambilan data secara otomatis dari website atau platform Cinevixv menggunakan bot, spider, scraper, crawler, atau alat otomatis lainnya tanpa izin tertulis sebelumnya.</li>
+      <li><strong>Serangan dan Gangguan Teknis:</strong> Mengirimkan virus, worm, trojan, malware, atau kode destruktif lainnya; melakukan serangan DDoS, brute force, atau bentuk serangan teknis lainnya terhadap infrastruktur Cinevixv.</li>
+      <li><strong>Penyebaran Konten Berbahaya:</strong> Menggunakan Layanan untuk menyebarkan konten yang mengandung malware, phishing, penipuan, atau bentuk ancaman keamanan lainnya.</li>
+      <li><strong>Spam dan Pesan Tidak Diminta:</strong> Mengirimkan pesan spam, pesan berantai, atau komunikasi tidak diminta lainnya melalui saluran komunikasi yang terkait dengan Layanan.</li>
+      <li><strong>Impersonasi:</strong> Menyamar sebagai Cinevixv, anggota tim Cinevixv, pengguna lain, atau entitas lain dengan maksud menyesatkan atau menipu.</li>
+      <li><strong>Pelanggaran Keamanan:</strong> Mengakses atau berupaya mengakses area, fitur, atau data dari Layanan yang tidak diizinkan untuk diakses oleh Anda.</li>
+      <li><strong>Eksploitasi Kerentanan:</strong> Mengeksploitasi, melaporkan, atau memanfaatkan kerentanan keamanan yang ditemukan pada Layanan tanpa terlebih dahulu melaporkannya kepada tim Cinevixv melalui saluran resmi.</li>
+    </ul>
+    <h3>7.2 Konten yang Dilarang</h3>
+    <p>Anda tidak diperkenankan menggunakan Layanan untuk membuat, mengunggah, atau menyebarkan konten yang:</p>
+    <ul>
+      <li>Melanggar atau berpotensi melanggar hak kekayaan intelektual pihak ketiga.</li>
+      <li>Bersifat fitnah, mencemarkan nama baik, mengancam, atau melecehkan.</li>
+      <li>Mengandung materi pornografi, eksplisit, atau tidak senonoh.</li>
+      <li>Mendorong kekerasan, kebencian, diskriminasi, atau tindakan ilegal.</li>
+      <li>Berisi informasi palsu, menyesatkan, atau hoaks yang dapat merugikan pihak lain.</li>
+      <li>Melanggar privasi atau hak publisitas individu lain.</li>
+    </ul>
+    <h3>7.3 Konsekuensi Pelanggaran</h3>
+    <p>Pelanggaran terhadap Kebijakan Penggunaan yang Dapat Diterima ini dapat mengakibatkan tindakan yang diambil oleh Cinevixv, termasuk namun tidak terbatas pada: peringatan tertulis, pembatasan akses sementara atau permanen, penghapusan konten, pelaporan kepada pihak berwenang, dan/atau tindakan hukum sesuai dengan ketentuan yang berlaku.</p>
+  </div>
+
+  <!-- SECTION 8 -->
+  <div class="section" id="s8">
+    <h2><span class="num">8</span> Konten yang Dihasilkan Pengguna (User-Generated Content)</h2>
+    <h3>8.1 Definisi</h3>
+    <p>"Konten yang Dihasilkan Pengguna" atau <em>User-Generated Content</em> (UGC) merujuk pada seluruh materi, komentar, ulasan, pesan, gambar, video, atau bentuk konten lainnya yang dibuat, diunggah, dikirimkan, atau dipublikasikan oleh pengguna melalui fitur interaktif yang tersedia pada Layanan Cinevixv atau melalui platform media sosial terkait.</p>
+    <h3>8.2 Lisensi atas UGC</h3>
+    <p>Dengan mengirimkan atau mempublikasikan UGC melalui atau terkait dengan Layanan Cinevixv, Anda memberikan kepada Cinevixv lisensi non-eksklusif, bebas royalti, dapat dialihkan, dapat disublisensikan, dan berlaku secara global untuk menggunakan, mereproduksi, memodifikasi, mengadaptasi, menerbitkan, menerjemahkan, mendistribusikan, dan menampilkan UGC tersebut dalam kaitannya dengan operasi dan promosi Layanan.</p>
+    <h3>8.3 Tanggung Jawab atas UGC</h3>
+    <p>Anda bertanggung jawab penuh atas seluruh UGC yang Anda kirimkan atau publikasikan. Anda menjamin bahwa:</p>
+    <ul>
+      <li>Anda memiliki seluruh hak, lisensi, dan izin yang diperlukan untuk mengirimkan UGC tersebut.</li>
+      <li>UGC tidak melanggar hak kekayaan intelektual, hak privasi, atau hak hukum pihak ketiga manapun.</li>
+      <li>UGC tidak melanggar ketentuan hukum yang berlaku di yurisdiksi manapun.</li>
+      <li>UGC tidak mengandung materi yang bersifat fitnah, mencemarkan nama baik, atau merugikan pihak lain.</li>
+    </ul>
+    <h3>8.4 Moderasi dan Penghapusan UGC</h3>
+    <p>Cinevixv berhak, namun tidak berkewajiban, untuk meninjau, memoderasi, mengedit, atau menghapus UGC yang dianggap melanggar Syarat & Ketentuan ini, kebijakan kami, atau hukum yang berlaku. Keputusan untuk memoderasi atau menghapus UGC merupakan hak diskresioner penuh dari Cinevixv dan tidak dapat digugat.</p>
+    <h3>8.5 Tidak Ada Kewajiban Pemantauan</h3>
+    <p>Cinevixv tidak berkewajiban untuk memantau seluruh UGC yang dikirimkan atau dipublikasikan melalui Layanan. Namun, kami berhak untuk melakukan peninjauan dan moderasi sesuai kebijakan internal kami.</p>
+  </div>
+
+  <!-- SECTION 9 -->
+  <div class="section" id="s9">
+    <h2><span class="num">9</span> Hak Kekayaan Intelektual dan Hak Cipta</h2>
+    <h3>9.1 Kepemilikan Konten Cinevixv</h3>
+    <p>Seluruh konten yang diproduksi, dikurasi, dan dipublikasikan oleh tim Cinevixv — termasuk namun tidak terbatas pada artikel, teks ulasan, analisis, rekomendasi, thumbnail, grafis, ilustrasi, video, audio, desain antarmuka, tata letak, logo, merek dagang, dan elemen visual lainnya — merupakan milik eksklusif Cinevixv atau pemberi lisensinya dan dilindungi oleh hukum hak cipta, merek dagang, dan hukum kekayaan intelektual lainnya yang berlaku di Indonesia dan secara internasional.</p>
+    <h3>9.2 Konten Pihak Ketiga dan Fair Use</h3>
+    <p>Konten yang berhubungan dengan film, series, dan karya audiovisual tertentu (termasuk namun tidak terbatas pada judul film, sinopsis, nama karakter, poster, still frame, trailer, dan materi promosi) adalah milik studio produksi, distributor, pemegang hak cipta, atau entitas terkait masing-masing. Cinevixv menggunakan materi tersebut semata-mata dalam konteks:</p>
+    <ul>
+      <li><strong>Ulasan dan Kritik:</strong> Penggunaan cuplikan, gambar, atau referensi dari karya film dan series untuk keperluan ulasan, kritik, dan komentar editorial yang dilindungi oleh prinsip <em>fair use</em> (penggunaan wajar) sebagaimana diatur dalam Pasal 10 Undang-Undang Hak Cipta Indonesia dan doktrin <em>fair use</em> dalam hukum hak cipta internasional.</li>
+      <li><strong>Pelaporan Berita:</strong> Penggunaan materi untuk keperluan pelaporan berita industri hiburan dan informasi faktual terkait perilisan film dan series.</li>
+      <li><strong>Referensi dan Edukasi:</strong> Penggunaan materi sebagai referensi edukatif dan panduan menonton bagi audiens.</li>
+    </ul>
+    <h3>9.3 Merek Dagang</h3>
+    <p>Logo "Cinevixv", nama merek, slogan, dan seluruh tanda pengenal lainnya yang digunakan pada Layanan merupakan merek dagang terdaftar atau tidak terdaftar dari Cinevixv. Tidak ada hak atau lisensi yang diberikan kepada Anda untuk menggunakan merek dagang tersebut tanpa persetujuan tertulis sebelumnya dari Cinevixv.</p>
+    <h3>9.4 Merek Dagang Pihak Ketiga</h3>
+    <p>Seluruh merek dagang, merek layanan, dan nama dagang pihak ketiga yang disebutkan atau ditampilkan pada Layanan (termasuk namun tidak terbatas pada Netflix, Disney+, TikTok, dan platform streaming lainnya) merupakan milik pemegang masing-masing. Penggunaan merek dagang pihak ketiga pada Layanan semata-mata untuk tujuan identifikasi dan referensi, dan tidak menyiratkan afiliasi, dukungan, atau persetujuan dari pemegang merek dagang tersebut.</p>
+  </div>
+
+  <!-- SECTION 10 -->
+  <div class="section" id="s10">
+    <h2><span class="num">10</span> Pemberitahuan Hak Cipta (DMCA & UU Hak Cipta)</h3>
+    <h3>10.1 Kepatuhan terhadap DMCA</h3>
+    <p>Meskipun Cinevixv beroperasi di Indonesia, kami menghormati prinsip-prinsip yang ditetapkan dalam <em>Digital Millennium Copyright Act</em> (DMCA) dan undang-undang hak cipta internasional lainnya. Kami berkomitmen untuk menanggapi setiap pemberitahuan pelanggaran hak cipta yang sah dan valid sesuai dengan prosedur yang berlaku.</p>
+    <h3>10.2 Prosedur Pemberitahuan Pelanggaran</h3>
+    <p>Jika Anda yakin bahwa hak cipta Anda telah dilanggar oleh konten yang tersedia pada Layanan Cinevixv, harap kirimkan pemberitahuan tertulis kepada kami yang memuat informasi berikut:</p>
+    <ol>
+      <li>Tanda tangan fisik atau elektronik dari pemilik hak cipta atau orang yang berwenang bertindak atas nama pemilik hak cipta.</li>
+      <li>Identifikasi karya berhak cipta yang diklaim telah dilanggar, atau jika beberapa karya berhak cipta dilanggar oleh satu pemberitahuan, daftar representatif dari karya-karya tersebut.</li>
+      <li>Identifikasi materi yang diklaim melanggar atau menjadi subjek tindakan pelanggaran, beserta informasi yang cukup untuk memungkinkan kami menemukan materi tersebut.</li>
+      <li>Informasi kontak Anda, termasuk alamat, nomor telepon, dan alamat email.</li>
+      <li>Pernyataan bahwa Anda memiliki keyakinan baik bahwa penggunaan materi yang dikeluhkan tidak diizinkan oleh pemilik hak cipta, agennya, atau hukum yang berlaku.</li>
+      <li>Pernyataan, dibuat di bawah sumpah, bahwa informasi dalam pemberitahuan adalah akurat dan bahwa Anda adalah pemilik hak cipta atau berwenang bertindak atas nama pemilik hak cipta.</li>
+    </ol>
+    <h3>10.3 Kontak Pemberitahuan Hak Cipta</h3>
+    <p>Pemberitahuan pelanggaran hak cipta dapat dikirimkan ke:</p>
+    <ul>
+      <li>Email: <a href="mailto:hello@cine.vixv.biz.id">hello@cine.vixv.biz.id</a></li>
+      <li>Subjek email: "Pemberitahuan Pelanggaran Hak Cipta - DMCA"</li>
+    </ul>
+    <h3>10.4 Tindak Lanjut</h3>
+    <p>Setelah menerima pemberitahuan yang lengkap dan valid, Cinevixv akan menanggapi dalam waktu yang wajar, yang dapat mencakup penghapusan atau penonaktifan akses ke materi yang diduga melanggar. Kami juga akan menginformasikan kepada pihak yang mengirimkan pemberitahuan mengenai tindakan yang telah diambil.</p>
+    <h3>10.5 Pemberitahuan Palsu</h3>
+    <p>Pemberitahuan pelanggaran hak cipta yang dibuat secara palsu atau dengan niat buruk dapat mengakibatkan tanggung jawab hukum bagi pihak yang mengirimkan pemberitahuan tersebut, termasuk ganti rugi dan biaya hukum.</p>
+  </div>
+
+  <!-- SECTION 11 -->
+  <div class="section" id="s11">
+    <h2><span class="num">11</span> Integrasi dan Kepatuhan TikTok Developer Platform</h2>
+    <h3>11.1 Deskripsi Integrasi</h3>
+    <p>Cinevixv mengintegrasikan layanan dan fitur dari TikTok Developer Platform untuk mendukung operasional dan distribusi konten kami. Integrasi ini mencakup penggunaan TikTok API untuk keperluan penerbitan konten, manajemen akun, dan analitik performa konten yang dipublikasikan melalui akun TikTok resmi Cinevixv (<a href="https://tiktok.com/@cinevix" target="_blank">@cinevix</a>).</h3>
+    <h3>11.2 Kepatuhan terhadap TikTok Developer Terms</h3>
+    <p>Seluruh penggunaan TikTok API dan layanan Developer Platform oleh Cinevixv tunduk dan mematuhi:</p>
+    <ul>
+      <li><strong>TikTok Developer Terms of Service:</strong> Syarat dan Ketentuan Layanan Pengembang TikTok yang mengatur penggunaan platform pengembang TikTok secara keseluruhan.</li>
+      <li><strong>TikTok API License Terms:</strong> Ketentuan Lisensi API TikTok yang mengatur hak dan kewajiban dalam penggunaan endpoint API.</li>
+      <li><strong>TikTok Developer Policies:</strong> Kebijakan Pengembang TikTok yang mencakup pedoman penggunaan data, privasi, keamanan, dan standar konten.</li>
+      <li><strong>TikTok Brand Guidelines:</strong> Pedoman Merek TikTok yang mengatur penggunaan merek dagang, logo, dan aset merek TikTok.</li>
+      <li><strong>TikTok Community Guidelines:</strong> Pedoman Komunitas TikTok yang mengatur standar perilaku dan konten di platform TikTok.</li>
+    </ul>
+    <h3>11.3 Tujuan Penggunaan TikTok API</h3>
+    <p>Cinevixv menggunakan TikTok API semata-mata untuk tujuan-tujuan berikut:</p>
+    <ul>
+      <li><strong>Content Publishing:</strong> Menerbitkan konten video dan artikel dalam format video ke akun TikTok resmi Cinevixv melalui Content Posting API.</li>
+      <li><strong>Content Management:</strong> Mengelola, memperbarui, dan menghapus konten yang telah dipublikasikan di akun TikTok resmi kami.</li>
+      <li><strong>Analytics:</strong> Mengakses data analitik performa konten (views, likes, comments, shares) untuk keperluan evaluasi dan optimasi strategi konten.</li>
+      <li><strong>Account Management:</strong> Mengelola pengaturan dan informasi akun TikTok resmi Cinevixv.</li>
+    </ul>
+    <h3>11.4 Batasan Penggunaan Data TikTok</h3>
+    <p>Cinevixv menyatakan dan menjamin bahwa:</p>
+    <ul>
+      <li>Data yang diperoleh melalui TikTok API hanya digunakan untuk tujuan yang telah diizinkan secara eksplisit oleh TikTok dan diungkapkan kepada pengguna.</li>
+      <li>Kami tidak mengumpulkan, menyimpan, atau memproses data pengguna TikTok di luar yang diperlukan untuk fungsi integrasi yang telah dijelaskan.</li>
+      <li>Kami tidak menjual, menyewakan, atau memperdagangkan data yang diperoleh melalui TikTok API kepada pihak ketiga manapun.</li>
+      <li>Kami tidak menggunakan data TikTok untuk tujuan iklan yang ditargetkan, profiling, atau pengambilan keputusan otomatis yang berdampak signifikan terhadap pengguna.</li>
+      <li>Kami menerapkan langkah-langkah keamanan teknis dan organisasi yang memadai untuk melindungi data yang diperoleh melalui TikTok API dari akses tidak sah, pengungkapan, perubahan, atau penghancuran.</li>
+    </ul>
+    <h3>11.5 Kepatuhan Berkelanjutan</h3>
+    <p>Cinevixv berkomitmen untuk secara berkelanjutan memantau dan memastikan kepatuhan terhadap seluruh persyaratan TikTok Developer Platform. Kami akan secara proaktif memperbarui praktik penggunaan API kami sesuai dengan perubahan kebijakan dan ketentuan yang diterbitkan oleh TikTok.</p>
+  </div>
+
+  <!-- SECTION 12 -->
+  <div class="section" id="s12">
+    <h2><span class="num">12</span> Penggunaan API TikTok dan Batasan</h2>
+    <h3>12.1 Lingkup Akses API</h3>
+    <p>Akses Cinevixv terhadap TikTok API dibatasi secara ketat pada scope (cakupan) yang telah disetujui dan diizinkan oleh TikTok melalui proses review aplikasi pengembang. Scope akses mencakup:</p>
+    <ul>
+      <li><code>user.info.basic</code> — Akses informasi dasar akun TikTok yang terautentikasi.</li>
+      <li><code>video.publish</code> — Kemampuan untuk mempublikasikan video ke akun TikTok yang terautentikasi.</li>
+      <li><code>video.list</code> — Kemampuan untuk mengakses daftar video yang telah dipublikasikan di akun TikTok yang terautentikasi.</li>
+      <li><code>video.analytics</code> — Kemampuan untuk mengakses data analitik performa video.</li>
+    </ul>
+    <h3>12.2 Batasan Teknis</h3>
+    <p>Cinevixv mematuhi seluruh batasan teknis yang ditetapkan oleh TikTok, termasuk namun tidak terbatas pada:</p>
+    <ul>
+      <li><strong>Rate Limiting:</strong> Mematuhi batas jumlah permintaan API per periode waktu yang ditetapkan oleh TikTok untuk setiap endpoint.</li>
+      <li><strong>Data Retention:</strong> Tidak menyimpan data yang diperoleh melalui TikTok API lebih lama dari yang diperlukan untuk tujuan yang telah diizinkan.</li>
+      <li><strong>Token Management:</strong> Mengelola access token dan refresh token dengan aman, tidak mengekspos token kepada pihak ketiga, dan mencabut token yang tidak lagi diperlukan.</li>
+      <li><strong>Scope Compliance:</strong> Hanya menggunakan data dan fungsi yang sesuai dengan scope akses yang telah disetujui, tidak berupaya mengakses data atau fungsi di luar scope yang diizinkan.</li>
+    </ul>
+    <h3>12.3 Larangan Penggunaan API</h3>
+    <p>Cinevixv tidak akan menggunakan TikTok API untuk:</p>
+    <ul>
+      <li>Mengumpulkan data pengguna TikTok tanpa persetujuan yang sah dan eksplisit.</li>
+      <li>Membuat, memfasilitasi, atau mendukung aktivitas yang melanggar TikTok Community Guidelines.</li>
+      <li>Mendistribusikan atau menampilkan konten yang melanggar hak kekayaan intelektual pihak ketiga.</li>
+      <li>Menggunakan data TikTok untuk melatih model machine learning atau AI tanpa persetujuan eksplisit dari TikTok.</li>
+      <li>Menampilkan data TikTok di luar konteks yang telah diizinkan oleh TikTok Developer Terms.</li>
+      <li>Menggunakan API untuk tujuan yang tidak terkait dengan fungsi dan layanan yang telah dijelaskan dalam aplikasi pengembang.</li>
+    </ul>
+    <h3>12.4 Keamanan Data</h3>
+    <p>Cinevixv menerapkan langkah-langkah keamanan yang memadai untuk melindungi data yang diperoleh melalui TikTok API, termasuk namun tidak terbatas pada:</p>
+    <ul>
+      <li>Enkripsi data saat transit (TLS/SSL) dan saat penyimpanan (encryption at rest).</li>
+      <li>Akses berbasis peran (role-based access control) untuk membatasi akses data hanya kepada personel yang berwenang.</li>
+      <li>Logging dan monitoring akses data untuk mendeteksi aktivitas yang mencurigakan atau tidak sah.</li>
+      <li>Penghapusan data yang aman (secure deletion) ketika data tidak lagi diperlukan.</li>
+    </ul>
+  </div>
+
+  <!-- SECTION 13 -->
+  <div class="section" id="s13">
+    <h2><span class="num">13</span> Perlindungan Data dan Privasi Pengguna</h2>
+    <h3>13.1 Komitmen Privasi</h3>
+    <p>Cinevixv berkomitmen untuk melindungi privasi dan keamanan data pengguna. Penggunaan data pribadi dilakukan sesuai dengan kebijakan privasi kami yang tersedia di halaman Kebijakan Privasi pada website cine.vixv.biz.id, serta sesuai dengan ketentuan perlindungan data yang berlaku, termasuk Undang-Undang Nomor 27 Tahun 2022 tentang Perlindungan Data Pribadi (UU PDP).</p>
+    <h3>13.2 Jenis Data yang Dikumpulkan</h3>
+    <p>Data yang dapat dikumpulkan oleh Cinevixv meliputi:</p>
+    <ul>
+      <li><strong>Data Teknis:</strong> Alamat IP, jenis browser, sistem operasi, informasi perangkat, dan data log server.</li>
+      <li><strong>Data Penggunaan:</strong> Halaman yang dikunjungi, waktu kunjungan, durasi sesi, dan pola interaksi dengan konten.</li>
+      <li><strong>Data yang Diberikan Secara Sukarela:</strong> Informasi yang Anda berikan melalui formulir kontak, komentar, atau komunikasi langsung dengan tim Cinevixv.</li>
+      <li><strong>Data dari TikTok API:</strong> Data yang diperoleh melalui integrasi TikTok API sesuai dengan scope akses yang telah disetujui, terbatas pada informasi yang diperlukan untuk fungsi integrasi.</li>
+    </ul>
+    <h3>13.3 Tujuan Pengumpulan Data</h3>
+    <p>Data yang dikumpulkan digunakan semata-mata untuk tujuan:</p>
+    <ul>
+      <li>Menyediakan, mengoperasikan, dan memelihara Layanan.</li>
+      <li>Meningkatkan pengalaman pengguna dan kualitas konten.</li>
+      <li>Menganalisis tren penggunaan dan performa konten.</li>
+      <li>Berkomunikasi dengan pengguna terkait pembaruan, informasi, atau respons terhadap pertanyaan.</li>
+      <li>Memenuhi kewajiban hukum dan regulasi yang berlaku.</li>
+    </ul>
+    <h3>13.4 Berbagi Data</h3>
+    <p>Cinevixv tidak menjual, menyewakan, atau memperdagangkan data pribadi pengguna kepada pihak ketiga. Data dapat dibagikan hanya dalam keadaan berikut:</p>
+    <ul>
+      <li>Dengan persetujuan eksplisit dari pengguna.</li>
+      <li>Kepada penyedia layanan pihak ketiga yang membantu pengoperasian Layanan, dengan perjanjian kerahasiaan yang mengikat.</li>
+      <li>Sesuai dengan kewajiban hukum atau perintah pengadilan yang sah.</li>
+      <li>Untuk melindungi hak, properti, atau keamanan Cinevixv, pengguna, atau publik.</li>
+    </ul>
+    <h3>13.5 Hak Pengguna atas Data</h3>
+    <p>Sesuai dengan ketentuan perlindungan data yang berlaku, Anda memiliki hak untuk:</p>
+    <ul>
+      <li>Mengakses data pribadi Anda yang disimpan oleh Cinevixv.</li>
+      <li>Meminta perbaikan data yang tidak akurat atau tidak lengkap.</li>
+      <li>Meminta penghapusan data pribadi Anda (hak untuk dilupakan).</li>
+      <li>Menarik persetujuan yang telah diberikan sebelumnya.</li>
+      <li>Mengajukan keberatan atas pemrosesan data pribadi Anda.</li>
+    </ul>
+    <p>Untuk menggunakan hak-hak tersebut, silakan hubungi kami melalui <a href="mailto:hello@cine.vixv.biz.id">hello@cine.vixv.biz.id</a>.</p>
+  </div>
+
+  <!-- SECTION 14 -->
+  <div class="section" id="s14">
+    <h2><span class="num">14</span> Tautan dan Layanan Pihak Ketiga</h2>
+    <h3>14.1 Keberadaan Tautan Pihak Ketiga</h3>
+    <p>Layanan Cinevixv dapat mengandung tautan (hyperlink) ke website, platform, atau layanan pihak ketiga yang tidak dimiliki atau dikendalikan oleh Cinevixv. Tautan ini disertakan semata-mata untuk tujuan informasi dan referensi bagi pengguna, termasuk namun tidak terbatas pada tautan ke platform streaming resmi seperti Netflix, Disney+, Vidio, iQIYI, WeTV, dan platform sejenis lainnya.</p>
+    <h3>14.2 Tidak Ada Afiliasi</h3>
+    <p>Keberadaan tautan ke website atau layanan pihak ketiga tidak menyiratkan afiliasi, endorsement, dukungan, atau hubungan kemitraan antara Cinevixv dengan pemilik atau operator website atau layanan tersebut, kecuali secara eksplisit dinyatakan sebaliknya oleh Cinevixv.</p>
+    <h3>14.3 Tidak Ada Tanggung Jawab</h3>
+    <p>Cinevixv tidak bertanggung jawab atas:</p>
+    <ul>
+      <li>Ketersediaan, aksesibilitas, atau keberlangsungan website atau layanan pihak ketiga.</li>
+      <li>Akurasi, legalitas, atau kesesuaian konten yang terdapat pada website atau layanan pihak ketiga.</li>
+      <li>Kebijakan privasi, syarat ketentuan, atau praktik pengumpulan data dari website atau layanan pihak ketiga.</li>
+      <li>Transaksi, kerugian, kerusakan, atau konsekuensi lainnya yang timbul dari penggunaan website atau layanan pihak ketiga.</li>
+    </ul>
+    <h3>14.4 Tanggung Jawab Pengguna</h3>
+    <p>Penggunaan tautan pihak ketiga sepenuhnya menjadi tanggung jawab Anda sebagai pengguna. Kami sangat menyarankan Anda untuk meninjau syarat ketentuan dan kebijakan privasi dari setiap website atau layanan pihak ketiga yang Anda kunjungi melalui tautan yang tersedia pada Layanan Cinevixv.</p>
+  </div>
+
+  <!-- SECTION 15 -->
+  <div class="section" id="s15">
+    <h2><span class="num">15</span> Penafian dan Batasan Tanggung Jawab</h2>
+    <h3>15.1 Penafian Umum</h3>
+    <p>LAYANAN CINEVIXV DISEDIAKAN "SEBAGAIMANA ADANYA" (<em>AS IS</em>) DAN "SEBAGAIMANA TERSEDIA" (<em>AS AVAILABLE</em>), TANPA JAMINAN APA PUN, BAISS TERSURAT MAUPUN TERSIRAT, TERMASUK NAMUN TIDAK TERBATAS PADA JAMINAN KELAYAKAN UNTUK DIPERDAGANGKAN (<em>MERCHANTABILITY</em>), KESESUAIAN UNTUK TUJUAN TERTENTU (<em>FITNESS FOR A PARTICULAR PURPOSE</em>), NON-PELANGGARAN, KEAMANAN, ATAU KEAKURATAN.</p>
+    <h3>15.2 Penafian Konten</h3>
+    <p>Seluruh konten yang tersedia pada Layanan Cinevixv disajikan semata-mata untuk tujuan informasi, hiburan, dan edukasi. Meskipun tim editorial Cinevixv berusaha keras untuk menjaga akurasi dan kualitas konten, kami tidak menjamin bahwa:</p>
+    <ul>
+      <li>Seluruh informasi yang disajikan akurat, lengkap, terkini, atau bebas dari kesalahan.</li>
+      <li>Konten akan tersedia secara terus-menerus tanpa gangguan, penundaan, atau kesalahan.</li>
+      <li>Kekurangan atau cacat pada Layanan akan diperbaiki.</li>
+      <li>Layanan atau server yang menjalankannya bebas dari virus atau komponen berbahaya lainnya.</li>
+    </ul>
+    <h3>15.3 Batasan Tanggung Jawab</h3>
+    <p>SEPANJANG DIIZINKAN OLEH HUKUM YANG BERLAKU, CINEVIXV, TERMASUK SELURUH DIREKTUR, KARYAWAN, MITRA, AGENT, DAN AFILIASINYA, TIDAK AKAN BERTANGGUNG JAWAB ATAS:</p>
+    <ul>
+      <li>KERUSAKAN LANGSUNG, TIDAK LANGSUNG, INSIDENTAL, KHUSUS, KONSEKUENSIAL, ATAU PUNITIF YANG TIMBUL DARI ATAU TERKAIT DENGAN PENGGUNAAN ATAU KETIDAKMAMPUAN MENGGUNAKAN LAYANAN.</li>
+      <li>KEHILANGAN DATA, KEHILANGAN PENDAPATAN, KEHILANGAN LABA, ATAU KERUGIAN BISNIS LAINNYA.</li>
+      <li>KERUSAKAN YANG DISEBABKAN OLEH KESALAHAN, KELALAIAN, ATAU TINDAKAN PIHAK KETIGA.</li>
+      <li>KERUSAKAN YANG DISEBABKAN OLEH FORCE MAJEURE, TERMASUK NAMUN TIDAK TERBATAS PADA BENCANA ALAM, PERANG, KERUSUHAN, ATAU GANGGUAN INFRASTRUKUR PUBLIK.</li>
+    </ul>
+    <h3>15.4 Batasan Maksimum</h3>
+    <p>Dalam hal Cinevixv dinyatakan bertanggung jawab atas kerugian yang timbul dari penggunaan Layanan, total tanggung jawab Cinevixv tidak akan melebihi jumlah Rp1.000.000,00 (satu juta Rupiah Indonesia) atau jumlah yang setara dalam mata uang lain, mana yang lebih tinggi, untuk seluruh klaim yang timbul dari atau terkait dengan penggunaan Layanan dalam periode 12 (dua belas) bulan terakhir.</p>
+    <h3>15.5 Pengecualian</h3>
+    <p>Beberapa yurisdiksi tidak mengizinkan pengecualian atau pembatasan tanggung jawab untuk kerusakan insidental atau konsekuensial. Dalam yurisdiksi tersebut, tanggung jawab Cinevixv akan dibatasi hingga tingkat maksimum yang diizinkan oleh hukum yang berlaku.</p>
+  </div>
+
+  <!-- SECTION 16 -->
+  <div class="section" id="s16">
+    <h2><span class="num">16</span> Indemnifikasi</h2>
+    <h3>16.1 Kewajiban Indemnifikasi</h3>
+    <p>Anda setuju untuk mengindemnifikasi, membela, dan membebaskan Cinevixv, termasuk seluruh direktur, karyawan, mitra, agen, dan afiliasinya, dari dan terhadap seluruh klaim, tuntutan, gugatan, kewajiban, kerusakan, kerugian, biaya, dan pengeluaran (termasuk biaya hukum yang wajar) yang timbul dari atau terkait dengan:</p>
+    <ul>
+      <li>Penggunaan Layanan oleh Anda, termasuk penggunaan yang melanggar Syarat & Ketentuan ini.</li>
+      <li>Pelanggaran Anda terhadap hak pihak ketiga, termasuk hak kekayaan intelektual, hak privasi, atau hak publisitas.</li>
+      <li>Konten yang Anda kirimkan, publikasikan, atau distribusikan melalui atau terkait dengan Layanan.</li>
+      <li>Pelanggaran Anda terhadap hukum atau peraturan yang berlaku.</li>
+      <li>Kelalaian atau tindakan salah yang disengaja oleh Anda dalam kaitannya dengan penggunaan Layanan.</li>
+    </ul>
+    <h3>16.2 Prosedur Indemnifikasi</h3>
+    <p>Cinevixv akan memberikan pemberitahuan yang wajar kepada Anda mengenai klaim yang tunduk pada indemnifikasi, dan Anda berhak untuk mengendalikan pembelaan terhadap klaim tersebut dengan persetujuan Cinevixv, yang tidak akan ditahan secara tidak wajar. Cinevixv berhak untuk berpartisipasi dalam pembelaan klaim tersebut dengan biaya sendiri.</p>
+  </div>
+
+  <!-- SECTION 17 -->
+  <div class="section" id="s17">
+    <h2><span class="num">17</span> Penghentian dan Pembatasan Akses</h2>
+    <h3>17.1 Hak Penghentian oleh Cinevixv</h3>
+    <p>Cinevixv berhak, atas kebijakan diskresioner penuh kami dan tanpa pemberitahuan sebelumnya, untuk:</p>
+    <ul>
+      <li>Menangguhkan atau mengakhiri akses Anda ke seluruh atau sebagian Layanan.</li>
+      <li>Menghapus atau menonaktifkan konten yang Anda kirimkan atau publikasikan melalui Layanan.</li>
+      <li>Membatasi, menangguhkan, atau mencabut hak dan lisensi yang diberikan kepada Anda berdasarkan Syarat & Ketentuan ini.</li>
+      <li>Mengambil tindakan teknis, hukum, atau lainnya yang dianggap perlu untuk melindungi Layanan, pengguna lain, atau pihak ketiga.</li>
+    </ul>
+    <h3>17.2 Alasan Penghentian</h3>
+    <p>Penghentian atau pembatasan akses dapat dilakukan oleh Cinevixv karena alasan apapun, termasuk namun tidak terbatas pada:</p>
+    <ul>
+      <li>Pelanggaran terhadap Syarat & Ketentuan ini atau kebijakan Cinevixv lainnya.</li>
+      <li>Pelanggaran terhadap hukum atau peraturan yang berlaku.</li>
+      <li>Pelanggaran terhadap hak pihak ketiga, termasuk hak kekayaan intelektual.</li>
+      <li>Permintaan dari pihak berwenang atau perintah pengadilan.</li>
+      <li>Kebutuhan untuk melindungi keamanan, integritas, atau keberlangsungan Layanan.</li>
+      <li>Penghentian atau perubahan layanan oleh pihak ketiga, termasuk TikTok.</li>
+      <li>Alasan lain yang dianggap wajar oleh Cinevixv.</li>
+    </ul>
+    <h3>17.3 Efek Penghentian</h3>
+    <p>Setelah penghentian akses:</p>
+    <ul>
+      <li>Lisensi dan hak yang diberikan kepada Anda berdasarkan Syarat & Ketentuan ini akan berakhir secara otomatis.</li>
+      <li>Ketentuan yang berdasarkan sifatnya harus tetap berlaku setelah penghentian (termasuk namun tidak terbatas pada hak kekayaan intelektual, penafian, batasan tanggung jawab, indemnifikasi, dan penyelesaian sengketa) akan tetap berlaku.</li>
+      <li>Cinevixv tidak berkewajiban untuk mengembalikan atau menyediakan akses ke data atau konten yang telah dihapus atau dinonaktifkan.</li>
+    </ul>
+    <h3>17.4 Penghentian oleh Pengguna</h3>
+    <p>Anda dapat menghentikan penggunaan Layanan Cinevixv kapan saja dengan cara menghentikan akses dan penggunaan Layanan. Penghentian penggunaan oleh Anda tidak membatalkan kewajiban yang telah timbul sebelum tanggal penghentian.</p>
+  </div>
+
+  <!-- SECTION 18 -->
+  <div class="section" id="s18">
+    <h2><span class="num">18</span> Perubahan dan Pembaruan Layanan</h2>
+    <h3>18.1 Hak untuk Mengubah Layanan</h3>
+    <p>Cinevixv berhak, atas kebijakan diskresioner penuh kami, untuk mengubah, menambah, mengurangi, menangguhkan, atau menghentikan seluruh atau sebagian Layanan kapan saja tanpa pemberitahuan sebelumnya. Perubahan ini dapat mencakup, namun tidak terbatas pada:</p>
+    <ul>
+      <li>Penambahan, penghapusan, atau modifikasi fitur dan fungsi Layanan.</li>
+      <li>Perubahan desain, tata letak, atau antarmuka pengguna.</li>
+      <li>Perubahan atau penghentian ketersediaan konten tertentu.</li>
+      <li>Integrasi atau penghapusan integrasi dengan layanan pihak ketiga, termasuk TikTok API.</li>
+      <li>Perubahan model bisnis atau struktur layanan.</li>
+    </ul>
+    <h3>18.2 Pembaruan Syarat & Ketentuan</h3>
+    <p>Cinevixv berhak untuk memperbarui, mengubah, atau merevisi Syarat & Ketentuan ini sewaktu-waktu. Pembaruan akan ditandai dengan tanggal revisi terbaru di bagian atas halaman ini. Kami akan berusaha untuk memberikan pemberitahuan yang wajar mengenai perubahan material melalui pengumuman pada website atau saluran komunikasi lainnya.</p>
+    <h3>18.3 Penerimaan Pembaruan</h3>
+    <p>Penggunaan Layanan secara berkelanjutan setelah pembaruan Syarat & Ketentuan ini diterbitkan dianggap sebagai penerimaan Anda terhadap syarat-syarat yang telah diperbarui. Jika Anda tidak menyetujui perubahan tersebut, Anda harus segera menghentikan penggunaan Layanan.</p>
+    <h3>18.4 Riwayat Perubahan</h3>
+    <p>Cinevixv akan menyimpan riwayat perubahan Syarat & Ketentuan ini dan dapat menyediakan akses terhadap versi sebelumnya atas permintaan yang wajar.</p>
+  </div>
+
+  <!-- SECTION 19 -->
+  <div class="section" id="s19">
+    <h2><span class="num">19</span> Hukum yang Berlaku dan Penyelesaian Sengketa</h2>
+    <h3>19.1 Hukum yang Berlaku</h3>
+    <p>Syarat & Ketentuan ini, termasuk seluruh hak dan kewajiban yang timbul darinya, tunduk pada dan diatur oleh hukum Republik Indonesia, termasuk namun tidak terbatas pada:</p>
+    <ul>
+      <li>Undang-Undang Nomor 28 Tahun 2014 tentang Hak Cipta.</li>
+      <li>Undang-Undang Nomor 11 Tahun 2008 tentang Informasi dan Transaksi Elektronik sebagaimana telah diubah dengan Undang-Undang Nomor 19 Tahun 2016.</li>
+      <li>Undang-Undang Nomor 27 Tahun 2022 tentang Perlindungan Data Pribadi.</li>
+      <li>Kitab Undang-Undang Hukum Perdata (Burgerlijk Wetboek).</li>
+      <li>Peraturan perundang-undangan lainnya yang berlaku di Republik Indonesia.</li>
+    </ul>
+    <h3>19.2 Penyelesaian Sengketa secara Musyawarah</h3>
+    <p>Setiap sengketa, perselisihan, atau perbedaan pendapat yang timbul dari atau terkait dengan Syarat & Ketentuan ini atau penggunaan Layanan akan diselesaikan terlebih dahulu melalui musyawarah untuk mufakat antara para pihak dalam itikad baik. Para pihak sepakat untuk berupaya menyelesaikan sengketa secara damai dalam waktu 30 (tiga puluh) hari kerja sejak diterimanya pemberitahuan tertulis mengenai sengketa tersebut.</p>
+    <h3>19.3 Mediasi</h3>
+    <p>Jika sengketa tidak dapat diselesaikan melalui musyawarah dalam jangka waktu yang ditetapkan, para pihak sepakat untuk menempuh jalur mediasi melalui mediator yang disepakati bersama atau melalui lembaga mediasi yang diakui di Indonesia.</p>
+    <h3>19.4 Penyelesaian melalui Pengadilan</h3>
+    <p>Jika mediasi tidak menghasilkan penyelesaian yang memuaskan, para pihak sepakat untuk menyelesaikan sengketa melalui pengadilan negeri yang berwenang di wilayah hukum tempat Cinevixv beroperasi. Keputusan pengadilan akan bersifat final dan mengikat para pihak.</p>
+    <h3>19.5 Bahasa</h3>
+    <p>Syarat & Ketentuan ini disusun dalam bahasa Indonesia. Jika terdapat terjemahan dalam bahasa lain, versi bahasa Indonesia akan menjadi versi yang berlaku dan mengikat dalam hal terdapat perbedaan penafsiran.</p>
+  </div>
+
+  <!-- SECTION 20 -->
+  <div class="section" id="s20">
+    <h2><span class="num">20</span> Ketentuan Umum dan Disposisi</h2>
+    <h3>20.1 Keseluruhan Perjanjian</h3>
+    <p>Syarat & Ketentuan ini merupakan keseluruhan perjanjian dan pemahaman antara Anda dan Cinevixv terkait penggunaan Layanan, dan menggantikan seluruh perjanjian, komunikasi, atau pemahaman sebelumnya, baik lisan maupun tertulis.</p>
+    <h3>20.2 Keterpisahan (Severability)</h3>
+    <p>Jika ada ketentuan dalam Syarat & Ketentuan ini yang dinyatakan tidak berlaku, tidak sah, atau tidak dapat dilaksanakan oleh pengadilan atau otoritas yang berwenang, ketentuan tersebut akan dipisahkan dari Syarat & Ketentuan ini dan tidak akan mempengaruhi keabsahan dan keberlakuan ketentuan lainnya yang tersisa.</p>
+    <h3>20.3 Tidak Ada Pelepasan Hak</h3>
+    <p>Kelalaian Cinevixv untuk menegakkan atau melaksanakan hak atau ketentuan apapun dalam Syarat & Ketentuan ini tidak akan merupakan pelepasan hak atau ketentuan tersebut, dan tidak akan mencegah Cinevixv untuk menegakkan hak atau ketentuan tersebut di kemudian hari.</p>
+    <h3>20.4 Pengalihan (Assignment)</h3>
+    <p>Anda tidak dapat mengalihkan, mentransfer, atau mensublisensikan hak atau kewajiban Anda berdasarkan Syarat & Ketentuan ini tanpa persetujuan tertulis sebelumnya dari Cinevixv. Cinevixv dapat mengalihkan hak dan kewajibannya kepada pihak ketiga tanpa persetujuan Anda, termasuk dalam rangka merger, akuisisi, atau penjualan aset.</p>
+    <h3>20.5 Force Majeure</h3>
+    <p>Cinevixv tidak akan bertanggung jawab atas keterlambatan atau kegagalan dalam melaksanakan kewajibannya yang disebabkan oleh keadaan di luar kendali yang wajar, termasuk namun tidak terbatas pada bencana alam, kebakaran, banjir, gempa bumi, perang, kerusuhan, aksi terorisme, pandemi, gangguan jaringan internet, pemadaman listrik, atau tindakan pemerintah.</p>
+    <h3>20.6 Judul dan Subjudul</h3>
+    <p>Judul dan subjudul yang digunakan dalam Syarat & Ketentuan ini semata-mata untuk kemudahan referensi dan tidak akan mempengaruhi penafsiran atau konstruksi ketentuan apapun.</p>
+    <h3>20.7 Komunikasi</h3>
+    <p>Seluruh pemberitahuan, permintaan, atau komunikasi lainnya yang terkait dengan Syarat & Ketentuan ini harus dikirimkan secara tertulis kepada Cinevixv melalui email ke <a href="mailto:hello@cine.vixv.biz.id">hello@cine.vixv.biz.id</a> atau melalui saluran komunikasi resmi lainnya yang disediakan oleh Cinevixv.</p>
+  </div>
+
+  <!-- SECTION 21 -->
+  <div class="section" id="s21">
+    <h2><span class="num">21</span> Informasi Kontak</h2>
+    <p>Jika Anda memiliki pertanyaan, komentar, keluhan, atau permintaan terkait Syarat & Ketentuan ini, Kebijakan Privasi, atau penggunaan Layanan Cinevixv secara umum, silakan hubungi kami melalui saluran berikut:</p>
+    <ul>
+      <li><strong>Website:</strong> <a href="https://cine.vixv.biz.id">https://cine.vixv.biz.id</a></li>
+      <li><strong>Email:</strong> <a href="mailto:hello@cine.vixv.biz.id">hello@cine.vixv.biz.id</a></li>
+      <li><strong>TikTok:</strong> <a href="https://tiktok.com/@cinevix" target="_blank">@cinevix</a></li>
+    </ul>
+    <p>Kami akan berupaya untuk merespons setiap pertanyaan atau permintaan dalam waktu yang wajar, umumnya dalam 5-10 hari kerja setelah penerimaan.</p>
+
+    <div class="highlight-box" style="margin-top: 32px;">
+      <strong>Dokumen ini terakhir diperbarui pada tanggal 16 Mei 2026.</strong> Cinevixv berhak untuk memperbarui dokumen ini sewaktu-waktu. Harap meninjau halaman ini secara berkala untuk mengetahui perubahan terbaru.
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  &copy; 2026 <strong>Cinevixv</strong>. Seluruh hak dilindungi undang-undang. &nbsp;|&nbsp; <a href="https://cine.vixv.biz.id">cine.vixv.biz.id</a>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Artikel — Cinevixv</title>
+  <meta name="description" content="Ulasan film & series terbaik."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <style>
+    :root{--ink:#080808;--paper:#0e0e0e;--card:#141414;--line:#222;--red:#c9312a;--red2:#e84040;--cream:#f0ece4;--dim:#666;--serif:'Cormorant Garamond',serif;--sans:'Syne',sans-serif}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{background:var(--ink);color:var(--cream);font-family:var(--sans);font-weight:300;line-height:1.8;overflow-x:hidden;cursor:none}
+    a{color:inherit;text-decoration:none}
+    body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:180px;opacity:.03;mix-blend-mode:overlay}
+
+    .cursor{position:fixed;z-index:10000;width:10px;height:10px;background:var(--red);border-radius:50%;pointer-events:none;transform:translate(-50%,-50%);transition:width .2s,height .2s,background .2s}
+    .cursor-ring{position:fixed;z-index:9999;width:36px;height:36px;border:1px solid rgba(201,49,42,.5);border-radius:50%;pointer-events:none;transform:translate(-50%,-50%);transition:width .25s,height .25s}
+
+    nav{position:fixed;top:0;left:0;right:0;z-index:500;height:64px;border-bottom:1px solid rgba(255,255,255,.06);background:rgba(8,8,8,.92);backdrop-filter:blur(18px)}
+    .nav-inner{max-width:1200px;margin:0 auto;padding:0 48px;height:100%;display:flex;align-items:center;justify-content:space-between}
+    .nav-logo{font-family:var(--serif);font-size:21px;font-weight:700;color:var(--cream)}
+    .nav-logo em{color:var(--red);font-style:normal}
+    .nav-back{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--dim);display:flex;align-items:center;gap:8px;transition:color .2s}
+    .nav-back:hover{color:var(--cream)}
+    .nav-back::before{content:'←'}
+
+    .article-hero{padding:140px 0 80px;border-bottom:1px solid var(--line)}
+    .wrap{max-width:1200px;margin:0 auto;padding:0 48px}
+    .article-cat{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--red);font-weight:700;margin-bottom:20px}
+    .article-title{font-family:var(--serif);font-size:clamp(36px,6vw,80px);font-weight:300;line-height:1;margin-bottom:28px}
+    .article-title em{font-style:italic;color:var(--red)}
+    .article-meta-row{display:flex;align-items:center;gap:24px;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--dim)}
+    .article-meta-row .platform{color:var(--red)}
+    .article-thumb{width:100%;max-height:480px;object-fit:cover;margin-top:48px;background:linear-gradient(135deg,#1c0a0a,#0e0e0e)}
+    .article-thumb-placeholder{width:100%;height:320px;background:linear-gradient(135deg,#1c0a0a 0%,#2a1010 40%,#0e0e0e 100%);margin-top:48px;display:flex;align-items:center;justify-content:center;font-size:64px}
+
+    .article-body{padding:72px 0 96px}
+    .article-content{max-width:720px}
+    .article-content p{font-family:var(--serif);font-size:20px;font-weight:300;line-height:1.85;color:rgba(240,236,228,.8);margin-bottom:24px}
+    .article-content h3{font-family:var(--serif);font-size:28px;font-weight:400;color:var(--cream);margin:40px 0 16px;padding-top:8px;border-top:1px solid var(--line)}
+    .article-content strong{color:var(--cream);font-weight:600}
+
+    .article-tiktok{margin-top:48px;padding:32px;background:var(--card);border:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .article-tiktok p{font-size:13px;color:var(--dim);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
+    .article-tiktok h4{font-family:var(--serif);font-size:22px;font-weight:400}
+    .tt-link{display:inline-flex;align-items:center;gap:10px;padding:12px 24px;background:var(--red);color:#fff;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;border-radius:2px;transition:.2s;white-space:nowrap}
+    .tt-link:hover{background:var(--red2)}
+
+    .related{padding:80px 0;border-top:1px solid var(--line)}
+    .related-title{font-family:var(--serif);font-size:clamp(24px,3vw,36px);font-weight:300;margin-bottom:32px}
+    .related-title em{font-style:italic;color:var(--red)}
+    .related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:2px}
+    .rel-card{background:var(--card);padding:28px;cursor:none;transition:background .2s;display:block}
+    .rel-card:hover{background:#1a1a1a}
+    .rel-cat{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--red);font-weight:700;margin-bottom:10px}
+    .rel-title{font-family:var(--serif);font-size:20px;font-weight:400;line-height:1.25;margin-bottom:8px}
+    .rel-meta{font-size:11px;color:var(--dim)}
+
+    footer{border-top:1px solid var(--line);padding:40px 0}
+    .footer-inner{max-width:1200px;margin:0 auto;padding:0 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px}
+    .footer-logo{font-family:var(--serif);font-size:19px;font-weight:700}
+    .footer-logo em{color:var(--red);font-style:normal}
+    .footer-links{display:flex;gap:24px;list-style:none;font-size:12px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--dim)}
+    .footer-links a:hover{color:var(--cream)}
+    .footer-copy{font-size:12px;color:var(--dim);width:100%;padding-top:20px;border-top:1px solid var(--line);display:flex;justify-content:space-between}
+
+    .not-found{min-height:80vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px}
+    .not-found h2{font-family:var(--serif);font-size:48px;font-weight:300;margin-bottom:16px}
+    .not-found p{color:var(--dim);margin-bottom:32px}
+    .btn-back{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border:1px solid var(--red);color:var(--red);font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;border-radius:2px;transition:.2s}
+    .btn-back:hover{background:var(--red);color:#fff}
+
+    @media(max-width:768px){
+      .nav-inner{padding:0 20px}.wrap{padding:0 20px}
+      .article-hero{padding:100px 0 48px}.footer-inner{padding:0 20px;flex-direction:column}
+      .footer-copy{flex-direction:column;gap:8px}.article-tiktok{flex-direction:column}
+    }
+  </style>
+</head>
+<body>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">cine<em>v</em>ixv</a>
+    <a href="/" class="nav-back">Kembali</a>
+  </div>
+</nav>
+
+<div id="articleContent"></div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">cine<em>v</em>ixv</div>
+    <ul class="footer-links">
+      <li><a href="privacy-policy.html">Privacy Policy</a></li>
+      <li><a href="terms-of-service.html">Terms of Service</a></li>
+    </ul>
+    <div class="footer-copy">
+      <span>© 2025 Cinevixv — Alkisah Cerita</span>
+      <span>Made for film lovers Indonesia</span>
+    </div>
+  </div>
+</footer>
+
+<script src="shared.js"></script>
+<script>
+  /* ── CURSOR ── */
+  const cur = document.getElementById('cursor');
+  const ring = document.getElementById('cursorRing');
+  let mx=0,my=0,rx=0,ry=0;
+  document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px';});
+  (function loop(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(loop);})();
+  document.querySelectorAll('a').forEach(el=>{
+    el.addEventListener('mouseenter',()=>{cur.style.width='18px';cur.style.height='18px';ring.style.width='56px';ring.style.height='56px';});
+    el.addEventListener('mouseleave',()=>{cur.style.width='10px';cur.style.height='10px';ring.style.width='36px';ring.style.height='36px';});
+  });
+
+  /* ── LOAD ARTICLE ── */
+  const params = new URLSearchParams(location.search);
+  const id = params.get('id');
+  const articles = CVX.getArticles();
+  const article = articles.find(a => a.id === id);
+  const container = document.getElementById('articleContent');
+
+  if (!article) {
+    container.innerHTML = `<div class="not-found"><h2>Artikel tidak ditemukan</h2><p>Artikel yang kamu cari tidak ada atau sudah dihapus.</p><a href="/" class="btn-back">← Kembali ke Beranda</a></div>`;
+  } else {
+    document.title = article.title + ' — Cinevixv';
+
+    const related = articles.filter(a => a.id !== id).slice(0, 3);
+    const relHTML = related.map(r => `
+      <a href="artikel.html?id=${r.id}" class="rel-card">
+        <p class="rel-cat">${r.category || 'Artikel'}</p>
+        <h3 class="rel-title">${r.title}</h3>
+        <div class="rel-meta">${r.date || ''}</div>
+      </a>`).join('');
+
+    const thumbHTML = article.thumb
+      ? `<img src="${article.thumb}" alt="${article.title}" class="article-thumb"/>`
+      : `<div class="article-thumb-placeholder">🎬</div>`;
+
+    container.innerHTML = `
+      <section class="article-hero">
+        <div class="wrap">
+          <p class="article-cat">${article.category || 'Artikel'}</p>
+          <h1 class="article-title">${article.title}</h1>
+          <div class="article-meta-row">
+            <span>${article.date || ''}</span>
+            ${article.platform ? `<span class="platform">${article.platform}</span>` : ''}
+          </div>
+          ${thumbHTML}
+        </div>
+      </section>
+
+      <section class="article-body">
+        <div class="wrap">
+          <div class="article-content">
+            ${article.body || `<p>${article.desc || ''}</p>`}
+          </div>
+          ${article.tiktokUrl ? `
+          <div class="article-tiktok">
+            <div>
+              <p>Tonton di TikTok</p>
+              <h4>Lihat konten lengkapnya di @cinevix</h4>
+            </div>
+            <a href="${article.tiktokUrl}" target="_blank" class="tt-link">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.28 8.28 0 004.83 1.54V6.78a4.85 4.85 0 01-1.06-.09z"/></svg>
+              Tonton Sekarang
+            </a>
+          </div>` : ''}
+        </div>
+      </section>
+
+      ${related.length ? `
+      <section class="related">
+        <div class="wrap">
+          <h2 class="related-title">Baca juga yang <em>lain</em></h2>
+          <div class="related-grid">${relHTML}</div>
+        </div>
+      </section>` : ''}
+    `;
+  }
+</script>
+</body>
+</html>

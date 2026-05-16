@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cinevixv — Alkisah Cerita</title>
+  <meta name="description" content="Nonton cerita seru gratis tiap hari. Ulasan film dan series terbaik dalam bahasa Indonesia."/>
+  <meta property="og:title" content="Cinevixv — Alkisah Cerita"/>
+  <meta property="og:description" content="Nonton cerita seru gratis tiap hari. Ulasan film dan series terbaik."/>
+  <meta property="og:type" content="website"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+
+  <style>
+    /* ── TOKENS ─────────────────────────────────── */
+    :root {
+      --ink:    #080808;
+      --paper:  #0e0e0e;
+      --card:   #141414;
+      --line:   #222;
+      --red:    #c9312a;
+      --red2:   #e84040;
+      --cream:  #f0ece4;
+      --dim:    #666;
+      --serif:  'Cormorant Garamond', serif;
+      --sans:   'Syne', sans-serif;
+    }
+
+    /* ── RESET ───────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--ink);
+      color: var(--cream);
+      font-family: var(--sans);
+      cursor: none;
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; width: 100%; }
+
+    /* ── GRAIN OVERLAY ───────────────────────────── */
+    body::after {
+      content: '';
+      position: fixed; inset: 0;
+      pointer-events: none; z-index: 9999;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+      background-size: 180px;
+      opacity: 0.032;
+      mix-blend-mode: overlay;
+    }
+
+    /* ── CURSOR ──────────────────────────────────── */
+    .cursor {
+      position: fixed; z-index: 10000;
+      width: 10px; height: 10px;
+      background: var(--red);
+      border-radius: 50%;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      transition: transform 0.08s, width 0.2s, height 0.2s, background 0.2s;
+    }
+    .cursor-ring {
+      position: fixed; z-index: 9999;
+      width: 36px; height: 36px;
+      border: 1px solid rgba(201,49,42,0.5);
+      border-radius: 50%;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      transition: transform 0.18s ease-out, width 0.25s, height 0.25s;
+    }
+    body:hover .cursor { opacity: 1; }
+
+    /* ── NAV ─────────────────────────────────────── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 500;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 40px;
+      height: 64px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      background: rgba(8,8,8,0.82);
+      backdrop-filter: blur(18px);
+    }
+    .nav-logo {
+      font-family: var(--serif);
+      font-size: 21px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      color: var(--cream);
+    }
+    .nav-logo em { color: var(--red); font-style: normal; }
+    .nav-links {
+      display: flex; gap: 32px;
+      list-style: none;
+      font-size: 12px; font-weight: 600;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--dim);
+    }
+    .nav-links li a { transition: color 0.2s; }
+    .nav-links li a:hover { color: var(--cream); }
+    .nav-cta {
+      font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+      padding: 9px 22px;
+      border: 1px solid var(--red);
+      color: var(--red);
+      border-radius: 2px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .nav-cta:hover { background: var(--red); color: #fff; }
+
+    /* ── HERO ────────────────────────────────────── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex; flex-direction: column; justify-content: flex-end;
+      padding: 0 40px 70px;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 60% 40%, rgba(150,20,20,0.18) 0%, transparent 65%),
+        radial-gradient(ellipse 40% 40% at 20% 70%, rgba(201,49,42,0.08) 0%, transparent 60%),
+        linear-gradient(180deg, #080808 0%, #0e0809 50%, #080808 100%);
+    }
+    /* film-strip top bar */
+    .hero-strip {
+      position: absolute; top: 64px; left: 0; right: 0;
+      height: 5px;
+      background: repeating-linear-gradient(90deg, var(--red) 0px, var(--red) 28px, transparent 28px, transparent 34px);
+      opacity: 0.6;
+    }
+    .hero-eyebrow {
+      position: relative;
+      display: flex; align-items: center; gap: 14px;
+      margin-bottom: 28px;
+      font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase;
+      color: var(--red);
+      opacity: 0; animation: fadeUp 0.7s 0.2s forwards;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      display: block; width: 32px; height: 1px; background: var(--red);
+    }
+    .hero-title {
+      position: relative;
+      font-family: var(--serif);
+      font-size: clamp(68px, 10vw, 148px);
+      font-weight: 300;
+      line-height: 0.92;
+      letter-spacing: -1px;
+      color: var(--cream);
+      opacity: 0; animation: fadeUp 0.8s 0.35s forwards;
+    }
+    .hero-title em {
+      font-style: italic;
+      color: var(--red);
+    }
+    .hero-bottom {
+      position: relative;
+      display: flex; align-items: flex-end; justify-content: space-between;
+      margin-top: 44px;
+      opacity: 0; animation: fadeUp 0.7s 0.55s forwards;
+    }
+    .hero-desc {
+      max-width: 420px;
+      font-size: 15px; line-height: 1.75;
+      color: rgba(240,236,228,0.55);
+    }
+    .hero-desc strong { color: var(--cream); font-weight: 500; }
+    .hero-stat {
+      text-align: right;
+    }
+    .hero-stat .num {
+      font-family: var(--serif);
+      font-size: 64px; font-weight: 300; line-height: 1;
+      color: var(--cream);
+    }
+    .hero-stat .label {
+      font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+      color: var(--dim); margin-top: 4px;
+    }
+    .scroll-hint {
+      position: absolute; bottom: 32px; left: 50%;
+      transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+      font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--dim);
+      animation: fadeUp 1s 1s both;
+    }
+    .scroll-hint::after {
+      content: '';
+      display: block; width: 1px; height: 40px;
+      background: linear-gradient(to bottom, var(--dim), transparent);
+      animation: scrollLine 1.8s 1.2s ease-in-out infinite;
+    }
+
+    /* ── TICKER ──────────────────────────────────── */
+    .ticker {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      overflow: hidden;
+      padding: 14px 0;
+      background: var(--paper);
+    }
+    .ticker-track {
+      display: flex; gap: 0;
+      white-space: nowrap;
+      animation: ticker 28s linear infinite;
+    }
+    .ticker-item {
+      display: inline-flex; align-items: center; gap: 28px;
+      padding: 0 28px;
+      font-size: 12px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase;
+      color: var(--dim);
+    }
+    .ticker-dot {
+      width: 4px; height: 4px; border-radius: 50%;
+      background: var(--red); flex-shrink: 0;
+    }
+
+    /* ── SECTION HEADER ──────────────────────────── */
+    .sec-header {
+      display: flex; align-items: baseline; justify-content: space-between;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 40px;
+    }
+    .sec-title {
+      font-family: var(--serif);
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 300;
+    }
+    .sec-title em { font-style: italic; color: var(--red); }
+    .sec-label {
+      font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--dim);
+    }
+    .sec-all {
+      font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase;
+      color: var(--red); font-weight: 600;
+      display: flex; align-items: center; gap: 8px;
+      transition: gap 0.2s;
+    }
+    .sec-all:hover { gap: 14px; }
+    .sec-all::after { content: '→'; }
+
+    /* ── ARTICLE GRID ────────────────────────────── */
+    section.articles { padding: 80px 40px; }
+    .grid-featured {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      grid-template-rows: auto auto;
+      gap: 2px;
+      margin-bottom: 2px;
+    }
+    .grid-row2 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+    .card {
+      position: relative;
+      overflow: hidden;
+      background: var(--card);
+      cursor: none;
+    }
+    .card-inner {
+      position: relative;
+      padding: 28px;
+      height: 100%;
+      display: flex; flex-direction: column; justify-content: flex-end;
+      min-height: 280px;
+      transition: background 0.3s;
+    }
+    .card:hover .card-inner { background: rgba(201,49,42,0.06); }
+    .card-thumb {
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, #1a0e0e, #0e0e1a);
+      opacity: 0.5;
+      transition: opacity 0.4s;
+    }
+    .card:hover .card-thumb { opacity: 0.3; }
+
+    /* Fake cinematic thumbnail overlays using gradients */
+    .card:nth-child(1) .card-thumb { background: linear-gradient(135deg,#1c0a0a 0%,#2a1010 40%,#0e0e0e 100%); }
+    .card:nth-child(2) .card-thumb { background: linear-gradient(135deg,#0a0c1c 0%,#141826 50%,#0e0e0e 100%); }
+    .card:nth-child(3) .card-thumb { background: linear-gradient(135deg,#0e1a0a 0%,#1a2a10 50%,#0e0e0e 100%); }
+    .card:nth-child(4) .card-thumb { background: linear-gradient(135deg,#1a160a 0%,#2a2010 50%,#0e0e0e 100%); }
+    .card:nth-child(5) .card-thumb { background: linear-gradient(135deg,#1a0a18 0%,#280a26 50%,#0e0e0e 100%); }
+
+    /* film-strip left border on featured */
+    .card-featured .card-inner::before {
+      content: '';
+      position: absolute; left: 0; top: 0; bottom: 0;
+      width: 4px;
+      background: var(--red);
+    }
+    .card-genre {
+      position: absolute; top: 20px; left: 28px;
+      font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase;
+      color: var(--red); font-weight: 700;
+      background: rgba(201,49,42,0.12);
+      padding: 4px 10px; border-radius: 1px;
+    }
+    .card-num {
+      font-family: var(--serif);
+      font-size: 72px; font-weight: 300; line-height: 1;
+      color: rgba(240,236,228,0.06);
+      position: absolute; right: 20px; bottom: 16px;
+      pointer-events: none;
+    }
+    .card-title {
+      font-family: var(--serif);
+      font-size: clamp(20px, 2.5vw, 30px);
+      font-weight: 400; line-height: 1.2;
+      margin-bottom: 12px;
+      position: relative; z-index: 1;
+      transition: color 0.2s;
+    }
+    .card:hover .card-title { color: #fff; }
+    .card-meta {
+      font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase;
+      color: var(--dim);
+      display: flex; gap: 16px;
+      position: relative; z-index: 1;
+    }
+    .card-meta .platform { color: var(--red); }
+    .card-arrow {
+      position: absolute; top: 20px; right: 24px;
+      font-size: 18px; color: var(--dim);
+      transition: color 0.2s, transform 0.2s;
+      opacity: 0;
+    }
+    .card:hover .card-arrow { opacity: 1; color: var(--red); transform: translate(4px,-4px); }
+
+    .card-featured { grid-row: span 2; }
+    .card-featured .card-inner { min-height: 500px; }
+    .card-featured .card-title { font-size: clamp(26px, 3.5vw, 44px); }
+
+    /* ── PLATFORMS ───────────────────────────────── */
+    section.platforms {
+      padding: 80px 40px;
+      border-top: 1px solid var(--line);
+    }
+    .platform-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 2px;
+      margin-top: 40px;
+    }
+    .platform-card {
+      background: var(--card);
+      padding: 32px 24px;
+      display: flex; flex-direction: column; align-items: center;
+      gap: 14px;
+      transition: background 0.25s;
+      cursor: none;
+    }
+    .platform-card:hover { background: #1c1c1c; }
+    .platform-card:hover .platform-icon { transform: scale(1.1); }
+    .platform-icon {
+      width: 48px; height: 48px;
+      border-radius: 12px;
+      display: grid; place-items: center;
+      font-size: 24px;
+      transition: transform 0.25s;
+      font-weight: 800;
+    }
+    .platform-name {
+      font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase;
+      font-weight: 600; color: var(--dim);
+      transition: color 0.2s;
+    }
+    .platform-card:hover .platform-name { color: var(--cream); }
+    .p-netflix  .platform-icon { background: #e50914; color: #fff; }
+    .p-disney   .platform-icon { background: #113ccf; color: #fff; font-size: 18px; }
+    .p-prime    .platform-icon { background: #00a8e1; color: #fff; font-size: 16px; }
+    .p-vidio    .platform-icon { background: #0d0d7c; color: #fff; font-size: 14px; font-weight: 900; }
+    .p-iqiyi    .platform-icon { background: #00b43c; color: #fff; font-size: 14px; font-weight: 900; }
+    .p-mola     .platform-icon { background: #ff5500; color: #fff; font-size: 18px; }
+
+    /* ── TIKTOK CTA ──────────────────────────────── */
+    section.tiktok {
+      padding: 100px 40px;
+      text-align: center;
+      position: relative; overflow: hidden;
+      border-top: 1px solid var(--line);
+    }
+    .tiktok-bg {
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(201,49,42,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .tiktok-label {
+      font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+      color: var(--red); font-weight: 600; margin-bottom: 20px;
+    }
+    .tiktok-title {
+      font-family: var(--serif);
+      font-size: clamp(40px, 7vw, 88px);
+      font-weight: 300; line-height: 1;
+      margin-bottom: 28px;
+    }
+    .tiktok-title em { font-style: italic; color: var(--red); }
+    .tiktok-sub {
+      font-size: 15px; color: rgba(240,236,228,0.5);
+      max-width: 440px; margin: 0 auto 44px; line-height: 1.8;
+    }
+    .tiktok-stats {
+      display: flex; justify-content: center; gap: 60px;
+      margin-bottom: 50px;
+    }
+    .tstat { text-align: center; }
+    .tstat .n {
+      font-family: var(--serif);
+      font-size: 52px; font-weight: 300; line-height: 1;
+      color: var(--cream);
+    }
+    .tstat .l {
+      font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--dim); margin-top: 4px;
+    }
+    .tiktok-btn {
+      display: inline-flex; align-items: center; gap: 12px;
+      padding: 16px 36px;
+      background: var(--red);
+      color: #fff; font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+      border-radius: 2px;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .tiktok-btn:hover { background: var(--red2); transform: translateY(-2px); }
+
+    /* ── FOOTER ──────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 40px 40px 32px;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 24px;
+    }
+    .footer-logo {
+      font-family: var(--serif);
+      font-size: 19px; font-weight: 700;
+    }
+    .footer-logo em { color: var(--red); font-style: normal; }
+    .footer-links {
+      display: flex; gap: 28px; list-style: none;
+      font-size: 12px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: var(--dim);
+    }
+    .footer-links a:hover { color: var(--cream); }
+    .footer-copy {
+      font-size: 12px; color: var(--dim); width: 100%;
+      padding-top: 20px; border-top: 1px solid var(--line);
+      display: flex; justify-content: space-between;
+    }
+
+    /* ── ANIMATIONS ──────────────────────────────── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes ticker {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+    @keyframes scrollLine {
+      0%,100% { opacity: 0.3; transform: scaleY(0.5); transform-origin: top; }
+      50%      { opacity: 1;   transform: scaleY(1); }
+    }
+
+    /* scroll-reveal */
+    .reveal {
+      opacity: 0; transform: translateY(32px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible { opacity: 1; transform: none; }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+
+    /* ── MOBILE ──────────────────────────────────── */
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      .hero { padding: 0 20px 60px; }
+      .hero-bottom { flex-direction: column; gap: 28px; }
+      .hero-stat { text-align: left; }
+      section.articles, section.platforms, section.tiktok { padding: 60px 20px; }
+      .grid-featured { grid-template-columns: 1fr; }
+      .grid-row2 { grid-template-columns: 1fr 1fr; }
+      .card-featured { grid-row: span 1; }
+      .tiktok-stats { gap: 32px; }
+      footer { flex-direction: column; gap: 20px; padding: 32px 20px; }
+      .footer-copy { flex-direction: column; gap: 8px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Cursor -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- Nav -->
+<nav>
+  <a href="/" class="nav-logo">cine<em>v</em>ixv</a>
+  <ul class="nav-links">
+    <li><a href="#artikel">Artikel</a></li>
+    <li><a href="#platform">Platform</a></li>
+    <li><a href="https://tiktok.com/@cinevix" target="_blank">TikTok</a></li>
+  </ul>
+  <a href="https://tiktok.com/@cinevix" target="_blank" class="nav-cta">Ikuti Kami</a>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-strip"></div>
+
+  <p class="hero-eyebrow">Alkisah Cerita — Film & Series</p>
+  <h1 class="hero-title">
+    Semua<br/><em>cerita</em><br/>ada di sini.
+  </h1>
+
+  <div class="hero-bottom">
+    <p class="hero-desc">
+      Ulasan, pembahasan, dan rekomendasi film & series terbaik.
+      <strong>Gratis, setiap hari</strong> — dari drama thriller sampai sci-fi yang bikin pusing kepala.
+    </p>
+    <div class="hero-stat">
+      <div class="num">46K</div>
+      <div class="label">Likes di TikTok</div>
+    </div>
+  </div>
+
+  <div class="scroll-hint">Scroll</div>
+</section>
+
+<!-- Ticker -->
+<div class="ticker">
+  <div class="ticker-track">
+    <!-- duplicated for seamless loop -->
+    <span class="ticker-item"><span class="ticker-dot"></span>Drama Korea</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Thriller Hollywood</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Sci-Fi</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Horor</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Serial Netflix</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Anime</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Film Indonesia</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Disney+</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Review Mingguan</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Rekomendasi</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Drama Korea</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Thriller Hollywood</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Sci-Fi</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Horor</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Serial Netflix</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Anime</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Film Indonesia</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Disney+</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Review Mingguan</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Rekomendasi</span>
+  </div>
+</div>
+
+<!-- Articles -->
+<section class="articles" id="artikel">
+  <div class="sec-header reveal">
+    <div>
+      <p class="sec-label">Artikel Terbaru</p>
+      <h2 class="sec-title">Baru <em>terbit</em></h2>
+    </div>
+    <a href="#" class="sec-all">Semua artikel</a>
+  </div>
+
+  <div class="grid-featured reveal">
+    <div class="card card-featured">
+      <div class="card-inner">
+        <div class="card-thumb"></div>
+        <span class="card-genre">Thriller · Netflix</span>
+        <span class="card-num">01</span>
+        <h3 class="card-title">Nightmares and Daydreams — Mimpi Buruk yang Bikin Nggak Bisa Tidur</h3>
+        <div class="card-meta">
+          <span>19 Mei 2025</span>
+          <span class="platform">Netflix</span>
+          <span>Part 1–5</span>
+        </div>
+        <span class="card-arrow">↗</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-thumb"></div>
+        <span class="card-genre">Horor · Series</span>
+        <span class="card-num">02</span>
+        <h3 class="card-title">Keluarga Ini Adopsi Anak Misterius — Siapa Sebenarnya Dia?</h3>
+        <div class="card-meta">
+          <span>18 Mei 2025</span>
+          <span class="platform">Lokal</span>
+        </div>
+        <span class="card-arrow">↗</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-thumb"></div>
+        <span class="card-genre">Review · Film</span>
+        <span class="card-num">03</span>
+        <h3 class="card-title">5 Film Thriller Jakarta yang Wajib Ditonton Tahun Ini</h3>
+        <div class="card-meta">
+          <span>17 Mei 2025</span>
+          <span class="platform">Berbagai</span>
+        </div>
+        <span class="card-arrow">↗</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-row2 reveal reveal-delay-1">
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-thumb"></div>
+        <span class="card-genre">Drama · Korea</span>
+        <span class="card-num">04</span>
+        <h3 class="card-title">Rekomendasi K-Drama Mei 2025 yang Lagi Hits</h3>
+        <div class="card-meta">
+          <span>16 Mei 2025</span>
+          <span class="platform">iQIYI</span>
+        </div>
+        <span class="card-arrow">↗</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-thumb"></div>
+        <span class="card-genre">Sci-Fi · Disney+</span>
+        <span class="card-num">05</span>
+        <h3 class="card-title">Andor Season 2 — Akhirnya Worth the Hype?</h3>
+        <div class="card-meta">
+          <span>15 Mei 2025</span>
+          <span class="platform">Disney+</span>
+        </div>
+        <span class="card-arrow">↗</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-thumb"></div>
+        <span class="card-genre">Horor · Review</span>
+        <span class="card-num">06</span>
+        <h3 class="card-title">10 Film Horor Indonesia Terbaik — Dari Paling Kuno Sampai Terbaru</h3>
+        <div class="card-meta">
+          <span>14 Mei 2025</span>
+          <span class="platform">Prime Video</span>
+        </div>
+        <span class="card-arrow">↗</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Platforms -->
+<section class="platforms" id="platform">
+  <div class="sec-header reveal">
+    <div>
+      <p class="sec-label">Temukan di</p>
+      <h2 class="sec-title">Platform <em>streaming</em></h2>
+    </div>
+  </div>
+
+  <div class="platform-grid reveal reveal-delay-1">
+    <a href="https://netflix.com" target="_blank" class="platform-card p-netflix">
+      <div class="platform-icon">N</div>
+      <span class="platform-name">Netflix</span>
+    </a>
+    <a href="https://disneyplus.com" target="_blank" class="platform-card p-disney">
+      <div class="platform-icon">D+</div>
+      <span class="platform-name">Disney+</span>
+    </a>
+    <a href="https://primevideo.com" target="_blank" class="platform-card p-prime">
+      <div class="platform-icon">▶</div>
+      <span class="platform-name">Prime Video</span>
+    </a>
+    <a href="https://vidio.com" target="_blank" class="platform-card p-vidio">
+      <div class="platform-icon">VI</div>
+      <span class="platform-name">Vidio</span>
+    </a>
+    <a href="https://iq.com" target="_blank" class="platform-card p-iqiyi">
+      <div class="platform-icon">iQ</div>
+      <span class="platform-name">iQIYI</span>
+    </a>
+    <a href="#" class="platform-card p-mola">
+      <div class="platform-icon">◉</div>
+      <span class="platform-name">& Lainnya</span>
+    </a>
+  </div>
+</section>
+
+<!-- TikTok CTA -->
+<section class="tiktok">
+  <div class="tiktok-bg"></div>
+  <p class="tiktok-label reveal">Ikuti kami di TikTok</p>
+  <h2 class="tiktok-title reveal reveal-delay-1">Siap ketagihan<br/><em>tiap part?</em></h2>
+  <p class="tiktok-sub reveal reveal-delay-2">
+    Update harian film & series langsung di FYP kamu. 1,941 followers sudah ketagihan — kapan giliran kamu?
+  </p>
+  <div class="tiktok-stats reveal reveal-delay-2">
+    <div class="tstat"><div class="n">1.9K</div><div class="l">Followers</div></div>
+    <div class="tstat"><div class="n">46K</div><div class="l">Likes</div></div>
+    <div class="tstat"><div class="n">∞</div><div class="l">Cerita</div></div>
+  </div>
+  <a href="https://tiktok.com/@cinevix" target="_blank" class="tiktok-btn reveal reveal-delay-3">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.28 8.28 0 004.83 1.54V6.78a4.85 4.85 0 01-1.06-.09z"/></svg>
+    Follow @cinevix
+  </a>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-logo">cine<em>v</em>ixv</div>
+  <ul class="footer-links">
+    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+    <li><a href="terms-of-service.html">Terms of Service</a></li>
+    <li><a href="https://tiktok.com/@cinevix" target="_blank">TikTok</a></li>
+  </ul>
+  <div class="footer-copy">
+    <span>&copy; 2025 Cinevixv — Alkisah Cerita</span>
+    <span>Made with ❤️ for film lovers Indonesia</span>
+  </div>
+</footer>
+
+<script>
+  /* ── Custom cursor ── */
+  const cursor = document.getElementById('cursor');
+  const ring = document.getElementById('cursorRing');
+  let mx = 0, my = 0, rx = 0, ry = 0;
+  document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; cursor.style.left = mx+'px'; cursor.style.top = my+'px'; });
+  (function animRing() {
+    rx += (mx - rx) * 0.12; ry += (my - ry) * 0.12;
+    ring.style.left = rx+'px'; ring.style.top = ry+'px';
+    requestAnimationFrame(animRing);
+  })();
+  document.querySelectorAll('a,.card').forEach(el => {
+    el.addEventListener('mouseenter', () => { cursor.style.width='18px'; cursor.style.height='18px'; ring.style.width='56px'; ring.style.height='56px'; cursor.style.background='var(--red2)'; });
+    el.addEventListener('mouseleave', () => { cursor.style.width='10px'; cursor.style.height='10px'; ring.style.width='36px'; ring.style.height='36px'; cursor.style.background='var(--red)'; });
+  });
+
+  /* ── Scroll reveal ── */
+  const revealEls = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => obs.observe(el));
+</script>
+</body>
+</html>

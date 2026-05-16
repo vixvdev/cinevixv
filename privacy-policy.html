@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kebijakan Privasi – Cinevixv</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg: #0d0d0d;
+      --surface: #161616;
+      --border: #2a2a2a;
+      --accent: #c0392b;
+      --accent-soft: #e74c3c22;
+      --text: #e8e8e8;
+      --muted: #888;
+      --heading-font: 'Playfair Display', serif;
+      --body-font: 'DM Sans', sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--body-font);
+      font-weight: 300;
+      line-height: 1.8;
+      font-size: 15px;
+    }
+
+    /* NAV */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 18px 40px;
+      background: rgba(13,13,13,0.9);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .logo {
+      font-family: var(--heading-font);
+      font-size: 22px;
+      letter-spacing: 1px;
+      color: var(--text);
+      text-decoration: none;
+    }
+    .logo span { color: var(--accent); }
+    nav small { color: var(--muted); font-size: 12px; letter-spacing: 2px; text-transform: uppercase; }
+
+    /* HERO */
+    .hero {
+      padding: 80px 40px 50px;
+      max-width: 780px;
+      margin: 0 auto;
+      border-bottom: 1px solid var(--border);
+    }
+    .label {
+      display: inline-block;
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      padding: 4px 12px;
+      border-radius: 2px;
+      margin-bottom: 24px;
+    }
+    h1 {
+      font-family: var(--heading-font);
+      font-size: clamp(32px, 5vw, 52px);
+      line-height: 1.15;
+      margin-bottom: 20px;
+      color: #fff;
+    }
+    .meta {
+      color: var(--muted);
+      font-size: 13px;
+      letter-spacing: 0.5px;
+    }
+    .meta span { color: var(--accent); }
+
+    /* CONTENT */
+    .content {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 60px 40px 100px;
+    }
+    .section {
+      margin-bottom: 52px;
+    }
+    h2 {
+      font-family: var(--heading-font);
+      font-size: 22px;
+      color: #fff;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    h2 .num {
+      font-family: var(--body-font);
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      width: 28px; height: 28px;
+      display: grid; place-items: center;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    h3 {
+      font-family: var(--heading-font);
+      font-size: 17px;
+      color: #fff;
+      margin: 24px 0 10px;
+    }
+    p { margin-bottom: 14px; color: #ccc; }
+    ul, ol { padding-left: 20px; margin-bottom: 14px; color: #ccc; }
+    ul li, ol li { margin-bottom: 8px; }
+    a { color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s; }
+    a:hover { border-color: var(--accent); }
+
+    .highlight-box {
+      background: var(--accent-soft);
+      border-left: 3px solid var(--accent);
+      padding: 18px 22px;
+      border-radius: 0 6px 6px 0;
+      margin: 20px 0;
+      color: #ddd;
+      font-size: 14px;
+    }
+
+    /* TOC */
+    .toc {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 28px 32px;
+      margin: 40px 0 52px;
+    }
+    .toc h3 {
+      font-family: var(--heading-font);
+      font-size: 18px;
+      color: #fff;
+      margin: 0 0 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    .toc ol {
+      list-style: none;
+      padding-left: 0;
+      counter-reset: toc-counter;
+    }
+    .toc ol li {
+      counter-increment: toc-counter;
+      margin-bottom: 6px;
+      padding-left: 0;
+    }
+    .toc ol li a {
+      color: #ccc;
+      font-size: 14px;
+      display: block;
+      padding: 4px 0;
+      border-bottom: none;
+      transition: color 0.2s, padding-left 0.2s;
+    }
+    .toc ol li a::before {
+      content: counter(toc-counter, decimal-leading-zero) ". ";
+      color: var(--accent);
+      font-weight: 500;
+      font-size: 13px;
+    }
+    .toc ol li a:hover {
+      color: #fff;
+      padding-left: 8px;
+    }
+
+    /* TABLE */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0 20px;
+      font-size: 14px;
+    }
+    .data-table th, .data-table td {
+      text-align: left;
+      padding: 10px 14px;
+      border: 1px solid var(--border);
+    }
+    .data-table th {
+      background: var(--surface);
+      color: #fff;
+      font-weight: 500;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .data-table td { color: #ccc; }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 30px 40px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    footer strong { color: var(--text); }
+
+    @media (max-width: 600px) {
+      nav { padding: 14px 20px; }
+      .hero { padding: 50px 20px 30px; }
+      .content { padding: 40px 20px 60px; }
+      .toc { padding: 20px; }
+      .data-table { font-size: 12px; }
+      .data-table th, .data-table td { padding: 8px 10px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="https://cine.vixv.biz.id" class="logo">cine<span>v</span>ixv</a>
+  <small>Kebijakan Privasi</small>
+</nav>
+
+<div class="hero">
+  <div class="label">Dokumen Legal</div>
+  <h1>Kebijakan Privasi</h1>
+  <p class="meta">
+    Berlaku sejak: <span>16 Mei 2026</span> &nbsp;&middot;&nbsp; Terakhir diperbarui: <span>16 Mei 2026</span>
+  </p>
+  <p class="meta" style="margin-top: 8px;">
+    Domain: <span>cine.vixv.biz.id</span> &nbsp;&middot;&nbsp; TikTok: <span>@cinevix</span>
+  </p>
+</div>
+
+<div class="content">
+
+  <div class="highlight-box">
+    <strong>Cinevixv</strong> berkomitmen penuh terhadap perlindungan data pribadi pengguna. Kebijakan Privasi ini menjelaskan secara rinci bagaimana kami mengumpulkan, menggunakan, menyimpan, membagikan, dan melindungi data pribadi Anda, termasuk data yang diperoleh melalui integrasi dengan TikTok for Developers API. Dokumen ini disusun untuk memenuhi ketentuan yang berlaku di Indonesia, termasuk Undang-Undang Nomor 27 Tahun 2022 tentang Perlindungan Data Pribadi (UU PDP), serta standar internasional seperti General Data Protection Regulation (GDPR) Uni Eropa.
+  </div>
+
+  <!-- TABLE OF CONTENTS -->
+  <div class="toc">
+    <h3>Daftar Isi</h3>
+    <ol>
+      <li><a href="#s1">Informasi Umum dan Identitas Pengendali Data</a></li>
+      <li><a href="#s2">Ruang Lingkup dan Penerapan Kebijakan</a></li>
+      <li><a href="#s3">Data Pribadi yang Kami Kumpulkan</a></li>
+      <li><a href="#s4">Integrasi TikTok API dan Data yang Diakses</a></li>
+      <li><a href="#s5">TikTok OAuth 2.0 Login Kit</a></li>
+      <li><a href="#s6">TikTok Content Posting API</a></li>
+      <li><a href="#s7">TikTok Display API dan Embed</a></li>
+      <li><a href="#s8">Skop Izin (Permissions Scopes) TikTok</a></li>
+      <li><a href="#s9">Tujuan Pengolahan Data</a></li>
+      <li><a href="#s10">Dasar Hukum Pengolahan Data</a></li>
+      <li><a href="#s11">Cookies dan Teknologi Pelacakan</a></li>
+      <li><a href="#s12">Layanan Pihak Ketiga</a></li>
+      <li><a href="#s13">Penyimpanan dan Retensi Data</a></li>
+      <li><a href="#s14">Keamanan Data</a></li>
+      <li><a href="#s15">Berbagi Data dan Pengungkapan kepada Pihak Ketiga</a></li>
+      <li><a href="#s16">Transfer Data Internasional</a></li>
+      <li><a href="#s17">Hak-Hak Pengguna</a></li>
+      <li><a href="#s18">Privasi Anak-Anak</a></li>
+      <li><a href="#s19">Kepatuhan GDPR</a></li>
+      <li><a href="#s20">Mekanisme Persetujuan (Consent)</a></li>
+      <li><a href="#s21">Perubahan Kebijakan Privasi</a></li>
+      <li><a href="#s22">Informasi Kontak dan Pengaduan</a></li>
+    </ol>
+  </div>
+
+  <!-- SECTION 1 -->
+  <div class="section" id="s1">
+    <h2><span class="num">1</span> Informasi Umum dan Identitas Pengendali Data</h2>
+    <p>Kebijakan Privasi ini diterbitkan dan dikelola oleh <strong>Cinevixv</strong>, sebuah platform konten digital yang beroperasi melalui situs web <a href="https://cine.vixv.biz.id">cine.vixv.biz.id</a> dan akun media sosial terkait, termasuk akun TikTok resmi <a href="https://www.tiktok.com/@cinevix" target="_blank" rel="noopener noreferrer">@cinevix</a>.</p>
+
+    <h3>1.1 Identitas Pengendali Data</h3>
+    <table class="data-table">
+      <tr><th>Informasi</th><th>Detail</th></tr>
+      <tr><td>Nama Platform</td><td>Cinevixv</td></tr>
+      <tr><td>Domain Utama</td><td>cine.vixv.biz.id</td></tr>
+      <tr><td>Email Kontak Privasi</td><td><a href="mailto:hello@cine.vixv.biz.id">hello@cine.vixv.biz.id</a></td></tr>
+      <tr><td>Akun TikTok Resmi</td><td>@cinevix</td></tr>
+      <tr><td>Jenis Layanan</td><td>Platform konten film dan series (artikel, ulasan, informasi)</td></tr>
+    </table>
+
+    <h3>1.2 Definisi Penting</h3>
+    <ul>
+      <li><strong>Data Pribadi</strong> merujuk pada setiap informasi yang berkaitan dengan individu yang teridentifikasi atau dapat diidentifikasi, baik secara langsung maupun tidak langsung.</li>
+      <li><strong>Pengendali Data</strong> adalah pihak yang menentukan tujuan dan cara pengolahan data pribadi, dalam hal ini Cinevixv.</li>
+      <li><strong>Pemroses Data</strong> adalah pihak yang memproses data pribadi atas nama Pengendali Data, termasuk penyedia layanan pihak ketiga yang kami gunakan.</li>
+      <li><strong>Pengguna</strong> merujuk pada setiap individu yang mengakses, mengunjungi, atau berinteraksi dengan layanan Cinevixv.</li>
+    </ul>
+  </div>
+
+  <!-- SECTION 2 -->
+  <div class="section" id="s2">
+    <h2><span class="num">2</span> Ruang Lingkup dan Penerapan Kebijakan</h2>
+    <p>Kebijakan Privasi ini berlaku untuk seluruh layanan yang disediakan oleh Cinevixv, termasuk namun tidak terbatas pada:</p>
+    <ul>
+      <li>Situs web <a href="https://cine.vixv.biz.id">cine.vixv.biz.id</a> dan seluruh subdomain terkait.</li>
+      <li>Integrasi dan interaksi dengan platform TikTok melalui TikTok for Developers API, termasuk Login Kit, Content Posting API, dan Display API.</li>
+      <li>Seluruh formulir, fitur interaktif, dan layanan yang tersedia di dalam ekosistem Cinevixv.</li>
+      <li>Akun media sosial resmi Cinevixv, termasuk akun TikTok <a href="https://www.tiktok.com/@cinevix" target="_blank" rel="noopener noreferrer">@cinevix</a>.</li>
+    </ul>
+    <p>Kebijakan ini <strong>tidak</strong> berlaku untuk situs web, aplikasi, atau layanan pihak ketiga yang dapat diakses melalui tautan (hyperlink) dari platform Cinevixv. Kami menyarankan Pengguna untuk membaca dan memahami kebijakan privasi dari setiap situs atau layanan pihak ketiga yang dikunjungi.</p>
+
+    <div class="highlight-box">
+      Dengan mengakses atau menggunakan layanan Cinevixv, Anda menyatakan bahwa Anda telah membaca, memahami, dan menyetujui seluruh ketentuan yang tercantum dalam Kebijakan Privasi ini. Jika Anda tidak menyetujui ketentuan ini, mohon untuk tidak menggunakan layanan kami.
+    </div>
+  </div>
+
+  <!-- SECTION 3 -->
+  <div class="section" id="s3">
+    <h2><span class="num">3</span> Data Pribadi yang Kami Kumpulkan</h2>
+    <p>Kami menerapkan prinsip minimalisasi data dan hanya mengumpulkan data pribadi yang diperlukan untuk tujuan yang sah dan spesifik. Berikut adalah kategori data pribadi yang kami kumpulkan:</p>
+
+    <h3>3.1 Data yang Dikumpulkan Secara Otomatis</h3>
+    <ul>
+      <li><strong>Alamat IP</strong> — alamat protokol internet dari perangkat yang digunakan untuk mengakses layanan kami.</li>
+      <li><strong>Informasi Perangkat</strong> — jenis perangkat, sistem operasi, versi browser, resolusi layar, dan bahasa yang digunakan.</li>
+      <li><strong>Data Navigasi</strong> — halaman yang dikunjungi, durasi kunjungan, halaman rujukan (referrer), dan jalur navigasi dalam situs.</li>
+      <li><strong>Log Server</strong> — catatan waktu akses, status permintaan HTTP, dan data teknis lainnya yang dihasilkan secara otomatis oleh server.</li>
+    </ul>
+
+    <h3>3.2 Data yang Dikumpulkan Secara Sukarela</h3>
+    <ul>
+      <li><strong>Nama Lengkap atau Nama Panggilan</strong> — yang Anda berikan melalui formulir kontak, komentar, atau proses autentikasi.</li>
+      <li><strong>Alamat Email</strong> — yang Anda berikan untuk keperluan komunikasi, berlangganan newsletter, atau pendaftaran akun.</li>
+      <li><strong>Konten Komunikasi</strong> — pesan, pertanyaan, atau feedback yang Anda kirimkan melalui formulir kontak atau email.</li>
+      <li><strong>Komentar</strong> — konten teks yang Anda kirimkan sebagai komentar pada artikel kami.</li>
+    </ul>
+
+    <h3>3.3 Data yang Diperoleh dari TikTok API</h3>
+    <ul>
+      <li><strong>Open ID</strong> — pengenal unik yang diberikan oleh TikTok untuk mengidentifikasi pengguna secara anonim.</li>
+      <li><strong>Avatar URL</strong> — tautan ke foto profil publik pengguna di TikTok.</li>
+      <li><strong>Display Name</strong> — nama tampilan publik pengguna di TikTok.</li>
+      <li><strong>Username</strong> — nama pengguna publik TikTok.</li>
+      <li><strong>Daftar Video Publik</strong> — metadata video publik pengguna (ID video, deskripsi, durasi, waktu pembuatan) sesuai dengan skop izin yang diberikan.</li>
+    </ul>
+
+    <h3>3.4 Data yang TIDAK Kami Kumpulkan</h3>
+    <p>Kami secara eksplisit menyatakan bahwa kami <strong>TIDAK</strong> mengumpulkan, menyimpan, atau memproses data berikut:</p>
+    <ul>
+      <li>Kata sandi (password) akun TikTok atau akun lainnya.</li>
+      <li>Informasi pembayaran, kartu kredit, atau data finansial lainnya.</li>
+      <li>Data lokasi presisi (precise location) pengguna.</li>
+      <li>Kontak atau daftar teman pengguna.</li>
+      <li>Pesan pribadi (DM) atau konten komunikasi privat di TikTok.</li>
+      <li>Data sensitif seperti informasi kesehatan, keyakinan agama, orientasi seksual, atau data biometrik.</li>
+      <li>Data pribadi anak di bawah usia 13 tahun tanpa persetujuan orang tua atau wali yang sah.</li>
+    </ul>
+  </div>
+
+  <!-- SECTION 4 -->
+  <div class="section" id="s4">
+    <h2><span class="num">4</span> Integrasi TikTok API dan Data yang Diakses</h2>
+    <p>Cinevixv mengintegrasikan layanan TikTok for Developers API untuk meningkatkan pengalaman pengguna dan memungkinkan fungsionalitas tertentu pada platform kami. Integrasi ini tunduk pada <a href="https://developers.tiktok.com/doc/" target="_blank" rel="noopener noreferrer">Ketentuan Layanan TikTok for Developers</a> serta <a href="https://www.tiktok.com/legal/page/global/tiktok-developers-platform-terms-of-service/en" target="_blank" rel="noopener noreferrer">Ketentuan Platform TikTok Developers</a>.</p>
+
+    <h3>4.1 Produk TikTok API yang Kami Gunakan</h3>
+    <table class="data-table">
+      <tr><th>Produk API</th><th>Fungsi</th><th>Data yang Diakses</th></tr>
+      <tr><td>Login Kit</td><td>Autentikasi pengguna melalui akun TikTok (OAuth 2.0)</td><td>Open ID, Display Name, Avatar URL</td></tr>
+      <tr><td>Content Posting API</td><td>Memublikasikan konten video ke TikTok atas nama akun pengguna yang telah memberikan izin</td><td>Video yang diunggah, metadata video</td></tr>
+      <tr><td>Display API</td><td>Menampilkan informasi profil publik dan video publik pengguna</td><td>Username, Display Name, Avatar, daftar video publik</td></tr>
+    </table>
+
+    <h3>4.2 Prinsip Penggunaan TikTok API</h3>
+    <ul>
+      <li>Kami hanya mengakses data TikTok yang secara eksplisit diizinkan oleh pengguna melalui proses persetujuan (consent) OAuth 2.0.</li>
+      <li>Kami tidak mengakses, menyimpan, atau menyalahgunakan data TikTok di luar skop izin yang telah diberikan oleh pengguna.</li>
+      <li>Kami tidak mentransfer data TikTok kepada pihak ketiga yang tidak terafiliasi, kecuali diwajibkan oleh hukum atau peraturan yang berlaku.</li>
+      <li>Kami mematuhi seluruh ketentuan dan kebijakan TikTok for Developers, termasuk batasan penggunaan data dan persyaratan keamanan.</li>
+      <li>Kami hanya menggunakan data TikTok untuk tujuan yang telah dijelaskan secara transparan kepada pengguna dan telah mendapatkan persetujuan eksplisit.</li>
+    </ul>
+  </div>
+
+  <!-- SECTION 5 -->
+  <div class="section" id="s5">
+    <h2><span class="num">5</span> TikTok OAuth 2.0 Login Kit</h2>
+    <p>Cinevixv menggunakan <strong>TikTok Login Kit</strong> yang berbasis protokol <strong>OAuth 2.0</strong> untuk memungkinkan pengguna masuk (login) ke layanan kami menggunakan akun TikTok mereka. Proses ini dirancang untuk memberikan pengalaman autentikasi yang aman tanpa memerlukan pengguna untuk membagikan kata sandi mereka kepada kami.</p>
+
+    <h3>5.1 Alur Autentikasi OAuth 2.0</h3>
+    <ol>
+      <li><strong>Inisiasi</strong> — Pengguna mengklik tombol "Masuk dengan TikTok" pada platform Cinevixv.</li>
+      <li><strong>Redirect ke TikTok</strong> — Pengguna dialihkan ke halaman otorisasi resmi TikTok di domain <code>tiktok.com</code>.</li>
+      <li><strong>Persetujuan (Consent)</strong> — TikTok menampilkan layar persetujuan yang menjelaskan skop data yang akan diakses oleh Cinevixv. Pengguna harus secara eksplisit menyetujui akses ini.</li>
+      <li><strong>Authorization Code</strong> — Setelah persetujuan diberikan, TikTok mengalihkan pengguna kembali ke Cinevixv dengan menyertakan kode otorisasi sementara (authorization code).</li>
+      <li><strong>Penukaran Token</strong> — Server Cinevixv menukar authorization code dengan access token melalui permintaan server-to-server yang aman ke TikTok API.</li>
+      <li><strong>Akses Data</strong> — Access token digunakan untuk mengakses data pengguna sesuai dengan skop izin yang telah disetujui.</li>
+    </ol>
+
+    <h3>5.2 Keamanan Proses OAuth</h3>
+    <ul>
+      <li>Seluruh komunikasi antara Cinevixv dan TikTok menggunakan protokol HTTPS dengan enkripsi TLS 1.2 atau lebih tinggi.</li>
+      <li>Access token disimpan secara aman di sisi server dan tidak pernah diekspos di sisi klien (browser).</li>
+      <li>Kami menggunakan parameter <code>state</code> untuk mencegah serangan CSRF (Cross-Site Request Forgery).</li>
+      <li>Access token memiliki masa berlaku (expiry) dan akan diperbarui menggunakan refresh token sesuai mekanisme yang disediakan TikTok.</li>
+      <li>Kami tidak menyimpan kata sandi atau kredensial login TikTok pengguna dalam bentuk apapun.</li>
+    </ul>
+
+    <h3>5.3 Pencabutan Akses</h3>
+    <p>Pengguna dapat mencabut akses Cinevixv ke akun TikTok mereka kapan saja melalui pengaturan privasi akun TikTok mereka. Setelah akses dicabut, kami akan menghentikan seluruh pemrosesan data TikTok yang terkait dengan akun tersebut dan menghapus data yang tidak lagi diperlukan sesuai kebijakan retensi kami.</p>
+  </div>
+
+  <!-- SECTION 6 -->
+  <div class="section" id="s6">
+    <h2><span class="num">6</span> TikTok Content Posting API</h2>
+    <p>Cinevixv menggunakan <strong>TikTok Content Posting API</strong> untuk memublikasikan konten video ke platform TikTok. Penggunaan API ini terbatas pada fungsionalitas editorial internal Cinevixv dan hanya dilakukan dengan persetujuan eksplisit dari pemilik akun yang berwenang.</p>
+
+    <h3>6.1 Fungsi Content Posting API</h3>
+    <ul>
+      <li>Mengunggah video ke akun TikTok yang telah memberikan izin.</li>
+      <li>Menetapkan metadata video termasuk judul, deskripsi, tagar (hashtags), dan pengaturan privasi video.</li>
+      <li>Memeriksa status unggahan dan mendapatkan informasi tentang video yang telah dipublikasikan.</li>
+    </ul>
+
+    <h3>6.2 Batasan Penggunaan</h3>
+    <ul>
+      <li>Content Posting API hanya digunakan untuk memublikasikan konten yang relevan dengan editorial Cinevixv (ulasan film, trailer, cuplikan konten).</li>
+      <li>Kami tidak menggunakan API ini untuk memublikasikan konten spam, menyesatkan, atau melanggar ketentuan komunitas TikTok.</li>
+      <li>Setiap unggahan video dilakukan atas dasar persetujuan dari pemilik akun TikTok yang terkait.</li>
+      <li>Kami tidak menyimpan salinan video yang diunggah di server kami setelah proses unggahan selesai, kecuali jika diperlukan untuk tujuan backup editorial internal.</li>
+    </ul>
+
+    <h3>6.3 Data yang Diproses melalui Content Posting API</h3>
+    <ul>
+      <li>File video yang akan diunggah (hanya selama proses unggahan).</li>
+      <li>Metadata video: judul, deskripsi, tagar, pengaturan privasi.</li>
+      <li>ID video yang dikembalikan oleh TikTok setelah unggahan berhasil.</li>
+      <li>Status publikasi dan informasi analitik dasar video (jumlah tayangan, suka, komentar) yang tersedia melalui API.</li>
+    </ul>
+  </div>
+
+  <!-- SECTION 7 -->
+  <div class="section" id="s7">
+    <h2><span class="num">7</span> TikTok Display API dan Embed</h2>
+    <p>Cinevixv menggunakan <strong>TikTok Display API</strong> dan fitur <strong>Embed</strong> untuk menampilkan informasi profil publik dan video publik dari akun TikTok tertentu dalam konten editorial kami.</p>
+
+    <h3>7.1 Fungsi Display API</h3>
+    <ul>
+      <li>Menampilkan informasi profil publik seperti username, nama tampilan, dan foto avatar.</li>
+      <li>Menampilkan daftar video publik dari akun TikTok yang relevan dengan konten editorial kami.</li>
+      <li>Menyematkan (embed) video TikTok publik dalam artikel ulasan atau pembahasan film.</li>
+    </ul>
+
+    <h3>7.2 Data yang Ditampilkan</h3>
+    <p>Data yang ditampilkan melalui Display API terbatas pada informasi yang telah dibuat publik oleh pemilik akun TikTok. Kami tidak mengakses atau menampilkan data privat, pesan pribadi, atau informasi lain yang tidak tersedia secara publik.</p>
+
+    <h3>7.3 TikTok Embed</h3>
+    <p>Kami juga menggunakan fitur embed resmi TikTok untuk menyematkan video TikTok dalam artikel kami. Video yang disematkan dimuat langsung dari server TikTok dan tunduk pada kebijakan privasi TikTok. Kami tidak menyimpan atau memproses data dari video yang disematkan di server kami.</p>
+  </div>
+
+  <!-- SECTION 8 -->
+  <div class="section" id="s8">
+    <h2><span class="num">8</span> Skop Izin (Permissions Scopes) TikTok</h2>
+    <p>Cinevixv hanya meminta skop izin (permissions scopes) yang diperlukan untuk fungsionalitas layanan kami. Berikut adalah skop izin TikTok yang kami gunakan beserta penjelasan tujuan penggunaannya:</p>
+
+    <table class="data-table">
+      <tr><th>Skop Izin</th><th>Deskripsi</th><th>Tujuan Penggunaan</th></tr>
+      <tr><td><code>user.info.basic</code></td><td>Mengakses informasi dasar profil pengguna termasuk Open ID, nama tampilan, dan avatar</td><td>Diperlukan untuk proses autentikasi Login Kit dan identifikasi pengguna yang masuk ke platform Cinevixv</td></tr>
+      <tr><td><code>user.info.profile</code></td><td>Mengakses informasi profil tambahan seperti username dan bio publik</td><td>Digunakan untuk menampilkan informasi profil pengguna dalam dashboard akun dan personalisasi pengalaman</td></tr>
+      <tr><td><code>video.list</code></td><td>Mengakses daftar video publik dari akun pengguna</td><td>Digunakan untuk menampilkan galeri video publik pengguna dalam fitur tertentu pada platform Cinevixv</td></tr>
+    </table>
+
+    <h3>8.1 Prinsip Minimalisasi Skop</h3>
+    <p>Kami secara aktif meninjau dan membatasi skop izin yang kami minta. Kami tidak meminta skop izin yang tidak diperlukan untuk fungsionalitas layanan kami, termasuk namun tidak terbatas pada:</p>
+    <ul>
+      <li><code>video.upload</code> — tidak digunakan secara umum, hanya untuk akun editorial internal yang telah melalui proses persetujuan khusus.</li>
+      <li>Skop yang memberikan akses ke data kontak, pesan pribadi, atau data sensitif lainnya — tidak pernah diminta.</li>
+    </ul>
+
+    <h3>8.2 Tinjauan Berkala Skop Izin</h3>
+    <p>Kami melakukan tinjauan berkala terhadap skop izin yang kami gunakan untuk memastikan bahwa setiap skop masih diperlukan dan sesuai dengan tujuan layanan. Jika suatu skop tidak lagi diperlukan, kami akan menghapusnya dari konfigurasi aplikasi kami.</p>
+  </div>
+
+  <!-- SECTION 9 -->
+  <div class="section" id="s9">
+    <h2><span class="num">9</span> Tujuan Pengolahan Data</h2>
+    <p>Kami memproses data pribadi Pengguna hanya untuk tujuan yang sah, spesifik, dan telah dikomunikasikan secara transparan. Berikut adalah tujuan pengolahan data oleh Cinevixv:</p>
+
+    <h3>9.1 Penyediaan dan Pengelolaan Layanan</h3>
+    <ul>
+      <li>Menyediakan akses ke konten artikel, ulasan, dan informasi film serta series.</li>
+      <li>Mengelola akun pengguna yang terdaftar melalui TikTok Login Kit.</li>
+      <li>Menampilkan informasi profil dan konten publik pengguna sesuai dengan skop izin yang diberikan.</li>
+      <li>Memungkinkan fungsionalitas Content Posting API untuk publikasi konten editorial.</li>
+    </ul>
+
+    <h3>9.2 Peningkatan Kualitas Layanan</h3>
+    <ul>
+      <li>Menganalisis pola penggunaan layanan untuk meningkatkan pengalaman pengguna.</li>
+      <li>Mengidentifikasi konten yang paling diminati untuk perencanaan editorial.</li>
+      <li>Melakukan pengujian A/B dan optimasi performa situs web.</li>
+    </ul>
+
+    <h3>9.3 Komunikasi</h3>
+    <ul>
+      <li>Merespons pertanyaan, masukan, atau keluhan dari Pengguna.</li>
+      <li>Mengirimkan notifikasi penting terkait layanan atau perubahan kebijakan.</li>
+      <li>Mengirimkan newsletter atau pembaruan konten (hanya dengan persetujuan eksplisit Pengguna).</li>
+    </ul>
+
+    <h3>9.4 Keamanan dan Kepatuhan</h3>
+    <ul>
+      <li>Mendeteksi dan mencegah aktivitas penipuan, penyalahgunaan, atau pelanggaran keamanan.</li>
+      <li>Memenuhi kewajiban hukum dan peraturan yang berlaku.</li>
+      <li>Menegakkan ketentuan layanan dan kebijakan komunitas Cinevixv.</li>
+    </ul>
+
+    <h3>9.5 Publikasi Konten ke TikTok</h3>
+    <ul>
+      <li>Mempublikasikan konten video editorial ke platform TikTok melalui Content Posting API.</li>
+      <li>Mengelola jadwal publikasi dan metadata konten video.</li>
+      <li>Memantau performa konten yang telah dipublikasikan melalui TikTok API.</li>
+    </ul>
+
+    <div class="highlight-box">
+      Kami secara tegas menyatakan bahwa kami <strong>TIDAK MENJUAL</strong> data pribadi Pengguna kepada pihak ketiga manapun. Data Pengguna tidak diperdagangkan, tidak disewakan, dan tidak dipertukarkan dengan entitas komersial lainnya.
+    </div>
+  </div>
+
+  <!-- SECTION 10 -->
+  <div class="section" id="s10">
+    <h2><span class="num">10</span> Dasar Hukum Pengolahan Data</h2>
+    <p>Kami memproses data pribadi Pengguna berdasarkan dasar hukum yang sah sesuai dengan ketentuan yang berlaku, termasuk UU PDP Indonesia dan GDPR Uni Eropa:</p>
+
+    <table class="data-table">
+      <tr><th>Dasar Hukum</th><th>Penerapan</th></tr>
+      <tr><td><strong>Persetujuan (Consent)</strong></td><td>Pengolahan data melalui TikTok Login Kit, Content Posting API, dan Display API dilakukan berdasarkan persetujuan eksplisit Pengguna yang diberikan melalui mekanisme OAuth 2.0. Pengguna juga memberikan persetujuan untuk penggunaan cookies non-esensial melalui banner persetujuan cookies.</td></tr>
+      <tr><td><strong>Pelaksanaan Kontrak</strong></td><td>Pengolahan data yang diperlukan untuk menyediakan layanan yang diminta oleh Pengguna, termasuk pengelolaan akun dan respons terhadap permintaan kontak.</td></tr>
+      <tr><td><strong>Kepentingan Sah (Legitimate Interest)</strong></td><td>Pengolahan data untuk tujuan analitik, peningkatan layanan, dan keamanan platform, sepanjang tidak melanggar hak dan kebebasan Pengguna.</td></tr>
+      <tr><td><strong>Kewajiban Hukum</strong></td><td>Pengolahan data yang diperlukan untuk mematuhi kewajiban hukum yang berlaku, termasuk penyimpanan catatan transaksi dan respons terhadap permintaan otoritas hukum.</td></tr>
+    </table>
+  </div>
+
+  <!-- SECTION 11 -->
+  <div class="section" id="s11">
+    <h2><span class="num">11</span> Cookies dan Teknologi Pelacakan</h2>
+    <p>Cinevixv menggunakan cookies dan teknologi pelacakan serupa untuk berbagai tujuan. Cookies adalah file teks kecil yang disimpan di perangkat Pengguna saat mengakses layanan kami.</p>
+
+    <h3>11.1 Kategori Cookies yang Kami Gunakan</h3>
+    <table class="data-table">
+      <tr><th>Kategori</th><th>Fungsi</th><th>Durasi</th><th>Contoh</th></tr>
+      <tr><td><strong>Esensial</strong></td><td>Diperlukan untuk fungsi dasar situs web seperti keamanan, autentikasi, dan preferensi tampilan</td><td>Sesi hingga 12 bulan</td><td>Cookie sesi, cookie preferensi bahasa</td></tr>
+      <tr><td><strong>Fungsional</strong></td><td>Mengingat pilihan dan preferensi Pengguna untuk pengalaman yang dipersonalisasi</td><td>Hingga 12 bulan</td><td>Cookie tema (dark/light mode), cookie preferensi notifikasi</td></tr>
+      <tr><td><strong>Analitik</strong></td><td>Mengumpulkan data anonim tentang penggunaan situs untuk analisis dan peningkatan layanan</td><td>Hingga 24 bulan</td><td>Google Analytics cookies (_ga, _gid, _gat)</td></tr>
+      <tr><td><strong>Pemasaran</strong></td><td>Digunakan untuk menampilkan iklan yang relevan (jika berlaku)</td><td>Hingga 12 bulan</td><td>Google AdSense cookies (jika diaktifkan)</td></tr>
+    </table>
+
+    <h3>11.2 Pengelolaan Cookies</h3>
+    <p>Pengguna dapat mengelola preferensi cookies melalui:</p>
+    <ul>
+      <li><strong>Banner Persetujuan Cookies</strong> — saat pertama kali mengakses situs, Pengguna akan disajikan banner persetujuan yang memungkinkan mereka menerima atau menolak cookies non-esensial.</li>
+      <li><strong>Pengaturan Browser</strong> — Pengguna dapat memblokir atau menghapus cookies melalui pengaturan browser mereka. Namun, penonaktifan cookies esensial dapat mempengaruhi fungsionalitas situs.</li>
+      <li><strong>Opt-out Pihak Ketiga</strong> — Pengguna dapat memilih untuk tidak berpartisipasi dalam pelacakan analitik melalui mekanisme opt-out yang disediakan oleh masing-masing penyedia layanan.</li>
+    </ul>
+
+    <h3>11.3 Teknologi Pelacakan Lainnya</h3>
+    <p>Selain cookies, kami juga dapat menggunakan teknologi pelacakan serupa seperti:</p>
+    <ul>
+      <li><strong>Pixel Tags</strong> — gambar kecil transparan yang digunakan untuk melacak interaksi Pengguna dengan konten dan email.</li>
+      <li><strong>Local Storage</strong> — penyimpanan lokal di browser yang digunakan untuk menyimpan preferensi Pengguna.</li>
+      <li><strong>Server Logs</strong> — catatan otomatis yang dihasilkan oleh server saat Pengguna mengakses situs.</li>
+    </ul>
+  </div>
+
+  <!-- SECTION 12 -->
+  <div class="section" id="s12">
+    <h2><span class="num">12</span> Layanan Pihak Ketiga</h2>
+    <p>Cinevixv menggunakan layanan pihak ketiga untuk mendukung operasional dan analisis layanan kami. Setiap layanan pihak ketiga memiliki kebijakan privasi tersendiri yang dapat berbeda dari Kebijakan Privasi ini.</p>
+
+    <h3>12.1 TikTok for Developers</h3>
+    <p>Kami mengintegrasikan TikTok for Developers API untuk autentikasi, publikasi konten, dan tampilan data profil. Penggunaan layanan ini tunduk pada:</p>
+    <ul>
+      <li><a href="https://www.tiktok.com/legal/page/global/tiktok-developers-platform-terms-of-service/en" target="_blank" rel="noopener noreferrer">TikTok Developers Platform Terms of Service</a></li>
+      <li><a href="https://www.tiktok.com/legal/page/global/tiktok-privacy-policy/en" target="_blank" rel="noopener noreferrer">TikTok Privacy Policy</a></li>
+      <li><a href="https://developers.tiktok.com/doc/" target="_blank" rel="noopener noreferrer">TikTok for Developers Documentation</a></li>
+    </ul>
+
+    <h3>12.2 Google Analytics</h3>
+    <p>Kami menggunakan Google Analytics untuk menganalisis trafik dan penggunaan situs. Data yang dikumpulkan bersifat anonim dan tidak mengidentifikasi individu secara langsung. Informasi lebih lanjut tersedia di <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer">Kebijakan Privasi Google</a>.</p>
+
+    <h3>12.3 Google AdSense (jika berlaku)</h3>
+    <p>Jika kami menampilkan iklan melalui Google AdSense, Google dapat menggunakan cookies untuk menampilkan iklan yang relevan berdasarkan kunjungan Pengguna ke situs kami dan situs lainnya. Pengguna dapat memilih untuk tidak berpartisipasi melalui <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer">Pengaturan Iklan Google</a>.</p>
+
+    <h3>12.4 Platform Streaming Pihak Ketiga</h3>
+    <p>Artikel di Cinevixv mengandung tautan ke platform streaming eksternal seperti Netflix, Disney+, Vidio, iQIYI, dan lainnya. Kami tidak bertanggung jawab atas kebijakan privasi atau praktik pengumpulan data dari platform-platform tersebut.</p>
+
+    <h3>12.5 Penyedia Infrastruktur</h3>
+    <p>Kami menggunakan layanan hosting dan infrastruktur cloud untuk menjalankan situs web. Penyedia infrastruktur kami terikat oleh perjanjian kerahasiaan dan tidak memiliki akses ke data pribadi Pengguna kecuali untuk keperluan pemeliharaan teknis yang diperlukan.</p>
+  </div>
+
+  <!-- SECTION 13 -->
+  <div class="section" id="s13">
+    <h2><span class="num">13</span> Penyimpanan dan Retensi Data</h2>
+    <p>Kami menyimpan data pribadi hanya selama diperlukan untuk mencapai tujuan yang telah ditetapkan atau selama diwajibkan oleh hukum yang berlaku.</p>
+
+    <h3>13.1 Periode Retensi Data</h3>
+    <table class="data-table">
+      <tr><th>Jenis Data</th><th>Periode Retensi</th><th>Keterangan</th></tr>
+      <tr><td>Data Akun (TikTok OAuth)</td><td>Selama akun aktif + 30 hari setelah pencabutan akses</td><td>Setelah pencabutan akses TikTok, data akun akan dihapus dalam waktu 30 hari</td></tr>
+      <tr><td>Access Token & Refresh Token</td><td>Sesuai masa berlaku yang ditetapkan TikTok</td><td>Token akan dihapus secara otomatis setelah kadaluarsa atau pencabutan akses</td></tr>
+      <tr><td>Log Server</td><td>12 bulan</td><td>Log server disimpan untuk tujuan keamanan dan diagnostik</td></tr>
+      <tr><td>Data Analitik</td><td>26 bulan</td><td>Sesuai dengan pengaturan retensi default Google Analytics</td></tr>
+      <tr><td>Data Komunikasi (Email/Kontak)</td><td>24 bulan setelah interaksi terakhir</td><td>Kecuali diperlukan lebih lama untuk penyelesaian sengketa atau kewajiban hukum</td></tr>
+      <tr><td>Komentar</td><td>Selama konten terkait tetap dipublikasikan</td><td>Komentar akan dihapus jika artikel terkait dihapus atau atas permintaan Pengguna</td></tr>
+      <tr><td>Data Content Posting API</td><td>12 bulan setelah publikasi</td><td>Metadata video disimpan untuk keperluan pelaporan dan analitik internal</td></tr>
+    </table>
+
+    <h3>13.2 Penghapusan Data</h3>
+    <p>Setelah periode retensi berakhir, data pribadi akan dihapus atau dianonimkan secara aman menggunakan metode yang tidak dapat dikembalikan. Penghapusan data dilakukan secara otomatis melalui proses terjadwal atau secara manual atas permintaan Pengguna.</p>
+
+    <h3>13.3 Pengecualian Retensi</h3>
+    <p>Dalam keadaan tertentu, kami dapat menyimpan data pribadi lebih lama dari periode retensi yang ditetapkan jika:</p>
+    <ul>
+      <li>Diperlukan untuk memenuhi kewajiban hukum atau peraturan yang berlaku.</li>
+      <li>Diperlukan untuk penyelesaian sengketa atau penegakan hak hukum.</li>
+      <li>Terdapat permintaan resmi dari otoritas hukum yang sah.</li>
+    </ul>
+  </div>
+
+  <!-- SECTION 14 -->
+  <div class="section" id="s14">
+    <h2><span class="num">14</span> Keamanan Data</h2>
+    <p>Kami menerapkan langkah-langkah teknis dan organisasi yang ketat untuk melindungi data pribadi Pengguna dari akses tidak sah, pengungkapan, perubahan, atau penghancuran.</p>
+
+    <h3>14.1 Langkah-langkah Keamanan Teknis</h3>
+    <ul>
+      <li><strong>Enkripsi Transport</strong> — Seluruh komunikasi antara browser Pengguna dan server Cinevixv dilindungi menggunakan protokol HTTPS dengan TLS 1.2 atau lebih tinggi.</li>
+      <li><strong>Enkripsi Data Saat Istirahat</strong> — Data sensitif yang disimpan di server kami dienkripsi menggunakan standar enkripsi industri (AES-256).</li>
+      <li><strong>Manajemen Token</strong> — Access token dan refresh token TikTok disimpan secara aman di sisi server dengan akses terbatas dan terenkripsi.</li>
+      <li><strong>Firewall dan Proteksi DDoS</strong> — Server kami dilindungi oleh firewall dan layanan proteksi DDoS untuk mencegah serangan siber.</li>
+      <li><strong>Monitoring dan Logging</strong> — Kami melakukan monitoring aktif terhadap akses server dan log keamanan untuk mendeteksi aktivitas mencurigakan.</li>
+      <li><strong>Pembaruan Keamanan</strong> — Seluruh perangkat lunak dan dependensi yang digunakan diperbarui secara berkala untuk menutup kerentanan keamanan yang diketahui.</li>
+    </ul>
+
+    <h3>14.2 Langkah-langkah Keamanan Organisasi</h3>
+    <ul>
+      <li><strong>Akses Berbasis Peran</strong> — Hanya personel yang berwenang yang memiliki akses ke data pribadi, dan akses tersebut dibatasi sesuai dengan kebutuhan tugas (prinsip least privilege).</li>
+      <li><strong>Pelatihan Keamanan</strong> — Personel yang menangani data pribadi menerima pelatihan keamanan dan privasi secara berkala.</li>
+      <li><strong>Perjanjian Kerahasiaan</strong> — Seluruh personel dan pihak ketiga yang memiliki akses ke data pribadi terikat oleh perjanjian kerahasiaan (NDA).</li>
+      <li><strong>Tinjauan Keamanan Berkala</strong> — Kami melakukan tinjauan dan audit keamanan secara berkala untuk memastikan efektivitas langkah-langkah keamanan yang diterapkan.</li>
+    </ul>
+
+    <h3>14.3 Prosedur Pelanggaran Data</h3>
+    <p>Dalam hal terjadi pelanggaran data pribadi yang berdampak signifikan terhadap hak dan kebebasan Pengguna, kami akan:</p>
+    <ol>
+      <li>Mengidentifikasi dan mengisolasi sumber pelanggaran dalam waktu sesingkat mungkin.</li>
+      <li>Memberitahu otoritas pengawas yang berwenang dalam waktu <strong>72 jam</strong> setelah mengetahui pelanggaran, sesuai dengan kewajiban GDPR.</li>
+      <li>Memberitahu Pengguna yang terdampak tanpa penundaan yang tidak wajar, termasuk penjelasan tentang sifat pelanggaran, data yang terpengaruh, dan langkah-langkah yang telah diambil.</li>
+      <li>Mengambil langkah-langkah perbaikan untuk mencegah terulangnya pelanggaran serupa.</li>
+    </ol>
+
+    <div class="highlight-box">
+      Meskipun kami menerapkan langkah-langkah keamanan yang ketat, tidak ada sistem yang 100% aman. Kami tidak dapat menjamin keamanan absolut data yang ditransmisikan ke atau melalui layanan kami. Pengguna juga bertanggung jawab untuk menjaga kerahasiaan kredensial akun mereka.
+    </div>
+  </div>
+
+  <!-- SECTION 15 -->
+  <div class="section" id="s15">
+    <h2><span class="num">15</span> Berbagi Data dan Pengungkapan kepada Pihak Ketiga</h2>
+    <p>Kami tidak menjual, memperdagangkan, atau menyewakan data pribadi Pengguna kepada pihak ketiga. Kami hanya membagikan data pribadi dalam keadaan terbatas berikut:</p>
+
+    <h3>15.1 Penyedia Layanan (Data Processors)</h3>
+    <p>Kami dapat membagikan data pribadi kepada penyedia layanan pihak ketiga yang membantu kami mengoperasikan layanan, termasuk:</p>
+    <ul>
+      <li>Penyedia layanan hosting dan infrastruktur cloud.</li>
+      <li>Penyedia layanan analitik (Google Analytics).</li>
+      <li>Penyedia layanan email dan komunikasi.</li>
+    </ul>
+    <p>Setiap penyedia layanan terikat oleh perjanjian pemrosesan data yang mewajibkan mereka untuk memproses data hanya sesuai dengan instruksi kami dan menerapkan langkah-langkah keamanan yang memadai.</p>
+
+    <h3>15.2 TikTok</h3>
+    <p>Data yang dikumpulkan melalui TikTok API dibagikan dengan TikTok sesuai dengan ketentuan TikTok for Developers. Data ini digunakan untuk tujuan autentikasi, publikasi konten, dan fungsionalitas lain yang telah disetujui oleh Pengguna.</p>
+
+    <h3>15.3 Kewajiban Hukum</h3>
+    <p>Kami dapat mengungkapkan data pribadi jika diwajibkan oleh hukum, peraturan, proses hukum, atau permintaan dari otoritas pemerintah yang sah. Kami akan berusaha untuk memastikan bahwa setiap pengungkapan dilakukan sesuai dengan kerangka hukum yang berlaku.</p>
+
+    <h3>15.4 Perlindungan Hak</h3>
+    <p>Kami dapat mengungkapkan data pribadi jika diperlukan untuk melindungi hak, properti, atau keamanan Cinevixv, Pengguna kami, atau publik, sesuai dengan yang diizinkan atau diwajibkan oleh hukum.</p>
+
+    <h3>15.5 Transfer Bisnis</h3>
+    <p>Dalam hal terjadi merger, akuisisi, penjualan aset, atau kebangkrutan, data pribadi dapat ditransfer sebagai bagian dari transaksi tersebut. Kami akan memberitahu Pengguna melalui email dan/atau pemberitahuan yang mencolok di situs web kami tentang setiap perubahan kepemilikan atau penggunaan data pribadi.</p>
+  </div>
+
+  <!-- SECTION 16 -->
+  <div class="section" id="s16">
+    <h2><span class="num">16</span> Transfer Data Internasional</h2>
+    <p>Cinevixv beroperasi di Indonesia, namun beberapa layanan pihak ketiga yang kami gunakan dapat memproses data di negara lain di luar Indonesia.</p>
+
+    <h3>16.1 Lokasi Pemrosesan Data</h3>
+    <ul>
+      <li><strong>Server Utama</strong> — Data disimpan pada server yang berlokasi di Indonesia atau wilayah Asia Tenggara.</li>
+      <li><strong>TikTok API</strong> — Data yang diproses melalui TikTok API dapat ditransfer ke server TikTok yang berlokasi di berbagai negara sesuai dengan infrastruktur TikTok.</li>
+      <li><strong>Google Analytics</strong> — Data analitik dapat diproses di server Google yang berlokasi di Amerika Serikat atau negara lainnya.</li>
+    </ul>
+
+    <h3>16.2 Mekanisme Perlindungan Transfer</h3>
+    <p>Untuk transfer data internasional, kami memastikan bahwa tingkat perlindungan data yang memadai diterapkan melalui:</p>
+    <ul>
+      <li>Klausul kontrak standar (Standard Contractual Clauses / SCC) yang disetujui oleh Komisi Eropa.</li>
+      <li>Penilaian kecukupan perlindungan data di negara tujuan transfer.</li>
+      <li>Perjanjian pemrosesan data yang mewajibkan penyedia layanan pihak ketiga untuk menerapkan langkah-langkah keamanan yang memadai.</li>
+      <li>Kepatuhan terhadap mekanisme Privacy Shield (jika applicable) atau kerangka perlindungan data internasional lainnya.</li>
+    </ul>
+
+    <h3>16.3 Hak Pengguna Terkait Transfer Internasional</h3>
+    <p>Pengguna berhak mengetahui negara atau organisasi internasional mana yang menerima data pribadi mereka. Untuk informasi lebih lanjut mengenai transfer data internasional, silakan hubungi kami di <a href="mailto:hello@cine.vixv.biz.id">hello@cine.vixv.biz.id</a>.</p>
+  </div>
+
+  <!-- SECTION 17 -->
+  <div class="section" id="s17">
+    <h2><span class="num">17</span> Hak-Hak Pengguna</h2>
+    <p>Sesuai dengan ketentuan UU PDP Indonesia, GDPR, dan peraturan perlindungan data lainnya, Pengguna memiliki hak-hak berikut terkait data pribadi mereka:</p>
+
+    <h3>17.1 Hak Akses (Right of Access)</h3>
+    <p>Pengguna berhak untuk mengetahui apakah data pribadi mereka sedang diproses, dan jika ya, berhak mendapatkan akses ke data tersebut serta informasi tentang tujuan pengolahan, kategori data, penerima data, dan periode retensi.</p>
+
+    <h3>17.2 Hak Rectifikasi (Right to Rectification)</h3>
+    <p>Pengguna berhak untuk meminta perbaikan data pribadi yang tidak akurat atau tidak lengkap. Kami akan memperbaiki data tersebut tanpa penundaan yang tidak wajar.</p>
+
+    <h3>17.3 Hak Penghapusan (Right to Erasure / "Right to be Forgotten")</h3>
+    <p>Pengguna berhak untuk meminta penghapusan data pribadi mereka jika:</p>
+    <ul>
+      <li>Data tidak lagi diperlukan untuk tujuan yang dikumpulkan.</li>
+      <li>Pengguna mencabut persetujuan yang menjadi dasar pengolahan.</li>
+      <li>Data diproses secara tidak sah.</li>
+      <li>Data harus dihapus untuk memenuhi kewajiban hukum.</li>
+    </ul>
+
+    <h3>17.4 Hak Pembatasan Pengolahan (Right to Restriction of Processing)</h3>
+    <p>Pengguna berhak untuk meminta pembatasan pengolahan data pribadi mereka dalam keadaan tertentu, termasuk ketika keakuratan data sedang dipertentangkan atau pengolahan bersifat tidak sah.</p>
+
+    <h3>17.5 Hak Portabilitas Data (Right to Data Portability)</h3>
+    <p>Pengguna berhak untuk menerima data pribadi mereka dalam format yang terstruktur, umum digunakan, dan dapat dibaca mesin, serta berhak untuk mentransfer data tersebut ke pengendali data lain tanpa halangan.</p>
+
+    <h3>17.6 Hak Keberatan (Right to Object)</h3>
+    <p>Pengguna berhak untuk menolak pengolahan data pribadi mereka yang didasarkan pada kepentingan sah (legitimate interest) atau untuk tujuan pemasaran langsung.</p>
+
+    <h3>17.7 Hak Pencabutan Persetujuan (Right to Withdraw Consent)</h3>
+    <p>Jika pengolahan data didasarkan pada persetujuan, Pengguna berhak untuk mencabut persetujuan tersebut kapan saja. Pencabutan persetujuan tidak mempengaruhi keabsahan pengolahan data yang dilakukan sebelum pencabutan.</p>
+
+    <h3>17.8 Hak Terkait Pengambilan Keputusan Otomatis</h3>
+    <p>Pengguna berhak untuk tidak tunduk pada keputusan yang semata-mata didasarkan pada pengolahan otomatis, termasuk profiling, yang menghasilkan efek hukum atau dampak signifikan terhadap mereka. Saat ini, Cinevixv tidak menggunakan pengambilan keputusan otomatis atau profiling.</p>
+
+    <h3>17.9 Cara Menggunakan Hak-Hak Tersebut</h3>
+    <p>Untuk menggunakan hak-hak di atas, Pengguna dapat menghubungi kami melalui:</p>
+    <ul>
+      <li>Email: <a href="mailto:hello@cine.vixv.biz.id">hello@cine.vixv.biz.id</a></li>
+      <li>Subjek email: "Permunaan Hak Privasi"</li>
+    </ul>
+    <p>Kami akan merespons permintaan dalam waktu <strong>30 hari kerja</strong> dan dapat meminta verifikasi identitas sebelum memproses permintaan untuk tujuan keamanan.</p>
+  </div>
+
+  <!-- SECTION 18 -->
+  <div class="section" id="s18">
+    <h2><span class="num">18</span> Privasi Anak-Anak</h2>
+    <p>Cinevixv berkomitmen untuk melindungi privasi anak-anak dan mematuhi ketentuan perlindungan data anak yang berlaku.</p>
+
+    <h3>18.1 Batasan Usia</h3>
+    <p>Layanan Cinevixv tidak ditujukan untuk anak-anak di bawah usia <strong>13 tahun</strong>. Kami tidak secara sengaja mengumpulkan data pribadi dari anak-anak di bawah usia 13 tahun.</p>
+
+    <h3>18.2 Persetujuan Orang Tua</h3>
+    <p>Jika kami mengetahui bahwa kami telah mengumpulkan data pribadi dari anak di bawah usia 13 tahun tanpa persetujuan orang tua atau wali yang sah, kami akan segera menghapus data tersebut. Orang tua atau wali yang mengetahui bahwa anak mereka telah memberikan data pribadi kepada kami tanpa persetujuan diminta untuk menghubungi kami di <a href="mailto:hello@cine.vixv.biz.id">hello@cine.vixv.biz.id</a>.</p>
+
+    <h3>18.3 Perlindungan Tambahan untuk Anak-Anak</h3>
+    <ul>
+      <li>Kami tidak menampilkan iklan yang ditargetkan kepada anak-anak.</li>
+      <li>Kami tidak menggunakan data anak-anak untuk tujuan profiling atau pengambilan keputusan otomatis.</li>
+      <li>Kami menerapkan kontrol privasi yang lebih ketat untuk akun yang teridentifikasi sebagai akun anak-anak.</li>
+    </ul>
+
+    <h3>18.4 Kepatuhan terhadap COPPA</h3>
+    <p>Meskipun Cinevixv beroperasi di Indonesia, kami juga berupaya mematuhi prinsip-prinsip Children's Online Privacy Protection Act (COPPA) Amerika Serikat dalam hal perlindungan data anak-anak.</p>
+  </div>
+
+  <!-- SECTION 19 -->
+  <div class="section" id="s19">
+    <h2><span class="num">19</span> Kepatuhan GDPR</h2>
+    <p>Bagi Pengguna yang berada di Wilayah Ekonomi Eropa (European Economic Area / EEA), ketentuan tambahan berikut berlaku sesuai dengan General Data Protection Regulation (GDPR) — Regulation (EU) 2016/679:</p>
+
+    <h3>19.1 Pengendali Data</h3>
+    <p>Cinevixv bertindak sebagai pengendali data (data controller) untuk data pribadi yang dikumpulkan melalui layanan kami.</p>
+
+    <h3>19.2 Dasar Hukum Pengolahan (Pasal 6 GDPR)</h3>
+    <p>Pengolahan data pribadi dilakukan berdasarkan salah satu atau lebih dasar hukum berikut:</p>
+    <ul>
+      <li><strong>Pasal 6(1)(a)</strong> — Persetujuan dari subjek data.</li>
+      <li><strong>Pasal 6(1)(b)</strong> — Diperlukan untuk pelaksanaan kontrak.</li>
+      <li><strong>Pasal 6(1)(f)</strong> — Diperlukan untuk kepentingan sah yang dikejar oleh pengendali data atau pihak ketiga.</li>
+    </ul>
+
+    <h3>19.3 Transfer Data ke Negara Ketiga (Pasal 44-49 GDPR)</h3>
+    <p>Transfer data pribadi ke negara di luar EEA dilakukan dengan mekanisme perlindungan yang memadai, termasuk Klausul Kontrak Standar (SCC) yang disetujui oleh Komisi Eropa.</p>
+
+    <h3>19.4 Hak untuk Mengajukan Keluhan</h3>
+    <p>Jika Pengguna berada di EEA dan percaya bahwa pengolahan data pribadi mereka melanggar GDPR, Pengguna berhak untuk mengajukan keluhan kepada otoritas pengawas perlindungan data di negara anggota tempat tinggal mereka.</p>
+
+    <h3>19.5 Perwakilan di EEA</h3>
+    <p>Saat ini, Cinevixv tidak memiliki perwakilan resmi di EEA. Untuk pertanyaan terkait GDPR, Pengguna dapat menghubungi kami langsung di <a href="mailto:hello@cine.vixv.biz.id">hello@cine.vixv.biz.id</a>.</p>
+  </div>
+
+  <!-- SECTION 20 -->
+  <div class="section" id="s20">
+    <h2><span class="num">20</span> Mekanisme Persetujuan (Consent)</h2>
+    <p>Persetujuan (consent) merupakan dasar hukum utama untuk pengolahan data pribadi melalui integrasi TikTok API. Kami memastikan bahwa persetujuan yang diperoleh memenuhi standar yang ditetapkan oleh UU PDP, GDPR, dan TikTok for Developers.</p>
+
+    <h3>20.1 Persetujuan untuk TikTok API</h3>
+    <p>Persetujuan untuk akses TikTok API diperoleh melalui mekanisme berikut:</p>
+    <ol>
+      <li><strong>Layar Persetujuan TikTok</strong> — Saat Pengguna mengklik "Masuk dengan TikTok", mereka dialihkan ke layar persetujuan resmi TikTok yang menampilkan secara jelas skop data yang akan diakses.</li>
+      <li><strong>Persetujuan Eksplisit</strong> — Pengguna harus secara aktif mengklik tombol "Izinkan" atau setara untuk memberikan persetujuan. Tidak ada persetujuan implisit atau pre-checked.</li>
+      <li><strong>Informasi Transparan</strong> — Sebelum memberikan persetujuan, Pengguna diberi informasi yang jelas dan mudah dipahami tentang data apa yang akan diakses dan untuk tujuan apa.</li>
+      <li><strong>Pencatatan Persetujuan</strong> — Kami mencatat waktu, skop, dan versi persetujuan yang diberikan untuk keperluan audit dan kepatuhan.</li>
+    </ol>
+
+    <h3>20.2 Persetujuan untuk Cookies</h3>
+    <p>Persetujuan untuk cookies non-esensial diperoleh melalui:</p>
+    <ul>
+      <li><strong>Banner Persetujuan</strong> — Banner yang muncul saat pertama kali mengakses situs, memberikan pilihan untuk menerima semua cookies, menolak cookies non-esensial, atau mengelola preferensi.</li>
+      <li><strong>Granular Control</strong> — Pengguna dapat memilih kategori cookies mana yang ingin mereka izinkan.</li>
+      <li><strong>Pencabutan Mudah</strong> — Pengguna dapat mencabut persetujuan cookies kapan saja melalui pengaturan yang mudah diakses.</li>
+    </ul>
+
+    <h3>20.3 Persetujuan untuk Newsletter</h3>
+    <p>Persetujuan untuk menerima newsletter atau komunikasi pemasaran diperoleh melalui:</p>
+    <ul>
+      <li><strong>Opt-in Eksplisit</strong> — Pengguna harus secara aktif mencentang kotak persetujuan atau mengklik tombol berlangganan.</li>
+      <li><strong>Double Opt-in</strong> — Kami menerapkan mekanisme double opt-in di mana Pengguna harus mengkonfirmasi langganan mereka melalui email.</li>
+      <li><strong>Unsubscribe Mudah</strong> — Setiap email newsletter menyertakan tautan unsubscribe yang memungkinkan Pengguna untuk berhenti berlangganan kapan saja.</li>
+    </ul>
+
+    <h3>20.4 Pencabutan Persetujuan</h3>
+    <p>Pengguna dapat mencabut persetujuan mereka kapan saja melalui:</p>
+    <ul>
+      <li>Pengaturan akun TikTok untuk mencabut akses Cinevixv.</li>
+      <li>Pengaturan cookies di browser atau melalui banner persetujuan.</li>
+      <li>Tautan unsubscribe di email newsletter.</li>
+      <li>Menghubungi kami langsung di <a href="mailto:hello@cine.vixv.biz.id">hello@cine.vixv.biz.id</a>.</li>
+    </ul>
+    <p>Pencabutan persetujuan tidak mempengaruhi keabsahan pengolahan data yang dilakukan sebelum pencabutan.</p>
+  </div>
+
+  <!-- SECTION 21 -->
+  <div class="section" id="s21">
+    <h2><span class="num">21</span> Perubahan Kebijakan Privasi</h2>
+    <p>Kami dapat memperbarui Kebijakan Privasi ini dari waktu ke waktu untuk mencerminkan perubahan dalam praktik pengolahan data, persyaratan hukum, atau perkembangan teknologi.</p>
+
+    <h3>21.1 Prosedur Pembaruan</h3>
+    <ul>
+      <li>Setiap perubahan material akan dikomunikasikan kepada Pengguna melalui pemberitahuan yang mencolok di situs web kami dan/atau melalui email.</li>
+      <li>Tanggal "Terakhir Diperbarui" di bagian atas dokumen ini akan diperbarui setiap kali ada perubahan.</li>
+      <li>Pengguna disarankan untuk meninjau Kebijakan Privasi ini secara berkala untuk tetap informed tentang bagaimana kami melindungi data mereka.</li>
+    </ul>
+
+    <h3>21.2 Persetujuan atas Perubahan</h3>
+    <p>Penggunaan layanan Cinevixv secara berkelanjutan setelah perubahan Kebijakan Privasi diterbitkan dianggap sebagai persetujuan terhadap perubahan tersebut. Jika Pengguna tidak menyetujui perubahan, mereka berhak untuk berhenti menggunakan layanan kami.</p>
+
+    <h3>21.3 Perubahan Material</h3>
+    <p>Perubahan yang dianggap material meliputi:</p>
+    <ul>
+      <li>Perubahan pada kategori data pribadi yang dikumpulkan.</li>
+      <li>Perubahan pada tujuan pengolahan data.</li>
+      <li>Perubahan pada pihak ketiga yang menerima data pribadi.</li>
+      <li>Perubahan pada hak-hak Pengguna atau cara menggunakan hak tersebut.</li>
+      <li>Perubahan pada mekanisme persetujuan atau pencabutan persetujuan.</li>
+    </ul>
+  </div>
+
+  <!-- SECTION 22 -->
+  <div class="section" id="s22">
+    <h2><span class="num">22</span> Informasi Kontak dan Pengaduan</h2>
+    <p>Jika Anda memiliki pertanyaan, kekhawatiran, atau pengaduan terkait Kebijakan Privasi ini atau pengolahan data pribadi Anda oleh Cinevixv, silakan hubungi kami melalui salah satu cara berikut:</p>
+
+    <table class="data-table">
+      <tr><th>Metode Kontak</th><th>Detail</th></tr>
+      <tr><td>Email Privasi</td><td><a href="mailto:hello@cine.vixv.biz.id">hello@cine.vixv.biz.id</a></td></tr>
+      <tr><td>Situs Web</td><td><a href="https://cine.vixv.biz.id">cine.vixv.biz.id</a></td></tr>
+      <tr><td>TikTok</td><td><a href="https://www.tiktok.com/@cinevix" target="_blank" rel="noopener noreferrer">@cinevix</a></td></tr>
+    </table>
+
+    <h3>22.1 Waktu Respons</h3>
+    <p>Kami berkomitmen untuk merespons seluruh permintaan dan pengaduan terkait privasi dalam waktu <strong>30 hari kerja</strong> setelah penerimaan. Dalam kasus yang kompleks, periode ini dapat diperpanjang hingga 60 hari, dan kami akan memberitahu Anda tentang perpanjangan tersebut beserta alasannya.</p>
+
+    <h3>22.2 Pengaduan ke Otoritas</h3>
+    <p>Jika Anda tidak puas dengan respons kami, Anda berhak untuk mengajukan pengaduan kepada otoritas perlindungan data yang berwenang di yurisdiksi Anda. Di Indonesia, pengaduan dapat diajukan kepada otoritas yang ditunjuk berdasarkan UU PDP.</p>
+
+    <h3>22.3 Bahasa Komunikasi</h3>
+    <p>Kami dapat berkomunikasi dalam bahasa Indonesia atau bahasa Inggris. Silakan menggunakan bahasa yang paling nyaman bagi Anda saat menghubungi kami.</p>
+
+    <div class="highlight-box">
+      <strong>Dokumen ini terakhir diperbarui pada 16 Mei 2026.</strong> Kami berterima kasih atas kepercayaan Anda kepada Cinevixv. Privasi Anda adalah prioritas kami, dan kami berkomitmen untuk terus meningkatkan praktik perlindungan data kami.
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  &copy; 2026 <strong>Cinevixv</strong>. Seluruh hak dilindungi undang-undang. &nbsp;|&nbsp; <a href="https://cine.vixv.biz.id">cine.vixv.biz.id</a> &nbsp;|&nbsp; <a href="mailto:hello@cine.vixv.biz.id">hello@cine.vixv.biz.id</a>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cinevixv — Alkisah Cerita</title>
+  <meta name="description" content="Ulasan film & series terbaik. Nonton cerita seru gratis tiap hari."/>
+  <meta name="author" content="Cinevixv"/>
+  <meta name="robots" content="index, follow"/>
+  <meta property="og:title" content="Cinevixv — Alkisah Cerita"/>
+  <meta property="og:description" content="Ulasan film & series terbaik. Nonton cerita seru gratis tiap hari."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://cine.vixv.biz.id"/>
+  <meta property="og:locale" content="id_ID"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Cinevixv — Alkisah Cerita"/>
+  <meta name="twitter:description" content="Ulasan film & series terbaik."/>
+  <link rel="canonical" href="https://cine.vixv.biz.id"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Syne:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root{--ink:#080808;--paper:#0e0e0e;--card:#141414;--line:#222;--red:#c9312a;--red2:#e84040;--cream:#f0ece4;--dim:#666;--serif:'Cormorant Garamond',serif;--sans:'Syne',sans-serif;--mono:'Inter',sans-serif}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{background:var(--ink);color:var(--cream);font-family:var(--sans);font-weight:300;line-height:1.8;overflow-x:hidden}
+    a{color:inherit;text-decoration:none}
+    img{display:block;width:100%;object-fit:cover}
+    body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:180px;opacity:.03;mix-blend-mode:overlay}
+
+    .wrap{max-width:1200px;margin:0 auto;width:100%;padding:0 48px}
+
+    nav{position:fixed;top:0;left:0;right:0;z-index:500;height:64px;border-bottom:1px solid rgba(255,255,255,.06);background:rgba(8,8,8,.88);backdrop-filter:blur(18px)}
+    .nav-inner{max-width:1200px;margin:0 auto;padding:0 48px;height:100%;display:flex;align-items:center;justify-content:space-between}
+    .nav-logo{font-family:var(--serif);font-size:21px;font-weight:700;color:var(--cream);cursor:pointer}
+    .nav-logo em{color:var(--red);font-style:normal}
+    .nav-links{display:flex;gap:32px;list-style:none;font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--dim)}
+    .nav-links a{cursor:pointer}
+    .nav-links a:hover{color:var(--cream)}
+    .nav-cta{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:9px 22px;border:1px solid var(--red);color:var(--red);border-radius:2px;transition:.2s}
+    .nav-cta:hover{background:var(--red);color:#fff}
+
+    .hero{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:0 0 80px;overflow:hidden}
+    .hero-wrap{position:relative;max-width:1200px;margin:0 auto;width:100%;padding:0 48px}
+    .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 60% 40%,rgba(150,20,20,.18) 0%,transparent 65%),linear-gradient(180deg,#080808 0%,#0e0809 50%,#080808 100%)}
+    .hero-strip{position:absolute;top:64px;left:0;right:0;height:5px;background:repeating-linear-gradient(90deg,var(--red) 0px,var(--red) 28px,transparent 28px,transparent 34px);opacity:.6}
+    .hero-eyebrow{position:relative;display:flex;align-items:center;gap:14px;margin-bottom:28px;font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--red);opacity:0;animation:fadeUp .7s .2s forwards}
+    .hero-eyebrow::before{content:'';display:block;width:32px;height:1px;background:var(--red)}
+    .hero-title{position:relative;font-family:var(--serif);font-size:clamp(64px,10vw,144px);font-weight:300;line-height:.92;color:var(--cream);opacity:0;animation:fadeUp .8s .35s forwards}
+    .hero-title em{font-style:italic;color:var(--red)}
+    .hero-bottom{position:relative;display:flex;align-items:flex-end;justify-content:space-between;margin-top:44px;opacity:0;animation:fadeUp .7s .55s forwards}
+    .hero-desc{max-width:420px;font-size:15px;line-height:1.75;color:rgba(240,236,228,.55)}
+    .hero-desc strong{color:var(--cream);font-weight:500}
+    .hero-stat .num{font-family:var(--serif);font-size:64px;font-weight:300;line-height:1;color:var(--cream);text-align:right}
+    .hero-stat .lbl{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--dim);margin-top:4px;text-align:right}
+    .scroll-hint{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--dim);animation:fadeUp 1s 1s both}
+    .scroll-hint::after{content:'';display:block;width:1px;height:40px;background:linear-gradient(to bottom,var(--dim),transparent);animation:scrollLine 1.8s 1.2s ease-in-out infinite}
+
+    .ticker{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;padding:14px 0;background:var(--paper)}
+    .ticker-track{display:flex;white-space:nowrap;animation:ticker 28s linear infinite}
+    .ticker-item{display:inline-flex;align-items:center;gap:28px;padding:0 28px;font-size:12px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--dim)}
+    .ticker-dot{width:4px;height:4px;border-radius:50%;background:var(--red);flex-shrink:0}
+
+    section{padding:96px 0}
+    .sec-header{display:flex;align-items:baseline;justify-content:space-between;padding-bottom:20px;border-bottom:1px solid var(--line);margin-bottom:40px}
+    .sec-lbl{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--dim);margin-bottom:6px}
+    .sec-title{font-family:var(--serif);font-size:clamp(28px,3.5vw,42px);font-weight:300}
+    .sec-title em{font-style:italic;color:var(--red)}
+
+    #videos{border-top:1px solid var(--line)}
+    .playlist-tabs{display:flex;gap:2px;margin-bottom:28px;overflow-x:auto;scrollbar-width:none}
+    .playlist-tabs::-webkit-scrollbar{display:none}
+    .tab-btn{padding:9px 20px;font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;background:var(--card);color:var(--dim);border:none;cursor:pointer;white-space:nowrap;transition:.2s}
+    .tab-btn:hover{color:var(--cream)}
+    .tab-btn.active{background:var(--red);color:#fff}
+    .video-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:3px}
+    .video-card{position:relative;cursor:pointer;overflow:hidden;background:var(--card);aspect-ratio:9/16}
+    .video-card img{width:100%;height:100%;object-fit:cover;transition:transform .4s,opacity .4s}
+    .video-card:hover img{transform:scale(1.05);opacity:.6}
+    .video-card-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.85) 0%,transparent 55%);display:flex;flex-direction:column;justify-content:flex-end;padding:14px}
+    .video-card-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:44px;height:44px;border-radius:50%;background:rgba(201,49,42,.9);display:grid;place-items:center;opacity:0;transition:.2s}
+    .video-card:hover .video-card-play{opacity:1}
+    .video-card-play svg{width:18px;height:18px;fill:white;margin-left:3px}
+    .video-card-series{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--red);font-weight:700;margin-bottom:4px}
+    .video-card-title{font-size:12px;font-weight:500;line-height:1.3;color:var(--cream)}
+    .vc-placeholder{width:100%;height:100%;background:linear-gradient(135deg,#1a0808,#0e0e0e);display:flex;align-items:center;justify-content:center;font-size:36px}
+    .spinner{width:24px;height:24px;border:2px solid var(--line);border-top-color:var(--red);border-radius:50%;animation:spin .7s linear infinite;margin:0 auto}
+    .empty-state{grid-column:1/-1;padding:60px;text-align:center;color:var(--dim)}
+    .empty-state h3{font-family:var(--serif);font-size:28px;font-weight:300;margin-bottom:12px;color:var(--cream)}
+
+    .modal-bg{position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,.96);display:none;align-items:center;justify-content:center;padding:20px}
+    .modal-bg.open{display:flex}
+    .modal-box{position:relative;width:100%;max-width:380px;background:var(--card);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+    .modal-close{position:absolute;top:12px;right:12px;z-index:10;width:36px;height:36px;border-radius:50%;background:rgba(0,0,0,.7);border:1px solid var(--line);display:grid;place-items:center;cursor:pointer;color:var(--cream);font-size:16px;transition:.2s}
+    .modal-close:hover{background:var(--red);border-color:var(--red)}
+    .modal-embed{width:100%;line-height:0}
+    .modal-embed iframe{width:100%;height:720px;border:none;display:block}
+
+    body{cursor:none}
+    .cursor{position:fixed;z-index:10000;width:10px;height:10px;background:var(--red);border-radius:50%;pointer-events:none;transform:translate(-50%,-50%);transition:transform .08s,width .2s,height .2s,background .2s}
+    .cursor-ring{position:fixed;z-index:9999;width:36px;height:36px;border:1px solid rgba(201,49,42,.5);border-radius:50%;pointer-events:none;transform:translate(-50%,-50%);transition:transform .18s ease-out,width .25s,height .25s}
+
+    #articles{border-top:1px solid var(--line)}
+    .sec-all{font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--red);font-weight:600;cursor:pointer;display:flex;align-items:center;gap:8px;transition:gap .2s}
+    .sec-all:hover{gap:14px}
+    .sec-all::after{content:'→'}
+    .grid-featured{display:grid;grid-template-columns:1.4fr 1fr;grid-template-rows:auto auto;gap:2px;margin-bottom:2px}
+    .grid-row2{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+    .card{position:relative;overflow:hidden;background:var(--card);cursor:none}
+    .card-inner{position:relative;padding:28px;height:100%;display:flex;flex-direction:column;justify-content:flex-end;min-height:280px;transition:background .3s}
+    .card:hover .card-inner{background:rgba(201,49,42,.06)}
+    .card-thumb{position:absolute;inset:0;opacity:.5;transition:opacity .4s}
+    .card:hover .card-thumb{opacity:.3}
+    .card-genre{position:absolute;top:20px;left:28px;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--red);font-weight:700;background:rgba(201,49,42,.12);padding:4px 10px;border-radius:1px}
+    .card-num{font-family:var(--serif);font-size:72px;font-weight:300;line-height:1;color:rgba(240,236,228,.06);position:absolute;right:20px;bottom:16px;pointer-events:none}
+    .card-title{font-family:var(--serif);font-size:clamp(20px,2.5vw,30px);font-weight:400;line-height:1.2;margin-bottom:12px;position:relative;z-index:1;transition:color .2s}
+    .card:hover .card-title{color:#fff}
+    .card-meta{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--dim);display:flex;gap:16px;position:relative;z-index:1}
+    .card-meta .platform{color:var(--red)}
+    .card-arrow{position:absolute;top:20px;right:24px;font-size:18px;color:var(--dim);transition:color .2s,transform .2s;opacity:0}
+    .card:hover .card-arrow{opacity:1;color:var(--red);transform:translate(4px,-4px)}
+    .card-featured{grid-row:span 2}
+    .card-featured .card-inner{min-height:500px}
+    .card-featured .card-title{font-size:clamp(26px,3.5vw,44px)}
+
+    #platforms{border-top:1px solid var(--line);background:var(--paper)}
+    .platform-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:2px;margin-top:40px}
+    .platform-card{background:var(--card);padding:28px 20px;display:flex;flex-direction:column;align-items:center;gap:12px;transition:background .25s}
+    .platform-card:hover{background:#1c1c1c}
+    .platform-icon{width:44px;height:44px;border-radius:10px;display:grid;place-items:center;font-size:20px;font-weight:800;transition:transform .25s}
+    .platform-card:hover .platform-icon{transform:scale(1.1)}
+    .platform-name{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;font-weight:600;color:var(--dim);transition:.2s}
+    .platform-card:hover .platform-name{color:var(--cream)}
+    .p-n .platform-icon{background:#e50914;color:#fff}
+    .p-d .platform-icon{background:#113ccf;color:#fff;font-size:15px}
+    .p-p .platform-icon{background:#00a8e1;color:#fff}
+    .p-v .platform-icon{background:#0d0d7c;color:#fff;font-size:13px;font-weight:900}
+    .p-i .platform-icon{background:#00b43c;color:#fff;font-size:13px;font-weight:900}
+    .p-m .platform-icon{background:#333;color:#aaa}
+
+    #tt{border-top:1px solid var(--line);text-align:center;position:relative;overflow:hidden}
+    .tt-bg{position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 50% 50%,rgba(201,49,42,.12) 0%,transparent 70%);pointer-events:none}
+    .tt-lbl{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--red);font-weight:600;margin-bottom:20px}
+    .tt-title{font-family:var(--serif);font-size:clamp(40px,7vw,84px);font-weight:300;line-height:1;margin-bottom:28px}
+    .tt-title em{font-style:italic;color:var(--red)}
+    .tt-sub{font-size:15px;color:rgba(240,236,228,.5);max-width:440px;margin:0 auto 44px;line-height:1.8}
+    .tt-stats{display:flex;justify-content:center;gap:60px;margin-bottom:48px}
+    .tstat .n{font-family:var(--serif);font-size:52px;font-weight:300;line-height:1}
+    .tstat .l{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--dim);margin-top:4px}
+    .tt-btn{display:inline-flex;align-items:center;gap:12px;padding:16px 36px;background:var(--red);color:#fff;font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;border-radius:2px;transition:.2s}
+    .tt-btn:hover{background:var(--red2);transform:translateY(-2px)}
+
+    footer{border-top:1px solid var(--line);padding:48px 0}
+    .footer-inner{max-width:1200px;margin:0 auto;padding:0 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px}
+    .footer-logo{font-family:var(--serif);font-size:19px;font-weight:700}
+    .footer-logo em{color:var(--red);font-style:normal}
+    .footer-links{display:flex;gap:24px;list-style:none;font-size:12px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--dim)}
+    .footer-links a:hover{color:var(--cream)}
+    .footer-copy{font-size:12px;color:var(--dim);width:100%;padding-top:20px;border-top:1px solid var(--line);display:flex;justify-content:space-between}
+    .cms-trigger{color:var(--dim);cursor:pointer;font-size:11px;opacity:.4;transition:.2s}
+    .cms-trigger:hover{opacity:1;color:var(--cream)}
+
+    @keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+    @keyframes scrollLine{0%,100%{opacity:.3}50%{opacity:1}}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+    .reveal.visible{opacity:1;transform:none}
+    .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+
+    /* ═══ VIEWS ═══ */
+    .view{display:none}
+    .view.active{display:block}
+
+    /* ═══ ARTICLE DETAIL ═══ */
+    .article-hero{padding:140px 0 80px;border-bottom:1px solid var(--line)}
+    .article-cat{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--red);font-weight:700;margin-bottom:20px}
+    .article-title{font-family:var(--serif);font-size:clamp(36px,6vw,80px);font-weight:300;line-height:1;margin-bottom:28px}
+    .article-title em{font-style:italic;color:var(--red)}
+    .article-meta-row{display:flex;align-items:center;gap:24px;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--dim)}
+    .article-meta-row .platform{color:var(--red)}
+    .article-thumb{width:100%;max-height:480px;object-fit:cover;margin-top:48px;background:linear-gradient(135deg,#1c0a0a,#0e0e0e)}
+    .article-thumb-placeholder{width:100%;height:320px;background:linear-gradient(135deg,#1c0a0a 0%,#2a1010 40%,#0e0e0e 100%);margin-top:48px;display:flex;align-items:center;justify-content:center;font-size:64px}
+    .article-body{padding:72px 0 96px}
+    .article-content{max-width:720px}
+    .article-content p{font-family:var(--serif);font-size:20px;font-weight:300;line-height:1.85;color:rgba(240,236,228,.8);margin-bottom:24px}
+    .article-content h3{font-family:var(--serif);font-size:28px;font-weight:400;color:var(--cream);margin:40px 0 16px;padding-top:8px;border-top:1px solid var(--line)}
+    .article-content strong{color:var(--cream);font-weight:600}
+    .article-tiktok{margin-top:48px;padding:32px;background:var(--card);border:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .article-tiktok p{font-size:13px;color:var(--dim);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
+    .article-tiktok h4{font-family:var(--serif);font-size:22px;font-weight:400}
+    .tt-link{display:inline-flex;align-items:center;gap:10px;padding:12px 24px;background:var(--red);color:#fff;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;border-radius:2px;transition:.2s;white-space:nowrap}
+    .tt-link:hover{background:var(--red2)}
+    .related{padding:80px 0;border-top:1px solid var(--line)}
+    .related-title{font-family:var(--serif);font-size:clamp(24px,3vw,36px);font-weight:300;margin-bottom:32px}
+    .related-title em{font-style:italic;color:var(--red)}
+    .related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:2px}
+    .rel-card{background:var(--card);padding:28px;cursor:none;transition:background .2s;display:block}
+    .rel-card:hover{background:#1a1a1a}
+    .rel-cat{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--red);font-weight:700;margin-bottom:10px}
+    .rel-title{font-family:var(--serif);font-size:20px;font-weight:400;line-height:1.25;margin-bottom:8px}
+    .rel-meta{font-size:11px;color:var(--dim)}
+    .back-btn{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--dim);cursor:pointer;display:flex;align-items:center;gap:8px;transition:color .2s;margin-bottom:24px}
+    .back-btn:hover{color:var(--cream)}
+    .back-btn::before{content:'←'}
+
+    /* ═══ ALL ARTICLES VIEW ═══ */
+    .all-articles-hero{padding:140px 0 60px;border-bottom:1px solid var(--line)}
+    .all-articles-list{padding:48px 0 96px}
+    .aa-card{display:flex;gap:24px;padding:28px;background:var(--card);margin-bottom:2px;cursor:pointer;transition:background .2s}
+    .aa-card:hover{background:#1a1a1a}
+    .aa-num{font-family:var(--serif);font-size:48px;font-weight:300;color:rgba(240,236,228,.08);line-height:1;flex-shrink:0;width:60px}
+    .aa-info{flex:1;min-width:0}
+    .aa-cat{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--red);font-weight:700;margin-bottom:8px}
+    .aa-title{font-family:var(--serif);font-size:22px;font-weight:400;line-height:1.3;margin-bottom:8px}
+    .aa-meta{font-size:11px;color:var(--dim);letter-spacing:1px;text-transform:uppercase}
+    .aa-meta .platform{color:var(--red)}
+
+    /* ═══ CMS PANEL ═══ */
+    .cms-overlay{position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,.95);display:none;overflow-y:auto}
+    .cms-overlay.open{display:block}
+    .cms-panel{max-width:900px;margin:0 auto;padding:32px 48px 80px}
+    .cms-header{display:flex;align-items:center;justify-content:space-between;padding:20px 0;border-bottom:1px solid var(--line);margin-bottom:32px;position:sticky;top:0;background:rgba(8,8,8,.95);backdrop-filter:blur(12px);z-index:10}
+    .cms-title{font-family:var(--serif);font-size:24px;font-weight:400}
+    .cms-title em{color:var(--red);font-style:normal}
+    .cms-close{background:none;border:none;color:var(--cream);font-size:24px;cursor:pointer;padding:8px;transition:.2s}
+    .cms-close:hover{color:var(--red)}
+    .cms-tabs{display:flex;gap:2px;margin-bottom:32px;border-bottom:1px solid var(--line)}
+    .cms-tab{padding:12px 24px;font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase;background:none;border:none;color:var(--dim);cursor:pointer;border-bottom:2px solid transparent;transition:.2s;font-family:var(--mono)}
+    .cms-tab:hover{color:var(--cream)}
+    .cms-tab.active{color:var(--red);border-bottom-color:var(--red)}
+    .cms-section{display:none}
+    .cms-section.active{display:block}
+    .cms-card{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:28px;margin-bottom:24px}
+    .cms-card h3{font-size:16px;font-weight:700;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+    .form-row{margin-bottom:16px}
+    .form-row label{display:block;font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--dim);margin-bottom:6px;font-family:var(--mono)}
+    .form-row input,.form-row textarea,.form-row select{width:100%;padding:10px 14px;background:var(--bg);border:1px solid var(--line);border-radius:4px;color:var(--cream);font-family:var(--mono);font-size:14px;transition:border-color .2s}
+    .form-row input:focus,.form-row textarea:focus,.form-row select:focus{outline:none;border-color:var(--red)}
+    .form-row textarea{min-height:120px;resize:vertical}
+    .form-row .hint{font-size:11px;color:var(--dim);margin-top:4px}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 24px;font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;border:none;border-radius:4px;cursor:pointer;transition:.2s;font-family:var(--mono)}
+    .btn-primary{background:var(--red);color:#fff}
+    .btn-primary:hover{background:#e84040}
+    .btn-secondary{background:var(--bg);color:var(--cream);border:1px solid var(--line)}
+    .btn-secondary:hover{border-color:var(--cream)}
+    .btn-danger{background:transparent;color:var(--red);border:1px solid var(--red)}
+    .btn-danger:hover{background:var(--red);color:#fff}
+    .btn-sm{padding:6px 14px;font-size:11px}
+    .btn-group{display:flex;gap:8px;margin-top:20px;flex-wrap:wrap}
+    .item-list{display:flex;flex-direction:column;gap:8px}
+    .item-row{display:flex;align-items:center;gap:16px;padding:14px 18px;background:var(--bg);border:1px solid var(--line);border-radius:6px;transition:.2s}
+    .item-row:hover{border-color:var(--dim)}
+    .item-info{flex:1;min-width:0}
+    .item-title{font-weight:600;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .item-meta{font-size:11px;color:var(--dim);margin-top:2px}
+    .item-actions{display:flex;gap:6px;flex-shrink:0}
+    .fetch-status{padding:10px 16px;border-radius:4px;font-size:12px;font-weight:600;margin-bottom:16px}
+    .fetch-status.success{background:rgba(46,204,113,.1);color:#2ecc71;border:1px solid rgba(46,204,113,.2)}
+    .fetch-status.error{background:rgba(201,49,42,.1);color:var(--red);border:1px solid rgba(201,49,42,.2)}
+    .fetch-status.info{background:rgba(201,49,42,.05);color:var(--dim);border:1px solid var(--line)}
+    .toast{position:fixed;bottom:24px;right:24px;padding:14px 24px;background:#2ecc71;color:#fff;font-size:13px;font-weight:600;border-radius:6px;z-index:9999;transform:translateY(100px);opacity:0;transition:.3s;font-family:var(--mono)}
+    .toast.show{transform:translateY(0);opacity:1}
+    .empty-msg{text-align:center;padding:48px;color:var(--dim)}
+
+    /* ═══ LOGIN MODAL ═══ */
+    .login-overlay{position:fixed;inset:0;z-index:3000;background:rgba(0,0,0,.96);display:none;align-items:center;justify-content:center}
+    .login-overlay.open{display:flex}
+    .login-box{width:100%;max-width:380px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:48px 40px;position:relative}
+    .login-box h2{font-family:var(--serif);font-size:28px;font-weight:400;text-align:center;margin-bottom:8px}
+    .login-box h2 em{color:var(--red);font-style:normal}
+    .login-box .login-sub{text-align:center;font-size:13px;color:var(--dim);margin-bottom:32px}
+    .login-box .form-row{margin-bottom:20px}
+    .login-box .form-row input{padding:14px 16px;font-size:15px;border-radius:6px}
+    .login-btn{width:100%;padding:14px;background:var(--red);color:#fff;font-size:14px;font-weight:700;letter-spacing:2px;text-transform:uppercase;border:none;border-radius:6px;cursor:pointer;transition:.2s;font-family:var(--mono)}
+    .login-btn:hover{background:#e84040}
+    .login-err{text-align:center;font-size:12px;color:var(--red);margin-top:16px;min-height:18px}
+    .login-close{position:absolute;top:24px;right:24px;background:none;border:none;color:var(--dim);font-size:20px;cursor:pointer;transition:.2s}
+    .login-close:hover{color:var(--cream)}
+
+    @media(max-width:768px){
+      nav{padding:0}.nav-inner{padding:0 20px}.nav-links{display:none}
+      .hero{padding:0 0 60px}.hero-wrap{padding:0 20px}.hero-bottom{flex-direction:column;gap:28px}
+      section{padding:64px 0}.wrap{padding:0 20px}.tt-stats{gap:32px}
+      footer{padding:32px 0}.footer-inner{padding:0 20px;flex-direction:column}.footer-copy{flex-direction:column;gap:8px}
+      .grid-featured{grid-template-columns:1fr}.grid-row2{grid-template-columns:1fr 1fr}.card-featured{grid-row:span 1}
+      .cms-panel{padding:16px}.cms-card{padding:18px}
+      .item-row{flex-direction:column;align-items:flex-start}.item-actions{width:100%}
+      .article-hero{padding:100px 0 48px}.article-tiktok{flex-direction:column}
+      .video-card{aspect-ratio:9/16}
+      .aa-card{flex-direction:column;gap:12px}.aa-num{width:auto;font-size:36px}
+    }
+  </style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo" onclick="navigate('home')">cine<em>v</em>ixv</div>
+    <ul class="nav-links">
+      <li><a onclick="navigate('home');scrollToEl('videos')">Videos</a></li>
+      <li><a onclick="navigate('home');scrollToEl('articles')">Artikel</a></li>
+      <li><a onclick="navigate('home');scrollToEl('platforms')">Platform</a></li>
+    </ul>
+    <a href="https://tiktok.com/@cinevix" target="_blank" class="nav-cta">Follow TikTok</a>
+  </div>
+</nav>
+
+<!-- ═══ HOME VIEW ═══ -->
+<div class="view active" id="view-home">
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-strip"></div>
+  <div class="hero-wrap">
+    <p class="hero-eyebrow">Alkisah Cerita — Film &amp; Series</p>
+    <h1 class="hero-title">Semua<br/><em>cerita</em><br/>ada di sini.</h1>
+    <div class="hero-bottom">
+      <p class="hero-desc">Ulasan, pembahasan, dan rekomendasi film &amp; series terbaik. <strong>Gratis, setiap hari</strong> — dari drama thriller sampai sci-fi.</p>
+      <div class="hero-stat"><div class="num">46K</div><div class="lbl">Likes TikTok</div></div>
+    </div>
+  </div>
+  <div class="scroll-hint">Scroll</div>
+</section>
+
+<div class="ticker">
+  <div class="ticker-track">
+    <span class="ticker-item"><span class="ticker-dot"></span>Drama Korea</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Thriller Hollywood</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Sci-Fi</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Horor</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Serial Netflix</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Anime</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Film Indonesia</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Review Harian</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Drama Korea</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Thriller Hollywood</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Sci-Fi</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Horor</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Serial Netflix</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Anime</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Film Indonesia</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Review Harian</span>
+  </div>
+</div>
+
+<section id="videos">
+  <div class="wrap">
+    <div class="sec-header reveal">
+      <div><p class="sec-lbl">Konten TikTok</p><h2 class="sec-title">Tonton <em>sekarang</em></h2></div>
+    </div>
+    <div class="playlist-tabs reveal d1" id="playlistTabs"></div>
+    <div class="video-grid reveal d2" id="videoGrid">
+      <div class="video-card" style="display:flex;align-items:center;justify-content:center"><div class="spinner"></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="articles">
+  <div class="wrap">
+    <div class="sec-header reveal">
+      <div><p class="sec-lbl">Artikel Terbaru</p><h2 class="sec-title">Baru <em>terbit</em></h2></div>
+      <span class="sec-all" onclick="navigate('all-articles')">Semua artikel</span>
+    </div>
+    <div id="articlesContainer">
+      <div class="grid-featured reveal">
+        <div class="card card-featured"><div class="card-inner"><div class="card-thumb"></div><span class="card-genre">Loading...</span><span class="card-num">01</span><h3 class="card-title">Memuat artikel...</h3><div class="card-meta"><span>...</span></div><span class="card-arrow">↗</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="platforms">
+  <div class="wrap">
+    <div class="sec-header reveal">
+      <div><p class="sec-lbl">Temukan di</p><h2 class="sec-title">Platform <em>streaming</em></h2></div>
+    </div>
+    <div class="platform-grid reveal d1">
+      <a href="https://netflix.com" target="_blank" class="platform-card p-n"><div class="platform-icon">N</div><span class="platform-name">Netflix</span></a>
+      <a href="https://disneyplus.com" target="_blank" class="platform-card p-d"><div class="platform-icon">D+</div><span class="platform-name">Disney+</span></a>
+      <a href="https://primevideo.com" target="_blank" class="platform-card p-p"><div class="platform-icon">▶</div><span class="platform-name">Prime</span></a>
+      <a href="https://vidio.com" target="_blank" class="platform-card p-v"><div class="platform-icon">VI</div><span class="platform-name">Vidio</span></a>
+      <a href="https://iq.com" target="_blank" class="platform-card p-i"><div class="platform-icon">iQ</div><span class="platform-name">iQIYI</span></a>
+      <a href="#" class="platform-card p-m"><div class="platform-icon">+</div><span class="platform-name">Lainnya</span></a>
+    </div>
+  </div>
+</section>
+
+<section id="tt">
+  <div class="tt-bg"></div>
+  <div class="wrap">
+    <p class="tt-lbl reveal">Ikuti kami di TikTok</p>
+    <h2 class="tt-title reveal d1">Siap ketagihan<br/><em>tiap part?</em></h2>
+    <p class="tt-sub reveal d2">Update harian film &amp; series langsung di FYP kamu.</p>
+    <div class="tt-stats reveal d2">
+      <div class="tstat"><div class="n">1.9K</div><div class="l">Followers</div></div>
+      <div class="tstat"><div class="n">46K</div><div class="l">Likes</div></div>
+      <div class="tstat"><div class="n">∞</div><div class="l">Cerita</div></div>
+    </div>
+    <a href="https://tiktok.com/@cinevix" target="_blank" class="tt-btn reveal d3">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.28 8.28 0 004.83 1.54V6.78a4.85 4.85 0 01-1.06-.09z"/></svg>
+      Follow @cinevix
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">cine<em>v</em>ixv</div>
+    <ul class="footer-links">
+      <li><a href="privacy-policy.html">Privacy Policy</a></li>
+      <li><a href="terms-of-service.html">Terms of Service</a></li>
+      <li><a href="https://tiktok.com/@cinevix" target="_blank">TikTok</a></li>
+    </ul>
+    <div class="footer-copy">
+      <span>© 2025 Cinevixv — Alkisah Cerita</span>
+      <span>Made for film lovers Indonesia</span>
+      <span class="cms-trigger" onclick="openCMS()"> CMS</span>
+    </div>
+  </div>
+</footer>
+
+</div>
+
+<!-- ═══ ALL ARTICLES VIEW ═══ -->
+<div class="view" id="view-all-articles">
+  <section class="all-articles-hero">
+    <div class="wrap">
+      <div class="back-btn" onclick="navigate('home');renderArticles();">Kembali ke Beranda</div>
+      <p class="sec-lbl">Semua Artikel</p>
+      <h1 class="sec-title" style="font-size:clamp(36px,5vw,64px)">Semua <em>artikel</em></h1>
+    </div>
+  </section>
+  <section class="all-articles-list">
+    <div class="wrap">
+      <div id="allArticlesList"></div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══ ARTICLE DETAIL VIEW ═══ -->
+<div class="view" id="view-article">
+  <div id="articleContent"></div>
+</div>
+
+<!-- ═══ VIDEO MODAL ═══ -->
+<div class="modal-bg" id="videoModal">
+  <div class="modal-box">
+    <button class="modal-close" id="modalClose">✕</button>
+    <div class="modal-embed" id="modalEmbed"></div>
+  </div>
+</div>
+
+<!-- ═══ LOGIN MODAL ═══ -->
+<div class="login-overlay" id="loginOverlay">
+  <div class="login-box">
+    <button class="login-close" onclick="closeLogin()">✕</button>
+    <h2>cine<em>v</em>ixv</h2>
+    <p class="login-sub">Masuk ke CMS</p>
+    <div class="form-row">
+      <label>Username</label>
+      <input type="text" id="loginUser" placeholder="Username" autocomplete="off"/>
+    </div>
+    <div class="form-row">
+      <label>Password</label>
+      <input type="password" id="loginPass" placeholder="Password"/>
+    </div>
+    <button class="login-btn" onclick="doLogin()">Masuk</button>
+    <p class="login-err" id="loginErr"></p>
+  </div>
+</div>
+
+<!-- ═══ CMS OVERLAY ═══ -->
+<div class="cms-overlay" id="cmsOverlay">
+  <div class="cms-panel">
+    <div class="cms-header">
+      <div class="cms-title">cine<em>v</em>ixv <span style="font-size:12px;color:var(--dim);font-weight:400">CMS</span></div>
+      <div style="display:flex;align-items:center;gap:16px">
+        <button class="btn btn-sm btn-secondary" onclick="cmsAuthenticated=false;closeCMS();toast('Logged out.')" style="font-size:11px">Logout</button>
+        <button class="cms-close" onclick="closeCMS()"></button>
+      </div>
+    </div>
+
+    <div class="cms-tabs">
+      <button class="cms-tab active" data-tab="videos"> Konten Video</button>
+      <button class="cms-tab" data-tab="articles"> Artikel</button>
+      <button class="cms-tab" data-tab="settings">⚙️ Settings</button>
+    </div>
+
+    <div class="cms-section active" id="cms-sec-videos">
+      <div class="cms-card">
+        <h3>Tambah Konten Video (TikTok)</h3>
+        <div id="fetchStatus"></div>
+        <div class="form-row">
+          <label>Link TikTok Video</label>
+          <input type="text" id="videoUrl" placeholder="https://www.tiktok.com/@cinevix/video/7640035101795011841"/>
+          <p class="hint">Paste link TikTok. Thumbnail & caption otomatis diambil.</p>
+        </div>
+        <div class="form-row">
+          <label>Series / Playlist (opsional)</label>
+          <input type="text" id="videoSeries" placeholder="Nightmares & Daydreams"/>
+          <p class="hint">Kosongkan untuk auto-detect dari judul.</p>
+        </div>
+        <div class="btn-group">
+          <button class="btn btn-primary" onclick="addVideo()">+ Tambah Video</button>
+          <button class="btn btn-secondary" onclick="fetchAllThumbs()">🔄 Refresh Semua Thumbnail</button>
+        </div>
+      </div>
+      <div class="cms-card">
+        <h3>Daftar Konten (<span id="videoCount">0</span>)</h3>
+        <div class="item-list" id="videoList"></div>
+      </div>
+    </div>
+
+    <div class="cms-section" id="cms-sec-articles">
+      <div class="cms-card">
+        <h3 id="articleFormTitle">Tambah Artikel Baru</h3>
+        <input type="hidden" id="editArticleId" value=""/>
+        <div class="form-row">
+          <label>Judul Artikel</label>
+          <input type="text" id="articleTitle" placeholder="Judul yang menarik"/>
+        </div>
+        <div class="form-row">
+          <label>Kategori</label>
+          <input type="text" id="articleCategory" placeholder="Thriller · Netflix"/>
+        </div>
+        <div class="form-row">
+          <label>Platform</label>
+          <input type="text" id="articlePlatform" placeholder="Netflix"/>
+        </div>
+        <div class="form-row">
+          <label>Tanggal</label>
+          <input type="text" id="articleDate" placeholder="19 Mei 2025"/>
+        </div>
+        <div class="form-row">
+          <label>Deskripsi Singkat</label>
+          <input type="text" id="articleDesc" placeholder="Ringkasan 1-2 kalimat"/>
+        </div>
+        <div class="form-row">
+          <label>Isi Artikel (HTML)</label>
+          <textarea id="articleBody" rows="12" placeholder="<p>Paragraf pertama...</p><h3>Sub Judul</h3><p>Paragraf kedua...</p>"></textarea>
+          <p class="hint">Gunakan tag HTML: &lt;p&gt;, &lt;h3&gt;, &lt;strong&gt;, &lt;em&gt;</p>
+        </div>
+        <div class="form-row">
+          <label>Link TikTok Terkait (opsional)</label>
+          <input type="text" id="articleTiktokUrl" placeholder="https://tiktok.com/@cinevix"/>
+        </div>
+        <div class="form-row">
+          <label>URL Thumbnail (opsional)</label>
+          <input type="text" id="articleThumb" placeholder="https://..."/>
+        </div>
+        <div class="btn-group">
+          <button class="btn btn-primary" onclick="saveArticle()">💾 Simpan</button>
+          <button class="btn btn-secondary" onclick="clearArticleForm()">Batal</button>
+        </div>
+      </div>
+      <div class="cms-card">
+        <h3>Daftar Artikel (<span id="articleCount">0</span>)</h3>
+        <div class="item-list" id="articleList"></div>
+      </div>
+    </div>
+
+    <div class="cms-section" id="cms-sec-settings">
+      <div class="cms-card">
+        <h3>Export / Import Data</h3>
+        <p style="color:var(--dim);margin-bottom:16px">Backup atau restore semua data.</p>
+        <div class="btn-group">
+          <button class="btn btn-secondary" onclick="exportData()"> Export JSON</button>
+          <button class="btn btn-secondary" onclick="document.getElementById('importFile').click()">📥 Import JSON</button>
+          <input type="file" id="importFile" accept=".json" style="display:none" onchange="importData(event)"/>
+        </div>
+      </div>
+      <div class="cms-card">
+        <h3 style="color:var(--red)">️ Reset Data</h3>
+        <p style="color:var(--dim);margin-bottom:16px">Hapus semua data dan kembalikan ke default.</p>
+        <button class="btn btn-danger" onclick="resetAll()">🗑️ Reset Semua Data</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="shared.js"></script>
+<script>
+/* ═══ STATE ═══ */
+let allVideos = [];
+let currentTab = 'Semua';
+let allArticles = [];
+
+/* ══ ROUTER ═══ */
+function navigate(view) {
+  document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+  const el = document.getElementById('view-' + view);
+  if (el) el.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  if (view === 'home') {
+    history.pushState(null, '', '/');
+  }
+}
+
+function scrollToEl(id) {
+  setTimeout(() => {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, 100);
+}
+
+function showArticleDetail(id) {
+  const article = allArticles.find(a => a.id === id);
+  if (!article) return;
+  const container = document.getElementById('articleContent');
+  const related = allArticles.filter(a => a.id !== id).slice(0, 3);
+  const thumbHTML = article.thumb
+    ? `<img src="${article.thumb}" alt="${article.title}" class="article-thumb"/>`
+    : `<div class="article-thumb-placeholder">🎬</div>`;
+
+  container.innerHTML = `
+    <section class="article-hero">
+      <div class="wrap">
+        <div class="back-btn" onclick="navigate('home');renderArticles();">Kembali ke Beranda</div>
+        <p class="article-cat">${article.category || 'Artikel'}</p>
+        <h1 class="article-title">${article.title}</h1>
+        <div class="article-meta-row">
+          <span>${article.date || ''}</span>
+          ${article.platform ? `<span class="platform">${article.platform}</span>` : ''}
+        </div>
+        ${thumbHTML}
+      </div>
+    </section>
+    <section class="article-body">
+      <div class="wrap">
+        <div class="article-content">
+          ${article.body || `<p>${article.desc || ''}</p>`}
+        </div>
+        ${article.tiktokUrl ? `
+        <div class="article-tiktok">
+          <div>
+            <p>Tonton di TikTok</p>
+            <h4>Lihat konten lengkapnya di @cinevix</h4>
+          </div>
+          <a href="${article.tiktokUrl}" target="_blank" class="tt-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.28 8.28 0 004.83 1.54V6.78a4.85 4.85 0 01-1.06-.09z"/></svg>
+            Tonton Sekarang
+          </a>
+        </div>` : ''}
+      </div>
+    </section>
+    ${related.length ? `
+    <section class="related">
+      <div class="wrap">
+        <h2 class="related-title">Baca juga yang <em>lain</em></h2>
+        <div class="related-grid">${related.map(r => `
+          <div class="rel-card" onclick="showArticleDetail('${r.id}')">
+            <p class="rel-cat">${r.category || 'Artikel'}</p>
+            <h3 class="rel-title">${r.title}</h3>
+            <div class="rel-meta">${r.date || ''}</div>
+          </div>`).join('')}</div>
+      </div>
+    </section>` : ''}
+  `;
+  navigate('article');
+}
+
+function showAllArticles() {
+  allArticles = CVX.getArticles();
+  const list = document.getElementById('allArticlesList');
+  if (!allArticles.length) {
+    list.innerHTML = '<div class="empty-state"><h3>Belum ada artikel</h3></div>';
+    return;
+  }
+  list.innerHTML = allArticles.map((a, i) => {
+    const num = String(i + 1).padStart(2, '0');
+    return `<div class="aa-card" onclick="showArticleDetail('${a.id}')">
+      <div class="aa-num">${num}</div>
+      <div class="aa-info">
+        <p class="aa-cat">${a.category || 'Artikel'}</p>
+        <h3 class="aa-title">${a.title}</h3>
+        <div class="aa-meta">
+          <span>${a.date || ''}</span>
+          ${a.platform ? `<span class="platform"> · ${a.platform}</span>` : ''}
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+  navigate('all-articles');
+}
+
+/* ═══ VIDEOS ══ */
+async function loadVideos() {
+  allVideos = CVX.getVideos();
+  renderTabs();
+  renderGrid();
+  let changed = false;
+  for (let i = 0; i < allVideos.length; i++) {
+    const v = allVideos[i];
+    if (!v.fetched) {
+      const data = await CVX.fetchOembed(v.url);
+      if (data) {
+        allVideos[i] = { ...v, title: data.title || '', thumbnail: data.thumbnail_url || '', description: data.title || '', series: CVX.detectSeries(data.title || ''), author: data.author_name || '', fetched: true };
+        changed = true;
+        renderTabs();
+        renderGrid();
+      }
+    }
+  }
+  if (changed) CVX.saveVideos(allVideos);
+}
+
+function renderTabs() {
+  const sets = ['Semua', ...new Set(allVideos.filter(v => v.series).map(v => v.series))];
+  document.getElementById('playlistTabs').innerHTML = sets.map(p =>
+    `<button class="tab-btn${p === currentTab ? ' active' : ''}" data-pl="${p}">${p}</button>`
+  ).join('');
+  document.querySelectorAll('.tab-btn').forEach(b => {
+    b.onclick = () => { currentTab = b.dataset.pl; renderTabs(); renderGrid(); };
+  });
+}
+
+function renderGrid() {
+  const list = currentTab === 'Semua' ? allVideos : allVideos.filter(v => v.series === currentTab);
+  const grid = document.getElementById('videoGrid');
+  if (!list.length) {
+    grid.innerHTML = `<div class="empty-state"><h3>Belum ada konten</h3><p>Konten segera hadir.</p></div>`;
+    return;
+  }
+  grid.innerHTML = list.map(v => {
+    const vid = CVX.getVid(v.url);
+    if (!v.fetched) return `<div class="video-card"><div class="vc-placeholder"></div><div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center"><div class="spinner"></div></div></div>`;
+    return `<div class="video-card" data-vid="${vid}" data-url="${v.url}" data-title="${encodeURIComponent(v.title || '')}" data-series="${encodeURIComponent(v.series || '')}">
+      ${v.thumbnail ? `<img src="${v.thumbnail}" alt="" loading="lazy"/>` : `<div class="vc-placeholder">🎬</div>`}
+      <div class="video-card-overlay">
+        <p class="video-card-series">${v.series || 'Video'}</p>
+        <p class="video-card-title">${(v.title || 'Tap untuk tonton').substring(0, 65)}${v.title && v.title.length > 65 ? '…' : ''}</p>
+      </div>
+      <div class="video-card-play"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+    </div>`;
+  }).join('');
+  grid.querySelectorAll('.video-card[data-vid]').forEach(c => {
+    c.onclick = () => openModal(c.dataset.vid);
+  });
+}
+
+/* ═══ MODAL ═══ */
+function openModal(vid) {
+  document.getElementById('modalEmbed').innerHTML = `<iframe src="https://www.tiktok.com/embed/v2/${vid}" width="100%" height="720" frameborder="0" allow="autoplay;fullscreen" allowfullscreen></iframe>`;
+  document.getElementById('videoModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('videoModal').classList.remove('open');
+  document.getElementById('modalEmbed').innerHTML = '';
+  document.body.style.overflow = '';
+}
+document.getElementById('modalClose').onclick = closeModal;
+document.getElementById('videoModal').onclick = e => { if (e.target === e.currentTarget) closeModal(); };
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+/* ═══ ARTICLES ═══ */
+function renderArticles() {
+  allArticles = CVX.getArticles();
+  const container = document.getElementById('articlesContainer');
+  if (!allArticles.length) {
+    container.innerHTML = `<div class="empty-state" style="padding:40px"><h3>Belum ada artikel</h3><p>Artikel akan segera hadir.</p></div>`;
+    return;
+  }
+  const featured = allArticles[0];
+  const row2 = allArticles.slice(1, 3);
+  const row3 = allArticles.slice(3, 6);
+
+  const cardHTML = (a, idx, featured = false) => {
+    const num = String(idx + 1).padStart(2, '0');
+    const thumbStyle = a.thumb ? `background:url('${a.thumb}') center/cover no-repeat;` : '';
+    return `<div class="card${featured ? ' card-featured' : ''}">
+      <div class="card-inner" onclick="showArticleDetail('${a.id}')" style="cursor:pointer">
+        <div class="card-thumb"${thumbStyle ? ` style="${thumbStyle}"` : ''}></div>
+        <span class="card-genre">${a.category || 'Artikel'}</span>
+        <span class="card-num">${num}</span>
+        <h3 class="card-title">${a.title}</h3>
+        <div class="card-meta">
+          <span>${a.date || ''}</span>
+          ${a.platform ? `<span class="platform">${a.platform}</span>` : ''}
+        </div>
+        <span class="card-arrow">↗</span>
+      </div>
+    </div>`;
+  };
+
+  let html = '';
+  if (featured) {
+    html += `<div class="grid-featured reveal">${cardHTML(featured, 0, true)}`;
+    row2.forEach((a, i) => { html += cardHTML(a, i + 1); });
+    html += `</div>`;
+  }
+  if (row3.length) {
+    html += `<div class="grid-row2 reveal d1">${row3.map((a, i) => cardHTML(a, i + 3)).join('')}</div>`;
+  }
+  container.innerHTML = html;
+  document.querySelectorAll('.reveal').forEach(el => {
+    if (!el.classList.contains('visible')) obs.observe(el);
+  });
+}
+
+/* ═══ CMS AUTH ═══ */
+const CMS_USER = 'vixv';
+const CMS_PASS = 'vixv';
+let cmsAuthenticated = false;
+
+function openCMS() {
+  if (cmsAuthenticated) {
+    showCMSPanel();
+    return;
+  }
+  document.getElementById('loginOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  document.getElementById('loginUser').value = '';
+  document.getElementById('loginPass').value = '';
+  document.getElementById('loginErr').textContent = '';
+  setTimeout(() => document.getElementById('loginUser').focus(), 100);
+}
+
+function closeLogin() {
+  document.getElementById('loginOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function doLogin() {
+  const user = document.getElementById('loginUser').value.trim();
+  const pass = document.getElementById('loginPass').value.trim();
+  if (user === CMS_USER && pass === CMS_PASS) {
+    cmsAuthenticated = true;
+    closeLogin();
+    showCMSPanel();
+  } else {
+    document.getElementById('loginErr').textContent = 'Username atau password salah!';
+    document.getElementById('loginPass').value = '';
+    document.getElementById('loginPass').focus();
+  }
+}
+
+document.getElementById('loginPass').addEventListener('keydown', e => { if (e.key === 'Enter') doLogin(); });
+document.getElementById('loginUser').addEventListener('keydown', e => { if (e.key === 'Enter') document.getElementById('loginPass').focus(); });
+
+function showCMSPanel() {
+  document.getElementById('cmsOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  renderCMSVideos();
+  renderCMSArticles();
+}
+function closeCMS() {
+  document.getElementById('cmsOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+  renderArticles();
+}
+
+document.querySelectorAll('.cms-tab').forEach(tab => {
+  tab.onclick = () => {
+    document.querySelectorAll('.cms-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.cms-section').forEach(s => s.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById('cms-sec-' + tab.dataset.tab).classList.add('active');
+  };
+});
+
+function toast(msg) {
+  const el = document.getElementById('toast');
+  el.textContent = msg;
+  el.classList.add('show');
+  setTimeout(() => el.classList.remove('show'), 3000);
+}
+
+function renderCMSVideos() {
+  const videos = CVX.getVideos();
+  document.getElementById('videoCount').textContent = videos.length;
+  const list = document.getElementById('videoList');
+  if (!videos.length) { list.innerHTML = '<div class="empty-msg"><p>Belum ada konten video</p></div>'; return; }
+  list.innerHTML = videos.map((v, i) => `
+    <div class="item-row">
+      <div class="item-info">
+        <div class="item-title">${v.title || '(Belum ada judul)'}</div>
+        <div class="item-meta">${v.series || '—'} · ${v.fetched ? '✅ Siap' : ' Belum di-fetch'}</div>
+      </div>
+      <div class="item-actions">
+        ${v.fetched ? `<button class="btn btn-sm btn-secondary" onclick="openModal('${CVX.getVid(v.url)}');closeCMS()">▶</button>` : ''}
+        <button class="btn btn-sm btn-danger" onclick="deleteVideo(${i})"></button>
+      </div>
+    </div>
+  `).join('');
+}
+
+async function addVideo() {
+  const url = document.getElementById('videoUrl').value.trim();
+  const series = document.getElementById('videoSeries').value.trim();
+  if (!url) { toast('Masukkan link TikTok!'); return; }
+  const vid = CVX.getVid(url);
+  if (!vid) { toast('Link tidak valid!'); return; }
+  const videos = CVX.getVideos();
+  if (videos.find(v => v.id === vid)) { toast('Video sudah ada!'); return; }
+  const statusEl = document.getElementById('fetchStatus');
+  statusEl.className = 'fetch-status info';
+  statusEl.textContent = '⏳ Mengambil data dari TikTok...';
+  const data = await CVX.fetchOembed(url);
+  if (data) {
+    videos.push({ id: vid, url, title: data.title || '', thumbnail: data.thumbnail_url || '', description: data.title || '', series: series || CVX.detectSeries(data.title || ''), author: data.author_name || '', fetched: true });
+    statusEl.className = 'fetch-status success';
+    statusEl.textContent = '✅ Berhasil! Thumbnail & caption otomatis diambil.';
+  } else {
+    videos.push({ id: vid, url, title: '', thumbnail: '', description: '', series: series || 'Lainnya', author: '', fetched: false });
+    statusEl.className = 'fetch-status error';
+    statusEl.textContent = '⚠️ Gagal mengambil data. Video tetap ditambahkan.';
+  }
+  CVX.saveVideos(videos);
+  document.getElementById('videoUrl').value = '';
+  document.getElementById('videoSeries').value = '';
+  renderCMSVideos();
+  toast('Video ditambahkan!');
+}
+
+async function fetchAllThumbs() {
+  const statusEl = document.getElementById('fetchStatus');
+  statusEl.className = 'fetch-status info';
+  statusEl.textContent = '⏳ Mengambil thumbnail semua video...';
+  const videos = await CVX.enrichVideos((updated) => { CVX.saveVideos(updated); renderCMSVideos(); });
+  CVX.saveVideos(videos);
+  statusEl.className = 'fetch-status success';
+  statusEl.textContent = '✅ Semua thumbnail berhasil di-refresh!';
+  renderCMSVideos();
+  toast('Thumbnail di-refresh!');
+}
+
+function deleteVideo(idx) {
+  if (!confirm('Hapus video ini?')) return;
+  const videos = CVX.getVideos();
+  videos.splice(idx, 1);
+  CVX.saveVideos(videos);
+  renderCMSVideos();
+  toast('Video dihapus.');
+}
+
+function renderCMSArticles() {
+  const articles = CVX.getArticles();
+  document.getElementById('articleCount').textContent = articles.length;
+  const list = document.getElementById('articleList');
+  if (!articles.length) { list.innerHTML = '<div class="empty-msg"><p>Belum ada artikel</p></div>'; return; }
+  list.innerHTML = articles.map((a, i) => `
+    <div class="item-row">
+      <div class="item-info">
+        <div class="item-title">${a.title}</div>
+        <div class="item-meta">${a.category || '—'} · ${a.date || ''}</div>
+      </div>
+      <div class="item-actions">
+        <button class="btn btn-sm btn-secondary" onclick="editArticle('${a.id}')">✏️</button>
+        <button class="btn btn-sm btn-secondary" onclick="showArticleDetail('${a.id}');closeCMS()">👁</button>
+        <button class="btn btn-sm btn-danger" onclick="deleteArticle(${i})">🗑</button>
+      </div>
+    </div>
+  `).join('');
+}
+
+function saveArticle() {
+  const editId = document.getElementById('editArticleId').value;
+  const title = document.getElementById('articleTitle').value.trim();
+  const category = document.getElementById('articleCategory').value.trim();
+  const platform = document.getElementById('articlePlatform').value.trim();
+  const date = document.getElementById('articleDate').value.trim();
+  const desc = document.getElementById('articleDesc').value.trim();
+  const body = document.getElementById('articleBody').value.trim();
+  const tiktokUrl = document.getElementById('articleTiktokUrl').value.trim();
+  const thumb = document.getElementById('articleThumb').value.trim();
+  if (!title) { toast('Judul wajib diisi!'); return; }
+  const articles = CVX.getArticles();
+  if (editId) {
+    const idx = articles.findIndex(a => a.id === editId);
+    if (idx >= 0) articles[idx] = { ...articles[idx], title, category, platform, date, desc, body, tiktokUrl, thumb };
+  } else {
+    articles.unshift({ id: 'a' + Date.now(), title, category, platform, date, desc, body, tiktokUrl, thumb });
+  }
+  CVX.saveArticles(articles);
+  clearArticleForm();
+  renderCMSArticles();
+  allArticles = CVX.getArticles();
+  toast(editId ? 'Artikel diupdate!' : 'Artikel ditambahkan!');
+}
+
+function editArticle(id) {
+  const articles = CVX.getArticles();
+  const a = articles.find(x => x.id === id);
+  if (!a) return;
+  document.getElementById('editArticleId').value = a.id;
+  document.getElementById('articleTitle').value = a.title || '';
+  document.getElementById('articleCategory').value = a.category || '';
+  document.getElementById('articlePlatform').value = a.platform || '';
+  document.getElementById('articleDate').value = a.date || '';
+  document.getElementById('articleDesc').value = a.desc || '';
+  document.getElementById('articleBody').value = a.body || '';
+  document.getElementById('articleTiktokUrl').value = a.tiktokUrl || '';
+  document.getElementById('articleThumb').value = a.thumb || '';
+  document.getElementById('articleFormTitle').textContent = 'Edit Artikel';
+  document.getElementById('cms-sec-articles').scrollIntoView({ behavior: 'smooth' });
+}
+
+function clearArticleForm() {
+  document.getElementById('editArticleId').value = '';
+  document.getElementById('articleTitle').value = '';
+  document.getElementById('articleCategory').value = '';
+  document.getElementById('articlePlatform').value = '';
+  document.getElementById('articleDate').value = '';
+  document.getElementById('articleDesc').value = '';
+  document.getElementById('articleBody').value = '';
+  document.getElementById('articleTiktokUrl').value = '';
+  document.getElementById('articleThumb').value = '';
+  document.getElementById('articleFormTitle').textContent = 'Tambah Artikel Baru';
+}
+
+function deleteArticle(idx) {
+  if (!confirm('Hapus artikel ini?')) return;
+  const articles = CVX.getArticles();
+  articles.splice(idx, 1);
+  CVX.saveArticles(articles);
+  renderCMSArticles();
+  allArticles = CVX.getArticles();
+  toast('Artikel dihapus.');
+}
+
+function exportData() {
+  const data = { videos: CVX.getVideos(), articles: CVX.getArticles(), exported: new Date().toISOString() };
+  const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = 'cinevixv-backup-' + Date.now() + '.json';
+  a.click(); URL.revokeObjectURL(url);
+  toast('Data di-export!');
+}
+
+function importData(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = (e) => {
+    try {
+      const data = JSON.parse(e.target.result);
+      if (data.videos) CVX.saveVideos(data.videos);
+      if (data.articles) CVX.saveArticles(data.articles);
+      renderCMSVideos(); renderCMSArticles();
+      allVideos = CVX.getVideos(); allArticles = CVX.getArticles();
+      toast('Data di-import!');
+    } catch { toast('File JSON tidak valid!'); }
+  };
+  reader.readAsText(file);
+  event.target.value = '';
+}
+
+function resetAll() {
+  if (!confirm('Yakin hapus SEMUA data?')) return;
+  if (!confirm('Benar-benar yakin?')) return;
+  localStorage.removeItem('cvx_videos');
+  localStorage.removeItem('cvx_articles');
+  renderCMSVideos(); renderCMSArticles();
+  allVideos = CVX.getVideos(); allArticles = CVX.getArticles();
+  toast('Data direset.');
+}
+
+(function setDefaultDate() {
+  const d = new Date();
+  const months = ['Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember'];
+  document.getElementById('articleDate').value = d.getDate() + ' ' + months[d.getMonth()] + ' ' + d.getFullYear();
+})();
+
+/* ═══ CURSOR ═══ */
+const cursor = document.getElementById('cursor');
+const ring = document.getElementById('cursorRing');
+let mx = 0, my = 0, rx = 0, ry = 0;
+document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; cursor.style.left = mx + 'px'; cursor.style.top = my + 'px'; });
+(function animRing() { rx += (mx - rx) * .12; ry += (my - ry) * .12; ring.style.left = rx + 'px'; ring.style.top = ry + 'px'; requestAnimationFrame(animRing); })();
+document.querySelectorAll('a,.card,.video-card,.rel-card,.aa-card,.cms-trigger,.back-btn,.nav-logo,.sec-all').forEach(el => {
+  el.addEventListener('mouseenter', () => { cursor.style.width = '18px'; cursor.style.height = '18px'; ring.style.width = '56px'; ring.style.height = '56px'; cursor.style.background = 'var(--red2)'; });
+  el.addEventListener('mouseleave', () => { cursor.style.width = '10px'; cursor.style.height = '10px'; ring.style.width = '36px'; ring.style.height = '36px'; cursor.style.background = 'var(--red)'; });
+});
+
+/* ═══ REVEAL ═══ */
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+}, { threshold: .1 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+/* ══ INIT ═══ */
+loadVideos();
+renderArticles();
+</script>
+</body>
+</html>
