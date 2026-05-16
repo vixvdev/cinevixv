@@ -16,7 +16,7 @@
 1. Klik **Verify** di sebelah URL `https://cine.vixv.biz.id`.
 2. Pilih metode **File Upload**.
 3. Download file `.txt` dari TikTok.
-4. File sudah ada di website kamu: `https://cine.vixv.biz.id/tiktokUFCJqDy51ofPMW2PpT2Wlx0NRB6FMDV.txt`.
+4. File sudah ada di website kamu: `https://cine.vixv.biz.id/tiktokRXfBPt040CEMj00XwbxnLoADaYKhXJRu.txt`.
 5. Klik **Verify**.
 
 ## STEP 4: URL PROPERTIES
